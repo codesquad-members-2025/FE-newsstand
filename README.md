@@ -4,11 +4,10 @@
 
 #### 기초 작업 + 설계
 
-- [ ] crong React 수업 내용 복습
 - [x] 프로젝트 설계 - UI 분석 및 컴포넌트 설계
 - [x] 프로젝트 설계 - Store과 View 각각의 관점에서 고민하기
 - [ ] 프로젝트 설계 - 다크 모드 적용 방법 고민하기
-- [ ] React 개발 환경 세팅 (TypeScript, React, Express, Vite, CSS Library - Emotion)
+- [x] React 개발 환경 세팅 (TypeScript, React, Express, Vite, CSS Library - Emotion)
 
 <br/>
 
@@ -31,7 +30,7 @@
 #### 최신 뉴스 자동롤링 영역 동적 구현
 
 - [ ] 무한 롤링 애니메이션 구현
-- [ ] 마우스 이벤트 구현
+- [ ] 마우스 이벤트 구현 (비동기)
 
 <br/>
 
