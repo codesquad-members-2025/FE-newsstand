@@ -11,7 +11,6 @@ const PressList: FC<MyComponentProps> = ({ title }) => {
   return (
     <Container>
       <h1>Press List Page {title}</h1>
-      <PressList />
     </Container>
   );
 };

@@ -10,8 +10,7 @@ interface MyComponentProps {
 const PressGrid: FC<MyComponentProps> = ({ title }) => {
   return (
     <Container>
-      <h1>{title ?? "Default Title"}</h1>
-      <p>이곳에 원하는 내용을 작성하세요.</p>
+      <h1>Press Gird Page {title}</h1>
     </Container>
   );
 };

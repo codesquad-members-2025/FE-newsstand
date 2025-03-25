@@ -20,7 +20,7 @@ function App() {
         <Route path="/press-list" element={<PressListPage />} />
 
         {/* "/" 경로 접속 시 바로 /press-grid로 이동시키는 예시 */}
-        <Route path="/" element={<PressGridPage />} />
+        <Route path="/" element={<PressListPage />} />
 
         {/* 404 처리용 또는 라우트가 없을 때 */}
         <Route path="*" element={<div>Page Not Found</div>} />
