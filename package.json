@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/Nago730/FE-newsstand#readme",
   "dependencies": {
+    "emotion-reset": "^3.0.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
@@ -29,6 +30,7 @@
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
     "@eslint/js": "^9.23.0",
+    "@types/node": "^22.13.13",
     "@types/react": "^19.0.12",
     "@types/react-dom": "^19.0.4",
     "@vitejs/plugin-react": "^1.0.0",

@@ -1,8 +1,16 @@
+import { GlobalStyle } from '@/styles/global'
+import { ThemeProvider } from '@emotion/react'
+import { theme } from '@/styles/theme'
+
+import MainLayout from '@/components/MainLayout'
+
 function App() {
   return (
     <>
-      <h1>뉴스스탠드</h1>
-      {/* 여기에 다른 컴포넌트들이 들어갑니다 */}
+      <ThemeProvider theme={theme}>
+        <GlobalStyle />
+        <MainLayout />
+      </ThemeProvider>
     </>
   )
 }
