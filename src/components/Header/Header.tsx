@@ -4,14 +4,15 @@ import styled from "@emotion/styled"; // styled-components or emotion 사용 시
 
 interface MyComponentProps {
   // 컴포넌트에 필요한 props 타입을 정의
-  title?: string;
+  toggleTheme: () => void;
 }
 
-const Header: FC<MyComponentProps> = ({ title }) => {
+const Header: FC<MyComponentProps> = ({ toggleTheme }) => {
   return (
     <Container>
-      <h1>{title ?? "Default Title"}</h1>
-      <p>이곳에 원하는 내용을 작성하세요.</p>
+      <header>
+        <button onClick={toggleTheme}>Toggle Theme</button>
+      </header>
     </Container>
   );
 };
