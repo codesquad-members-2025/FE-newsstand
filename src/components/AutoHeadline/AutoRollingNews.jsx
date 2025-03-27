@@ -4,13 +4,13 @@ import NewsContainer from "./content/News_Contatiner";
 const StyledDiv = styled.div`
   background-color: #f5f7f9;
   border: 1px solid #d2dae0;
-  width: 461px;
-  height: 49px;
-  padding: 16px;
+  width: 28.81rem;
+  height: 3.06rem;
+  padding: 1rem;
   display: flex;
-  gap: 16px;
+  gap: 1rem;
   align-items: center;
-  font-size: 14px;
+  font-size: 0.88rem;
 `;
 
 export default function AutoRollingNews() {

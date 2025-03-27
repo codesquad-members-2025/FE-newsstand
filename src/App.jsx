@@ -1,13 +1,13 @@
 import { useState } from "react";
 import GlobalStyle from "./style/GlobalStyle";
 // import AutoRollingNews from "./components/AutoHeadline/AutoRollingNews";
-import TopHeader from "./components/TopHeader/TopHeader";
+import NewsStandPage from "./containers/NewsStandPage";
 function App() {
   return (
     <>
       <GlobalStyle />
-      {/* <AutoRollingNews /> */}
-      <TopHeader />
+
+      <NewsStandPage />
     </>
   );
 }

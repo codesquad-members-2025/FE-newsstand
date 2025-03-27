@@ -8,7 +8,7 @@ const StyledDiv = styled.div`
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  padding: 0 10.94rem;
+  /* padding: 0 10.94rem; */
 `;
 
 export default function TopHeader() {
