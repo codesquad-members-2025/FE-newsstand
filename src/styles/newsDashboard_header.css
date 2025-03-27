@@ -1,0 +1,72 @@
+.newsDashboard-header {
+  margin-top: 32px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.tabButtons {
+  display: flex;
+  gap: 24px;
+  font: var(--available-medium16);
+  color: var(--text-weak);
+}
+
+.selectedTab {
+  font: var(--selected-bold16);
+  color: var(--text-strong);
+}
+
+.subscribedButton {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+}
+
+.badge {
+  min-width: 20px;
+  height: 20px;
+  background-color: var(--surface-brand-alt);
+  border-radius: 8px;
+  font: var(--display-medium12);
+  color: var(--text-white-weak);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.viewerButtons {
+  display: flex;
+  gap: 8px;
+}
+
+.listView,
+.gridView {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.listButton {
+  width: 18px;
+  height: 18px;
+  mask-image: url("../icons/listView.svg");
+  mask-size: cover;
+  mask-repeat: no-repeat;
+  background-color: var(--text-weak);
+}
+
+.gridButton {
+  width: 18px;
+  height: 18px;
+  mask-image: url("../icons/gridView.svg");
+  mask-size: cover;
+  mask-repeat: no-repeat;
+  background-color: var(--text-weak);
+}
+
+.selectedViewer {
+  background-color: var(--surface-brand-alt);
+}
