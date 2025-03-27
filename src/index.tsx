@@ -7,7 +7,7 @@ import ResetStyles from "./styles/ResetStyles.tsx";
 import { ThemeProvider } from "@emotion/react";
 import theme from "./theme.ts";
 
-createRoot(document.getElementById("root")!).render(
+createRoot(document.getElementById("root") as HTMLElement).render(
   <StrictMode>
     <ThemeProvider theme={theme}>
       <ResetStyles />
