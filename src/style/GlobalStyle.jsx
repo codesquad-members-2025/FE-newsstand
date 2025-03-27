@@ -78,8 +78,8 @@ const GlobalStyle = createGlobalStyle`
     height: 100%;
     margin: 0;
     padding: 0;
-    background-color: #FFFFFF;
-    color: #4E4B66;
+    background-color: ${({ theme }) => theme.surface.default};
+    color: ${({ theme }) => theme.text.default};
     font-family: 'Pretendard'
     
   }

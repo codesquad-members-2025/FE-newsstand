@@ -2,8 +2,8 @@ import styled from "styled-components";
 import HeadLineTitle from "./Headline_Title";
 import NewsContainer from "./content/News_Contatiner";
 const StyledDiv = styled.div`
-  background-color: #f5f7f9;
-  border: 1px solid #d2dae0;
+  background-color: ${({ theme }) => theme.surface.alt};
+  border: 1px solid ${({ theme }) => theme.border.default};
   width: 28.81rem;
   height: 3.06rem;
   padding: 1rem;

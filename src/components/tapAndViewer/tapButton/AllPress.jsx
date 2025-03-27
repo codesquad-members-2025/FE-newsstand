@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const StyledDiv = styled.div`
-  color: #14212b;
+  color: ${({ theme }) => theme.text.strong};
   cursor: pointer;
   &:hover {
     opacity: 0.8;

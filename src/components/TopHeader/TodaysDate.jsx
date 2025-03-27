@@ -4,7 +4,7 @@ import getDates from "../../utils/getDates";
 const StyledDiv = styled.div`
   font-weight: 500;
   font-size: 1rem;
-  color: #5f6e76;
+  color: ${({ theme }) => theme.text.default};
 `;
 
 export default function TodaysDate() {

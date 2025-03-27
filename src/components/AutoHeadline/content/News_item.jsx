@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const StyledA = styled.a`
-  color: #5f6e76;
+  color: ${({ theme }) => theme.text.default};
   font-weight: 500;
 `;
 
