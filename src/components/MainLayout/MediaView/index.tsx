@@ -1,12 +1,18 @@
+import { useState } from 'react'
 import styled from '@emotion/styled'
 import TabAndViewer from './TabAndViewer'
 import GridView from './GridView'
+import ListView from './ListView'
+
+export type ViewType = 'grid' | 'list'
 
 function MediaView() {
+  const [currentView, setCurrentView] = useState<ViewType>('grid')
+
   return (
     <Container>
-      <TabAndViewer />
-      <GridView />
+      <TabAndViewer onViewChange={setCurrentView} currentView={currentView} />
+      {currentView === 'grid' ? <GridView /> : <ListView />}
     </Container>
   )
 }

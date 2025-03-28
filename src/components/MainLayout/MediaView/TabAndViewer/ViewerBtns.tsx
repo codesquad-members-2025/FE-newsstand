@@ -1,9 +1,15 @@
 import styled from '@emotion/styled'
+import { ViewType } from '../index'
 
-function ViewerButton() {
+interface ViewerButtonProps {
+  currentView: ViewType
+  onViewChange: (view: ViewType) => void
+}
+
+function ViewerButton({ currentView, onViewChange }: ViewerButtonProps) {
   return (
     <Container>
-      <ListViewBtn>
+      <ListViewBtn onClick={() => onViewChange('list')} active={currentView === 'list'}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -17,7 +23,7 @@ function ViewerButton() {
           />
         </svg>
       </ListViewBtn>
-      <GridViewBtn>
+      <GridViewBtn onClick={() => onViewChange('grid')} active={currentView === 'grid'}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -43,12 +49,20 @@ const Container = styled.div`
   gap: 8px;
 `
 
-const ListViewBtn = styled.button`
+const ListViewBtn = styled.button<{ active: boolean }>`
   display: flex;
+
+  & svg path {
+    fill: ${({ active }) => (active ? '#4362D0' : '#879298')};
+  }
 `
 
-const GridViewBtn = styled.button`
+const GridViewBtn = styled.button<{ active: boolean }>`
   display: flex;
+
+  & svg path {
+    fill: ${({ active }) => (active ? '#4362D0' : '#879298')};
+  }
 `
 
 export default ViewerButton

@@ -1,12 +1,18 @@
 import styled from '@emotion/styled'
-import TabButton from './TabButton'
-import ViewerButton from './ViewerButton'
+import TabButton from './TabBtns'
+import ViewerButton from './ViewerBtns'
+import { ViewType } from '../index'
 
-function TabPanel() {
+interface TabAndViewerProps {
+  currentView: ViewType
+  onViewChange: (view: ViewType) => void
+}
+
+function TabAndViewer({ currentView, onViewChange }: TabAndViewerProps) {
   return (
     <Container>
       <TabButton />
-      <ViewerButton />
+      <ViewerButton onViewChange={onViewChange} currentView={currentView} />
     </Container>
   )
 }
@@ -18,4 +24,4 @@ const Container = styled.div`
   gap: 24px;
 `
 
-export default TabPanel
+export default TabAndViewer
