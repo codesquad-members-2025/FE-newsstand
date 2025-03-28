@@ -1,0 +1,27 @@
+@import url("./global.css");
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 58px;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+h1.logo {
+  color: var(--text-strong);
+  font: var(--display-bold24);
+}
+
+.logo-image {
+  margin-right: 8px;
+}
+
+.today {
+  font: var(--display-medium16);
+  color: var(--text-default);
+}

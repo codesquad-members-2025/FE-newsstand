@@ -1,0 +1,33 @@
+:root {
+  /* text colors */
+  --text-strong: rgba(20, 33, 43, 1);
+  --text-default: rgba(95, 110, 118, 1);
+  --text-weak: rgba(135, 146, 152, 1);
+  --text-white-weak: rgba(255, 255, 255, 0.7);
+
+  /* background colors */
+  --surface-alt: rgba(245, 247, 249, 1);
+  --surface-brand-alt: rgba(120, 144, 231, 1);
+  --surface-default: rgba(255, 255, 255, 1);
+
+  /* border colors */
+  --border-default: rgba(210, 218, 224, 1);
+  --border-bold: rgba(110, 128, 145, 1);
+
+  /* font styles */
+  --display-bold24: 700 24px "Pretendard Variable", sans-serif;
+  --display-bold14: 700 14px "Pretendard Variable", sans-serif;
+
+  --display-medium16: 500 16px "Pretendard Variable", sans-serif;
+  --display-medium12: 500 12px "Pretendard Variable", sans-serif;
+
+  --available-medium16: 500 16px "Pretendard Variable", sans-serif;
+  --available-medium14: 500 14px "Pretendard Variable", sans-serif;
+
+  --selected-bold16: 700 16px "Pretendard Variable", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+}
