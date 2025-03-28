@@ -36,9 +36,12 @@ function newsDashboardContentArea() {
 
   return (
     <GridContentArea>
-      {filledCells.map((press) => (
-        <Cell key={press.id} className="press">
-          {press.name}
+      {filledCells.map((press, index) => (
+        <Cell
+          key={press.id ? `${press.id}` : `empty-${index}`}
+          className="press"
+        >
+          {press.name || ""}
         </Cell>
       ))}
     </GridContentArea>
