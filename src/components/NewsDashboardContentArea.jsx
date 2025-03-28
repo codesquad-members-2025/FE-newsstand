@@ -7,13 +7,16 @@ const GridContentArea = styled.div`
   grid-template-columns: repeat(6, 1fr);
   width: 930px;
   height: 388px;
-  border: 1px solid var(--border-default);
+  border-top: 1px solid var(--border-default);
+  border-left: 1px solid var(--border-default);
 `;
 
 const Cell = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  border-right: 1px solid var(--border-default);
+  border-bottom: 1px solid var(--border-default);
 `;
 
 function newsDashboardContentArea() {
@@ -27,16 +30,18 @@ function newsDashboardContentArea() {
       })
       .catch((error) => console.error("Error:", error));
   }, []);
+
+  const emptyCells = 24 - pressData.length;
+  const filledCells = [...pressData, ...new Array(emptyCells).fill("")];
+
   return (
-    <>
-      <GridContentArea>
-        {pressData.map((press) => (
-          <Cell key={press.id} className="press">
-            {press.name}
-          </Cell>
-        ))}
-      </GridContentArea>
-    </>
+    <GridContentArea>
+      {filledCells.map((press) => (
+        <Cell key={press.id} className="press">
+          {press.name}
+        </Cell>
+      ))}
+    </GridContentArea>
   );
 }
 
