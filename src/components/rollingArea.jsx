@@ -2,7 +2,7 @@ import "../styles/rollingArea.css";
 
 function rollingArea() {
   return (
-    <article>
+    <div className="rollingAreaContainer">
       <div className="rollingArea">
         <p className="pressName">연합뉴스</p>
         <p className="headline">
@@ -15,7 +15,7 @@ function rollingArea() {
           [속보] 與최고위원 본경선, 김병민·김용태·김재원·민영삼
         </p>
       </div>
-    </article>
+    </div>
   );
 }
 
