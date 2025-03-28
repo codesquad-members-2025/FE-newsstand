@@ -1,0 +1,26 @@
+# 빌드 폴더
+/dist
+/build
+
+# node_modules 폴더
+/node_modules
+
+# 타입스크립트 빌드 결과물
+/*.tsbuildinfo
+
+# 테스트 폴더
+/test
+/tests
+
+# 타입스크립트 컴파일러 출력 디렉토리 (tsc에 의해 생성되는 파일)
+/out
+
+# 특정 확장자 가진 파일들 제외
+*.min.js
+*.bundle.js
+
+# Vite와 관련된 설정 파일 (Vite는 빌드 결과물과 설정 파일을 생성)
+.vite
+*.env
+
+# 특정 파일만 무시할 경우 아래에 생성
