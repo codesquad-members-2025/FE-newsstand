@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import styled from '@emotion/styled'
-import TabAndViewer from './TabAndViewer'
+
+import MediaHeader from './MediaHeader'
 import GridView from './GridView'
 import ListView from './ListView'
 
@@ -11,7 +12,7 @@ function MediaView() {
 
   return (
     <Container>
-      <TabAndViewer onViewChange={setCurrentView} currentView={currentView} />
+      <MediaHeader onViewChange={setCurrentView} currentView={currentView} />
       {currentView === 'grid' ? <GridView /> : <ListView />}
     </Container>
   )

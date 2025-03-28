@@ -1,18 +1,20 @@
 import styled from '@emotion/styled'
-import TabButton from './TabBtns'
-import ViewerButton from './ViewerBtns'
+
+import TabBtns from './TabBtns'
+import ViewBtns from './ViewBtns'
+
 import { ViewType } from '../index'
 
-interface TabAndViewerProps {
+interface MediaHeaderProps {
   currentView: ViewType
   onViewChange: (view: ViewType) => void
 }
 
-function TabAndViewer({ currentView, onViewChange }: TabAndViewerProps) {
+function MediaHeader({ currentView, onViewChange }: MediaHeaderProps) {
   return (
     <Container>
-      <TabButton />
-      <ViewerButton onViewChange={onViewChange} currentView={currentView} />
+      <TabBtns />
+      <ViewBtns onViewChange={onViewChange} currentView={currentView} />
     </Container>
   )
 }
@@ -24,4 +26,4 @@ const Container = styled.div`
   gap: 24px;
 `
 
-export default TabAndViewer
+export default MediaHeader
