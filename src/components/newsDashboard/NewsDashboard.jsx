@@ -1,5 +1,5 @@
-import DashboardHeader from "./NewsDashboardHeader.jsx";
-import DashboardContentArea from "./NewsDashboardContentArea.jsx";
+import DashboardHeader from "./header/NewsDashboardHeader.jsx";
+import DashboardContentArea from "./contentArea/NewsDashboardContentArea.jsx";
 
 function NewsDashboard() {
   return (
