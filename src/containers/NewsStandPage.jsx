@@ -3,6 +3,7 @@ import TopHeader from "../components/TopHeader/TopHeader";
 import AutoRollingNews from "../components/AutoHeadline/AutoRollingNews";
 import Container from "../style/Container";
 import TapViewerBox from "../components/tapAndViewer/tapViewerBox";
+import GridView from "../components/ContentView/GridView";
 
 const PageLayout = styled.div`
   display: flex;
@@ -23,6 +24,7 @@ export default function NewsStandPage() {
         <AutoRollingNews />
       </AutoNewsBarContainer>
       <TapViewerBox />
+      <GridView />
     </PageLayout>
   );
 }

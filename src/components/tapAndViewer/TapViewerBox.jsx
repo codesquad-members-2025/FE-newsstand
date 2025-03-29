@@ -11,6 +11,7 @@ const FlexRowWrapper = styled(Container)`
   justify-content: space-between;
   align-items: center;
   padding-top: 2rem;
+  padding-bottom: 1.56rem;
 `;
 
 const LeftGroup = styled.div`
