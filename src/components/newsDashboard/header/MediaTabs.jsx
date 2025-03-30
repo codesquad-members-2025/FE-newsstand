@@ -1,18 +1,12 @@
 import styled from "styled-components";
+import { useState } from "react";
 
 const TabButtons = styled.div`
   display: flex;
   gap: 24px;
-  font: var(--available-medium16);
-  color: var(--text-weak);
 `;
 
-const AllpressButton = styled.button`
-  &.selectedTab {
-    font: var(--selected-bold16);
-    color: var(--text-strong);
-  }
-`;
+const AllpressButton = styled.button``;
 
 const SubscribedArea = styled.div`
   display: flex;
@@ -35,12 +29,39 @@ const Badge = styled.div`
   align-items: center;
 `;
 
+function getStyledButton(buttonName, activeButton) {
+  return {
+    font:
+      activeButton === buttonName
+        ? "var(--selected-bold16)"
+        : "var(--available-medium16)",
+    color:
+      activeButton === buttonName ? "var(--text-strong)" : "var(--text-weak)",
+  };
+}
+
 function MediaTabs() {
+  const [activeButton, setActiveButton] = useState("AllPress");
+
+  function handleClick(buttonName) {
+    setActiveButton(buttonName);
+  }
+
   return (
     <TabButtons>
-      <AllpressButton className="selectedTab">전체 언론사</AllpressButton>
+      <AllpressButton
+        style={getStyledButton("AllPress", activeButton)}
+        onClick={() => handleClick("AllPress")}
+      >
+        전체 언론사
+      </AllpressButton>
       <SubscribedArea>
-        <SubscribedPressButton>내가 구독한 언론사</SubscribedPressButton>
+        <SubscribedPressButton
+          style={getStyledButton("Subscribed", activeButton)}
+          onClick={() => handleClick("Subscribed")}
+        >
+          내가 구독한 언론사
+        </SubscribedPressButton>
         <Badge>0</Badge>
       </SubscribedArea>
     </TabButtons>

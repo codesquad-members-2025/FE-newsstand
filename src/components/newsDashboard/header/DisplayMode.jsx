@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import listIcon from "../../../icons/listView.svg";
 import gridIcon from "../../../icons/gridView.svg";
+import { useState } from "react";
 
 const DisplayButtons = styled.div`
   display: flex;
@@ -21,7 +22,6 @@ const ListButton = styled.div`
   mask-image: url("${listIcon}");
   mask-size: cover;
   mask-repeat: no-repeat;
-  background-color: var(--text-weak);
 `;
 
 const GridButton = styled.div`
@@ -30,20 +30,35 @@ const GridButton = styled.div`
   mask-image: url("${gridIcon}");
   mask-size: cover;
   mask-repeat: no-repeat;
-  background-color: var(--text-weak);
-  &.selectedMode {
-    background-color: var(--surface-brand-alt);
-  }
 `;
 
+function getStyledDisplayMode(modeName, displayMode) {
+  return {
+    backgroundColor:
+      modeName === displayMode ? "var(--text-point)" : "var(--text-weak)",
+  };
+}
+
 function displayMode() {
+  const [displayMode, setDisplayMode] = useState("GridView");
+
+  function handleClick(modeName) {
+    setDisplayMode(modeName);
+  }
+
   return (
     <DisplayButtons>
-      <Button className="listView">
-        <ListButton />
+      <Button>
+        <ListButton
+          style={getStyledDisplayMode("ListView", displayMode)}
+          onClick={() => handleClick("ListView")}
+        />
       </Button>
-      <Button className="gridView">
-        <GridButton className="selectedMode" />
+      <Button>
+        <GridButton
+          style={getStyledDisplayMode("GridView", displayMode)}
+          onClick={() => handleClick("GridView")}
+        />
       </Button>
     </DisplayButtons>
   );

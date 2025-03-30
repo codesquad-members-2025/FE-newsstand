@@ -4,6 +4,7 @@
   --text-default: rgba(95, 110, 118, 1);
   --text-weak: rgba(135, 146, 152, 1);
   --text-white-weak: rgba(255, 255, 255, 0.7);
+  --text-point: rgba(67, 98, 208, 1);
 
   /* background colors */
   --surface-alt: rgba(245, 247, 249, 1);
