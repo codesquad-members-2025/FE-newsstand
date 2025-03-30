@@ -1,7 +1,7 @@
-import { typography, radius, shadow, grayscale, blue } from "./baseTheme";
+import { typo, radius, shadow, grayscale, blue } from "./baseTheme";
 
 const baseTheme = {
-  typography,
+  typo,
   radius,
   shadow,
 };

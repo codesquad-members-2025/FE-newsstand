@@ -1,4 +1,4 @@
-export const typography = {
+export const typo = {
   bold24: { fontWeight: 700, fontSize: "24px", lineHeight: "auto" },
   bold16: { fontWeight: 700, fontSize: "16px", lineHeight: "auto" },
   bold14: { fontWeight: 700, fontSize: "14px", lineHeight: "auto" },
@@ -36,3 +36,4 @@ export const blue = {
   blue100: "#7890E7",
   blue500: "#4362D0",
 };
+

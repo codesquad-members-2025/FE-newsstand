@@ -1,11 +1,12 @@
 /** @jsxImportSource @emotion/react */
 import { Global, css } from "@emotion/react";
+import "pretendard/dist/web/variable/pretendardvariable.css";
 
 const GlobalStyles = () => (
   <Global
     styles={css`
       :root {
-        font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+        font-family: "Pretendard Variable", sans-serif;
         line-height: 1.5;
         font-weight: 400;
 
@@ -17,6 +18,10 @@ const GlobalStyles = () => (
         text-rendering: optimizeLegibility;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
 
       a {
@@ -32,7 +37,7 @@ const GlobalStyles = () => (
         margin: 0;
         display: flex;
         place-items: center;
-        min-width: 320px;
+        min-width: 930px;
         min-height: 100vh;
       }
 

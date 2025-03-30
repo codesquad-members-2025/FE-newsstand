@@ -1,4 +1,3 @@
-/** @jsxImportSource @emotion/react */ // Emotion 사용 시 (선택)
 import React, { FC } from "react"; // 리액트 및 타입 정의 import
 import styled from "@emotion/styled"; // styled-components or emotion 사용 시 (선택)
 
@@ -10,8 +9,8 @@ interface MyComponentProps {
 const HeaderDate: FC<MyComponentProps> = ({ title }) => {
   return (
     <Container>
-      <h1>{title ?? "Default Title"}</h1>
-      <p>이곳에 원하는 내용을 작성하세요.</p>
+      <p>2024. 03. 28 금요일</p>
+      {title}
     </Container>
   );
 };
@@ -20,6 +19,11 @@ export default HeaderDate;
 
 // 아래는 Emotion styled 예시 (선택)
 const Container = styled.div`
-  border: 1px solid #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  font-weight: 500;
 `;

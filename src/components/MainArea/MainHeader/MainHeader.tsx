@@ -1,4 +1,3 @@
-/** @jsxImportSource @emotion/react */ // Emotion 사용 시 (선택)
 import React, { FC } from "react"; // 리액트 및 타입 정의 import
 import styled from "@emotion/styled"; // styled-components or emotion 사용 시 (선택)
 
