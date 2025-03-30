@@ -8,11 +8,16 @@ const Header = styled.div`
   justify-content: space-between;
 `;
 
-function NewsDashboardHeader() {
+function NewsDashboardHeader({
+  activeTab,
+  setActiveTab,
+  displayMode,
+  setDisplayMode,
+}) {
   return (
     <Header>
-      <MediaTabs />
-      <DisplayMode />
+      <MediaTabs activeTab={activeTab} setActiveTab={setActiveTab} />
+      <DisplayMode displayMode={displayMode} setDisplayMode={setDisplayMode} />
     </Header>
   );
 }

@@ -40,24 +40,22 @@ function getStyledButton(buttonName, activeButton) {
   };
 }
 
-function MediaTabs() {
-  const [activeButton, setActiveButton] = useState("AllPress");
-
+function MediaTabs({ activeTab, setActiveTab }) {
   function handleClick(buttonName) {
-    setActiveButton(buttonName);
+    setActiveTab(buttonName);
   }
 
   return (
     <TabButtons>
       <AllpressButton
-        style={getStyledButton("AllPress", activeButton)}
+        style={getStyledButton("AllPress", activeTab)}
         onClick={() => handleClick("AllPress")}
       >
         전체 언론사
       </AllpressButton>
       <SubscribedArea>
         <SubscribedPressButton
-          style={getStyledButton("Subscribed", activeButton)}
+          style={getStyledButton("Subscribed", activeTab)}
           onClick={() => handleClick("Subscribed")}
         >
           내가 구독한 언론사

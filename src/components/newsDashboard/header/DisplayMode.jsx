@@ -39,9 +39,7 @@ function getStyledDisplayMode(modeName, displayMode) {
   };
 }
 
-function displayMode() {
-  const [displayMode, setDisplayMode] = useState("GridView");
-
+function DisplayMode({ displayMode, setDisplayMode }) {
   function handleClick(modeName) {
     setDisplayMode(modeName);
   }
@@ -64,4 +62,4 @@ function displayMode() {
   );
 }
 
-export default displayMode;
+export default DisplayMode;

@@ -19,7 +19,7 @@ const Cell = styled.div`
   border-bottom: 1px solid var(--border-default);
 `;
 
-function newsDashboardContentArea() {
+function NewsDashboardContentArea() {
   const [pressData, setPressData] = useState([]);
 
   useEffect(() => {
@@ -48,4 +48,4 @@ function newsDashboardContentArea() {
   );
 }
 
-export default newsDashboardContentArea;
+export default NewsDashboardContentArea;
