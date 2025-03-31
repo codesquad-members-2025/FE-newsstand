@@ -1,8 +1,7 @@
 import styled from "styled-components";
 import { useState, useEffect } from "react";
 
-const GridContentArea = styled.div`
-  margin-top: 24px;
+const GridContent = styled.div`
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   width: 930px;
@@ -19,7 +18,7 @@ const Cell = styled.div`
   border-bottom: 1px solid var(--border-default);
 `;
 
-function NewsDashboardContentArea() {
+function GridContentArea() {
   const [pressData, setPressData] = useState([]);
 
   useEffect(() => {
@@ -35,7 +34,7 @@ function NewsDashboardContentArea() {
   const filledCells = [...pressData, ...new Array(emptyCells).fill("")];
 
   return (
-    <GridContentArea>
+    <GridContent>
       {filledCells.map((press, index) => (
         <Cell
           key={press.id ? `${press.id}` : `empty-${index}`}
@@ -44,8 +43,8 @@ function NewsDashboardContentArea() {
           {press.name || ""}
         </Cell>
       ))}
-    </GridContentArea>
+    </GridContent>
   );
 }
 
-export default NewsDashboardContentArea;
+export default GridContentArea;
