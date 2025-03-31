@@ -6,9 +6,11 @@
     "editedTime": "2025-03-25T10:00:00Z",
     "newsData": [
       {
+        "id": 1,
         "newsTitle": "메인 뉴스 - 조선일보 주요 기사 제목",
         "thumbnailImage": "https://imgnews.naver.com/chosun_news1.png",
-        "link": "https://news.naver.com/chosun/news1"
+        "link": "https://news.naver.com/chosun/news1",
+        "date": "2025-03-25T10:00:00Z"
       },
       {
         "newsTitle": "서브 뉴스 1 - 조선일보 기사 제목",

@@ -25,7 +25,6 @@ const Container = styled.header`
   display: flex;
   justify-content: space-between;
   height: 2rem;
-  border: 1px solid #ccc;
   padding: 1rem;
   font-size: ${({ theme }) => theme.typo.bold24.fontSize};
   font-weight: ${({ theme }) => theme.typo.bold24.fontWeight};
