@@ -9,11 +9,11 @@ const ListViewWrapper = styled.div`
   border: ${({ theme }) => theme.border.default};
 `;
 
-export default function ListView() {
+export default function ListView({ categoryNews, page }) {
   return (
     <ListViewWrapper>
       <HeaderTab />
-      <NewsTab />
+      <NewsTab categoryNews={categoryNews} page={page} />
     </ListViewWrapper>
   );
 }

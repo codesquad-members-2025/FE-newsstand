@@ -29,9 +29,28 @@ function parseNewsLogo(newsData) {
   return logos;
 }
 
+function parseOneCategoryNews(newsData, category) {
+  if (!newsData || !newsData[category]) return []; // ✅ null 방어
+  const parsedNewsArr = newsData[category].map((item) => {
+    const name = item.name;
+    const logo = item.logoLight;
+    const regDate = item.regDate;
+    const materials = item.materials.map((material) => {
+      const title = material.title;
+      const url = material.url;
+      const image = material.image ? material.image.url : null;
+      const materialObj = { title, url, image };
+      return materialObj;
+    });
+    return { name, logo, regDate, materials };
+  });
+  return parsedNewsArr;
+}
+
 export default function ContentView({ listView }) {
   const [newsData, setnewsData] = useState(null);
   const [page, setpage] = useState(0);
+  const [category, setcategory] = useState("종합/경제");
 
   useEffect(() => {
     async function fetchData() {
@@ -42,10 +61,10 @@ export default function ContentView({ listView }) {
     fetchData();
   }, []);
 
+  if (!newsData) return null; //조건부 렌더링
   function swipeNextPage() {
     setpage((prev) => prev + 1);
   }
-
   function swipePrevPage() {
     setpage((prev) => prev - 1);
   }
@@ -55,10 +74,19 @@ export default function ContentView({ listView }) {
   const pagedEntries = entries.slice(page * pageSize, pageSize * (1 + page));
   const maxPage = Math.ceil(entries.length / pageSize);
 
+  //----------------------------------
+  //---------------------------------아래는 리스트 뷰 관련 로직
+
+  const categoryNews = parseOneCategoryNews(newsData, category);
+
   return (
     <ContentBoxWrapper>
       <LeftSwipeButton swipePrevPage={swipePrevPage} visible={page > 0} />
-      {listView ? <ListView /> : <GridView items={pagedEntries} />}
+      {listView ? (
+        <ListView categoryNews={categoryNews} page={page} />
+      ) : (
+        <GridView items={pagedEntries} />
+      )}
       <RightSwipeButton
         swipeNextPage={swipeNextPage}
         visible={page < maxPage - 1}
