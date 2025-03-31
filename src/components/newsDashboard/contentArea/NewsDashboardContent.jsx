@@ -15,12 +15,12 @@ function NewsDashboardContent({ activeTab, displayMode }) {
         displayMode === "ListView" ? (
           <ListView title={"내가 구독한 언론사 리스트 뷰"} />
         ) : (
-          <GridView />
+          <GridView activeTab={activeTab} />
         )
       ) : displayMode === "ListView" ? (
         <ListView title={"전체 언론사 리스트 뷰"} />
       ) : (
-        <GridView />
+        <GridView activeTab={activeTab} />
       )}
     </DashboardContentArea>
   );

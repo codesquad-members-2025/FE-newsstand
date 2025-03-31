@@ -18,17 +18,19 @@ const Cell = styled.div`
   border-bottom: 1px solid var(--border-default);
 `;
 
-function GridContentArea() {
+function GridContentArea({ activeTab }) {
   const [pressData, setPressData] = useState([]);
 
   useEffect(() => {
     fetch("/mockData.json")
       .then((response) => response.json())
       .then((data) => {
-        setPressData(data);
+        activeTab === "AllPress"
+          ? setPressData(data.AllPress)
+          : setPressData(data.Subscribed);
       })
       .catch((error) => console.error("Error:", error));
-  }, []);
+  }, [activeTab]);
 
   const emptyCells = 24 - pressData.length;
   const filledCells = [...pressData, ...new Array(emptyCells).fill("")];
