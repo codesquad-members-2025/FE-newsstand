@@ -1,12 +1,12 @@
 import styled from '@emotion/styled'
-import NewsInfo from './NewsInfo'
-import NewsArea from './NewsArea'
+import NewsSource from './NewsSource'
+import NewsContent from './NewsContent'
 
 function PressNews() {
   return (
     <Container>
-      <NewsInfo />
-      <NewsArea />
+      <NewsSource />
+      <NewsContent />
     </Container>
   )
 }

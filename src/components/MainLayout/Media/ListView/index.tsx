@@ -1,12 +1,12 @@
 import styled from '@emotion/styled'
-import PressScroll from './PressScroll'
-import PressNews from './PressNews'
+import Header from './Header'
+import NewsCard from './NewsCard'
 
 function ListView() {
   return (
     <Container>
-      <PressScroll />
-      <PressNews />
+      <Header />
+      <NewsCard />
     </Container>
   )
 }

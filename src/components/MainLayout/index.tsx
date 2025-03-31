@@ -1,14 +1,14 @@
 import styled from '@emotion/styled'
 import Header from '@/components/MainLayout/Header'
-import Roller from '@/components/MainLayout/Roller'
-import MediaView from '@/components/MainLayout/MediaView'
+import AutoRollingBar from '@/components/MainLayout/AutoRollingBar'
+import Media from '@/components/MainLayout/Media'
 
 function MainLayout() {
   return (
     <Container>
       <Header />
-      <Roller />
-      <MediaView />
+      <AutoRollingBar />
+      <Media />
     </Container>
   )
 }
