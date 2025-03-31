@@ -31,7 +31,13 @@ const SubscribeGroup = styled.div`
   gap: 0.25rem;
 `;
 
-export default function TapViewerBox() {
+export default function TapViewerBox({ toggleListView }) {
+  function showListView() {
+    toggleListView(() => true);
+  }
+  function showGridView() {
+    toggleListView(() => false);
+  }
   return (
     <FlexRowWrapper>
       <LeftGroup>
@@ -42,8 +48,8 @@ export default function TapViewerBox() {
         </SubscribeGroup>
       </LeftGroup>
       <RightGroup>
-        <GridViewBtn />
-        <ListViewBtn />
+        <GridViewBtn showGridView={showGridView} />
+        <ListViewBtn showListView={showListView} />
       </RightGroup>
     </FlexRowWrapper>
   );
