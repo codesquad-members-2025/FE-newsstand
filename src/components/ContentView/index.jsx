@@ -32,6 +32,7 @@ function parseNewsLogo(newsData) {
 function parseOneCategoryNews(newsData, category) {
   if (!newsData || !newsData[category]) return []; // ✅ null 방어
   const parsedNewsArr = newsData[category].map((item) => {
+    const pressId = item.pid;
     const name = item.name;
     const logo = item.logoLight;
     const regDate = item.regDate;
@@ -42,7 +43,7 @@ function parseOneCategoryNews(newsData, category) {
       const materialObj = { title, url, image };
       return materialObj;
     });
-    return { name, logo, regDate, materials };
+    return { pressId, name, logo, regDate, materials };
   });
   return parsedNewsArr;
 }
