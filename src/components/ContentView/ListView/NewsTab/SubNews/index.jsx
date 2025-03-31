@@ -7,7 +7,7 @@ const SubNewsWrapper = styled.div`
 `;
 
 const SubNewsArticle = styled.a`
-  color: ${({ theme }) => theme.font.strong};
+  color: ${({ theme }) => theme.text.strong};
   font-weight: 500;
 `;
 
@@ -33,10 +33,10 @@ function captionComment(press) {
   return comment;
 }
 
-export default function SubNews({ SubNews, pressName }) {
+export default function SubNews({ subNews, pressName }) {
   return (
     <SubNewsWrapper>
-      {makeArticles(SubNews)}
+      {makeArticles(subNews)}
       <Caption>{captionComment(pressName)}</Caption>
     </SubNewsWrapper>
   );

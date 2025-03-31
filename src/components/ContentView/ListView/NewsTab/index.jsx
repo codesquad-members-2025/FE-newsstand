@@ -18,13 +18,12 @@ const PressNewsWrapper = styled.div`
 `;
 
 function parseCurrentPageNews(newsData, page) {
-  if (!newsData) return newsData;
   const currentPageNews = newsData[page];
   return currentPageNews;
 }
 
 export default function NewsTab({ categoryNews, page }) {
-  const currentNews = parseCurrentPageNews(categoryNews, page);
+  const currentNews = parseCurrentPageNews(categoryNews, page); //한 페이지 뉴스 데이터-> 객체
 
   return (
     <NewsListWrapper>

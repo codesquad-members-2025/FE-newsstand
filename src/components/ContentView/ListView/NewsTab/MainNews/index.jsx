@@ -9,16 +9,16 @@ const MainNewsWrapper = styled.div`
     height: 12.5rem;
   }
   a {
-    color: ${({ theme }) => theme.font.strong};
+    color: ${({ theme }) => theme.text.strong};
     font-weight: 500;
   }
 `;
 
-export default function MainNews({ MainNews }) {
+export default function MainNews({ mainNews }) {
   return (
     <MainNewsWrapper>
-      <img src={MainNews.image} />
-      <a href={MainNews.url}>{MainNews.title}</a>
+      <img src={mainNews.image} />
+      <a href={mainNews.url}>{mainNews.title}</a>
     </MainNewsWrapper>
   );
 }

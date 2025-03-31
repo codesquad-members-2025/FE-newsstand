@@ -20,7 +20,7 @@ function formatDateTime(input) {
 }
 
 export default function PressInformation({ newsInformation }) {
-  const pressLogo = newsInformation.logoLight;
+  const pressLogo = newsInformation.logo;
   const regDate = formatDateTime(newsInformation.regDate);
   const subscribed = "구독하기"; //구독 조건에 따라 반 문자열 반환도 추후 고려
 

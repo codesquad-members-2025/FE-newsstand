@@ -62,6 +62,7 @@ export default function ContentView({ listView }) {
   }, []);
 
   if (!newsData) return null; //조건부 렌더링
+
   function swipeNextPage() {
     setpage((prev) => prev + 1);
   }
