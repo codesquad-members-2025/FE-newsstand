@@ -69,6 +69,7 @@ export default function ContentView({ listView }) {
   function swipePrevPage() {
     setpage((prev) => prev - 1);
   }
+
   const newsLogo = parseNewsLogo(newsData);
   const entries = Object.entries(newsLogo);
   const pageSize = 24;
