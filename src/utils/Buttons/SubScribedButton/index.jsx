@@ -5,12 +5,13 @@ const StyledButton = styled.button`
   cursor: pointer;
   padding: 0.31rem 0.38rem;
   display: flex;
+  width: ${({ width }) => width}rem;
   gap: 0.25rem;
   color: ${({ theme }) => theme.text.weak};
   fill: ${({ theme }) => theme.text.weak};
   background-color: ${({ theme }) => theme.surface.alt};
   border: 1px solid ${({ theme }) => theme.border.default};
-  border-radius: ${width / 2};
+  border-radius: ${({ width }) => width / 2}rem;
   font-weight: 500;
 
   &:hover {

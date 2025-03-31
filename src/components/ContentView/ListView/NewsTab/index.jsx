@@ -1,44 +1,40 @@
 import styled from "styled-components";
+import MainNews from "./MainNews";
+import SubNews from "./SubNews";
+import PressInformation from "./PressInformation";
 
-const NewsWrapper = styled.div`
+const NewsListWrapper = styled.div`
   display: flex;
   flex-direction: column;
   padding: 1.5rem;
   gap: 1rem;
 `;
 
-const NewsTitle = styled.div`
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-  color: ${({ theme }) => theme.text.default};
-  img {
-    width: 0 0.03rem;
-  }
-`;
-const NewsContentWrapper = styled.div`
+const PressNewsWrapper = styled.div`
   display: flex;
   gap: 2rem;
   align-items: flex-start;
-`;
-const MainNews = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  img {
-    width: 20rem;
-    height: 12.5rem;
-  }
-  div {
-    color: ${({ theme }) => theme.font.strong};
-    font-weight: 500;
-  }
+  color: ${({ theme }) => theme.text.default};
 `;
 
-export default function NewsTab() {
+function parseCurrentPageNews(newsData, page) {
+  const currentPageNews = newsData[page];
+  return currentPageNews;
+}
+
+export default function NewsTab({ categoryNews, page }) {
+  const currentNews = parseCurrentPageNews(categoryNews, page); //한 페이지 뉴스 데이터-> 객체
+
   return (
-    <NewsWrapper>
-      <NewsTitle></NewsTitle>
-    </NewsWrapper>
+    <NewsListWrapper>
+      <PressInformation newsInformation={currentNews} />
+      <PressNewsWrapper>
+        <MainNews mainNews={currentNews.materials[0]} />
+        <SubNews
+          subNews={currentNews.materials.slice(1)}
+          pressName={currentNews.name}
+        />
+      </PressNewsWrapper>
+    </NewsListWrapper>
   );
 }
