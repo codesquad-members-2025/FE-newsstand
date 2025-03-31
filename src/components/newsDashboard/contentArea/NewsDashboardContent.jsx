@@ -9,18 +9,17 @@ const DashboardContentArea = styled.div`
 `;
 
 function NewsDashboardContent({ activeTab, displayMode }) {
+  const isGridView = displayMode === "GridView";
+  const title =
+    activeTab === "Subscribed"
+      ? "내가 구독한 언론사 리스트 뷰"
+      : "전체 언론사 리스트 뷰";
   return (
     <DashboardContentArea>
-      {activeTab === "Subscribed" ? (
-        displayMode === "ListView" ? (
-          <ListView title={"내가 구독한 언론사 리스트 뷰"} />
-        ) : (
-          <GridView activeTab={activeTab} />
-        )
-      ) : displayMode === "ListView" ? (
-        <ListView title={"전체 언론사 리스트 뷰"} />
-      ) : (
+      {isGridView ? (
         <GridView activeTab={activeTab} />
+      ) : (
+        <ListView title={title} />
       )}
     </DashboardContentArea>
   );
