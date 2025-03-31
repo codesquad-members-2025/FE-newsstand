@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ThemeProvider } from "@emotion/react";
+import { ThemeProvider as EmotionThemeProvider } from "@emotion/react";
 import styled from "@emotion/styled";
 import Header from "./components/Header/Header";
 import AutoRollingArea from "./components/AutoRollingArea/AutoRollingArea";
@@ -14,13 +14,13 @@ function App() {
   };
 
   return (
-    <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
+    <EmotionThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
       <GridLayout>
         <Header toggleTheme={toggleTheme} />
         <AutoRollingArea />
         <AppRoutes />
       </GridLayout>
-    </ThemeProvider>
+    </EmotionThemeProvider>
   );
 }
 

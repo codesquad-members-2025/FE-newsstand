@@ -24,7 +24,6 @@ export default Header;
 const Container = styled.header`
   display: flex;
   justify-content: space-between;
-  width: 100%;
   height: 2rem;
   border: 1px solid #ccc;
   padding: 1rem;

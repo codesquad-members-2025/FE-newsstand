@@ -19,8 +19,8 @@ export default HeaderToggle;
 // 아래는 Emotion styled 예시 (선택)
 const Container = styled.div`
   display: flex;
-  justify-content: space-between;
-  border: 1px solid #ccc;
+  justify-content: center;
+  align-items: center;
   padding: 1rem;
   font-weight: ${({ theme }) => theme.typo.regular12.fontWeight};
   font-size: ${({ theme }) => theme.typo.regular12.fontSize};
