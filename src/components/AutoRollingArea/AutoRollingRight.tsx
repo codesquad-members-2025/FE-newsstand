@@ -23,6 +23,16 @@ const AutoRollingRight: FC<MyComponentProps> = ({ news }) => {
     console.log(newsItem.date);
   });
 
+  // news 데이터가 없을 경우
+  if (!news || news.length === 0) {
+    return (
+      <Container>
+        <p className="rolling_left">연합뉴스</p>
+        <p className="rolling_title">뉴스 데이터가 없습니다.</p>
+      </Container>
+    );
+  }
+
   const newsItem = news[0];
 
   return (

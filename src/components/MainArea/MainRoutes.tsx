@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import PressGrid from "./PressGrid/PressGrid";
 import PressList from "./PressList/PressList";
@@ -6,9 +6,25 @@ import MainHeader from "./MainHeader/MainHeader";
 import styled from "@emotion/styled";
 
 const MainRoutes: React.FC = () => {
+  const [currPressState, setCurrPressState] =
+    React.useState<string>("all-press");
+  const [currShowState, setCurrShowState] = React.useState<string>("list");
+
+  useEffect(() => {
+    if (currPressState === "all-press") {
+      // 전체 언론사
+    } else {
+      // 내가 구독한 언론사
+    }
+  }, [currPressState]);
+
   return (
     <Container>
-      <MainHeader />
+      <MainHeader
+        currShowState={currShowState}
+        setCurrShowState={setCurrShowState}
+        setCurrPressState={setCurrPressState}
+      />
       <Routes>
         <Route path="/press-grid" element={<PressGrid />} />
         <Route path="/press-list" element={<PressList />} />

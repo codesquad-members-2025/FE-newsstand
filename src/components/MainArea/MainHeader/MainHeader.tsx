@@ -3,11 +3,25 @@ import styled from "@emotion/styled"; // styled-components or emotion 사용 시
 import MainHeaderListTab from "./MainHeaderListTab";
 import MainHeaderPressTab from "./MainHeaderPressTab";
 
-const MainHeader: FC = () => {
+interface MyComponentProps {
+  // 컴포넌트에 필요한 props 타입을 정의
+  currShowState: string;
+  setCurrPressState: React.Dispatch<React.SetStateAction<string>>;
+  setCurrShowState: React.Dispatch<React.SetStateAction<string>>;
+}
+
+const MainHeader: FC<MyComponentProps> = ({
+  currShowState,
+  setCurrPressState,
+  setCurrShowState,
+}) => {
   return (
     <Container>
-      <MainHeaderListTab />
-      <MainHeaderPressTab />
+      <MainHeaderListTab setCurrPressState={setCurrPressState} />
+      <MainHeaderPressTab
+        currShowState={currShowState}
+        setCurrShowState={setCurrShowState}
+      />
     </Container>
   );
 };
@@ -19,5 +33,6 @@ const Container = styled.div`
   display: flex;
   justify-content: space-between;
   height: 1.5rem;
+  margin-top: 0.688rem;
   margin-bottom: 1.563rem;
 `;
