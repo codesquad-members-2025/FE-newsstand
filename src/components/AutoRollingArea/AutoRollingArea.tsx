@@ -73,5 +73,4 @@ const Container = styled.div`
   grid-template-rows: 3.063rem;
   grid-template-columns: 1fr 1fr;
   column-gap: 0.5rem;
-  padding: 1rem;
 `;

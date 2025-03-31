@@ -3,7 +3,7 @@ import { ThemeProvider as EmotionThemeProvider } from "@emotion/react";
 import styled from "@emotion/styled";
 import Header from "./components/Header/Header";
 import AutoRollingArea from "./components/AutoRollingArea/AutoRollingArea";
-import AppRoutes from "./AppRoutes";
+import MainRoutes from "./components/MainArea/MainRoutes";
 import darkTheme from "./styles/theme/darkTheme";
 import lightTheme from "./styles/theme/lightTheme";
 
@@ -18,7 +18,7 @@ function App() {
       <GridLayout>
         <Header toggleTheme={toggleTheme} />
         <AutoRollingArea />
-        <AppRoutes />
+        <MainRoutes />
       </GridLayout>
     </EmotionThemeProvider>
   );
@@ -26,9 +26,9 @@ function App() {
 
 const GridLayout = styled.div`
   display: grid;
-  grid-template-rows: 49px 49px 436px;
-  grid-template-columns: 930px;
-  row-gap: 32px;
+  grid-template-rows: 3.063rem 3.063rem auto;
+  grid-template-columns: 58.125rem;
+  row-gap: 1.5rem;
   min-height: 100vh;
 `;
 
