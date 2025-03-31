@@ -16,11 +16,7 @@ function NewsDashboardContent({ activeTab, displayMode }) {
       : "전체 언론사 리스트 뷰";
   return (
     <DashboardContentArea>
-      {isGridView ? (
-        <GridView activeTab={activeTab} />
-      ) : (
-        <ListView title={title} />
-      )}
+      {isGridView ? <GridView activeTab={activeTab} /> : <ListView />}
     </DashboardContentArea>
   );
 }
