@@ -1,16 +1,20 @@
 import styled from '@emotion/styled'
-import FieldTab from './FieldTab'
+import PressScroll from './PressScroll'
 import PressNews from './PressNews'
 
 function ListView() {
   return (
     <Container>
-      <FieldTab />
+      <PressScroll />
       <PressNews />
     </Container>
   )
 }
 
-const Container = styled.div``
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+`
 
 export default ListView

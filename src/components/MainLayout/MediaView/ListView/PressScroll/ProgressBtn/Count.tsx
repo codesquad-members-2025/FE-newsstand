@@ -1,11 +1,16 @@
 import styled from '@emotion/styled'
 
-function Count() {
+interface CountProps {
+  currentIndex: number
+  totalCount: number
+}
+
+function Count({ currentIndex, totalCount }: CountProps) {
   return (
     <Container>
-      <Present>1</Present>
+      <CurrentIndex>{currentIndex}</CurrentIndex>
       <Division>/</Division>
-      <Entire>81</Entire>
+      <TotalCount>{totalCount}</TotalCount>
     </Container>
   )
 }
@@ -18,17 +23,17 @@ const Container = styled.div`
   gap: 2px;
 `
 
-const Present = styled.div`
+const CurrentIndex = styled.span`
   font-weight: 700;
   font-size: 12px;
   color: rgba(255, 255, 255, 1);
 `
 
-const Division = styled.div`
+const Division = styled.span`
   color: rgba(255, 255, 255, 0.7);
 `
 
-const Entire = styled.div`
+const TotalCount = styled.span`
   font-weight: 700;
   font-size: 12px;
   color: rgba(255, 255, 255, 0.7);
