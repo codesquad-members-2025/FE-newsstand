@@ -1,15 +1,10 @@
-import DashboardHeader from "./header/NewsDashboardHeader.jsx";
-import DashboardContent from "./contentArea/NewsDashboardContent.jsx";
-import { useEffect, useState } from "react";
+import DashboardHeader from "./header/DashboardHeader.jsx";
+import DashboardContent from "./contentArea/DashboardContent.jsx";
+import { useState } from "react";
 
 function NewsDashboard() {
   const [activeTab, setActiveTab] = useState("AllPress");
   const [displayMode, setDisplayMode] = useState("GridView");
-
-  // useEffect(() => {
-  //   if (activeTab === "Subscribed") setDisplayMode("ListView");
-  //   else setDisplayMode("GridView");
-  // }, [activeTab]);
 
   return (
     <>

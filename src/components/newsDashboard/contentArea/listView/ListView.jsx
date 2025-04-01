@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import FieldTab from "./FieldTab.jsx";
-import PressNews from "./PressNewsBody.jsx";
+import PressNewsBody from "./PressNewsBody.jsx";
 
 const NewsList = styled.div`
   background-color: var(--surface-default);
@@ -11,7 +11,7 @@ function ListContentArea() {
   return (
     <NewsList>
       <FieldTab />
-      <PressNews />
+      <PressNewsBody />
     </NewsList>
   );
 }
