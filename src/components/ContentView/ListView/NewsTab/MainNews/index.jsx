@@ -12,6 +12,7 @@ const MainNewsWrapper = styled.div`
   a {
     color: ${({ theme }) => theme.text.strong};
     font-weight: 500;
+    text-decoration: none;
   }
 `;
 

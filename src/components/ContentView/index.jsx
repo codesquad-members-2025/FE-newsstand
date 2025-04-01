@@ -22,6 +22,16 @@ export default function ContentView({ listView }) {
   const [page, setpage] = useState(0);
   const [category, setcategory] = useState("종합/경제");
 
+  function swipeNextPage() {
+    setpage((prev) => prev + 1);
+  }
+  function swipePrevPage() {
+    setpage((prev) => prev - 1);
+  }
+
+  const categoryNews = parseOneCategoryNews(newsData, category);
+  const [pagedData, maxPage] = paginateData(listView, categoryNews, page);
+
   useEffect(() => {
     async function fetchData() {
       const res = await fetch("/crawler/press_by_category.json");
@@ -36,17 +46,6 @@ export default function ContentView({ listView }) {
   }, [listView]);
 
   if (!newsData) return null; //조건부 렌더링
-
-  function swipeNextPage() {
-    setpage((prev) => prev + 1);
-  }
-  function swipePrevPage() {
-    setpage((prev) => prev - 1);
-  }
-
-  const categoryNews = parseOneCategoryNews(newsData, category);
-  const [pagedData, maxPage] = paginateData(listView, categoryNews, page);
-
   return (
     <ContentBoxWrapper>
       <LeftSwipeButton swipePrevPage={swipePrevPage} visible={page > 0} />
