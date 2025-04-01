@@ -1,11 +1,11 @@
 import styled from '@emotion/styled'
-import NewsSource from './NewsSource'
+import NewsInfo from './NewsInfo'
 import NewsContent from './NewsContent'
 
 function PressNews() {
   return (
     <Container>
-      <NewsSource />
+      <NewsInfo />
       <NewsContent />
     </Container>
   )

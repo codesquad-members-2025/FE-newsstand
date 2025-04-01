@@ -5,15 +5,25 @@ import MediaHeader from './MediaHeader'
 import GridView from './GridView'
 import ListView from './ListView'
 
+import useFetch from '@/hooks/useFetch'
+import { randomizePressData } from './newsTransFormater'
+
 export type ViewType = 'grid' | 'list'
 
-function MediaView() {
+function Media() {
+  const { data, loading } = useFetch('/mock/press_by_category.json')
   const [currentView, setCurrentView] = useState<ViewType>('grid')
 
   return (
     <Container>
       <MediaHeader onViewChange={setCurrentView} currentView={currentView} />
-      {currentView === 'grid' ? <GridView /> : <ListView />}
+      {loading ? (
+        <p>Loading...</p>
+      ) : currentView === 'grid' ? (
+        <GridView data={randomizePressData(data)} />
+      ) : (
+        <ListView />
+      )}
     </Container>
   )
 }
@@ -26,4 +36,4 @@ const Container = styled.div`
   justify-content: space-between;
 `
 
-export default MediaView
+export default Media
