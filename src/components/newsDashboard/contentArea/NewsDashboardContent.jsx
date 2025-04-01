@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import ListView from "./ListView.jsx";
+import ListView from "./listView/ListView.jsx";
 import GridView from "./GridView.jsx";
 
 const DashboardContentArea = styled.div`

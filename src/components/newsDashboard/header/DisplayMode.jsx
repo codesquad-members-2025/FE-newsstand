@@ -1,7 +1,6 @@
 import styled from "styled-components";
-import listIcon from "../../../icons/listView.svg";
-import gridIcon from "../../../icons/gridView.svg";
-import { useState } from "react";
+import listIcon from "../../../assets/icons/listView.svg";
+import gridIcon from "../../../assets/icons/gridView.svg";
 
 const DisplayButtons = styled.div`
   display: flex;

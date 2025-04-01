@@ -20,10 +20,12 @@
   --display-bold14: 700 14px "Pretendard Variable", sans-serif;
 
   --display-medium16: 500 16px "Pretendard Variable", sans-serif;
+  --display-medium14: 500 14px "Pretendard Variable", sans-serif;
   --display-medium12: 500 12px "Pretendard Variable", sans-serif;
 
   --available-medium16: 500 16px "Pretendard Variable", sans-serif;
   --available-medium14: 500 14px "Pretendard Variable", sans-serif;
+  --available-medium12: 500 12px "Pretendard Variable", sans-serif;
 
   --selected-bold16: 700 16px "Pretendard Variable", sans-serif;
 }
