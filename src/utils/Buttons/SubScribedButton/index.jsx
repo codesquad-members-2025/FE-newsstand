@@ -5,6 +5,7 @@ const StyledButton = styled.button`
   cursor: pointer;
   padding: 0.31rem 0.38rem;
   display: flex;
+  align-content: center;
   width: ${({ width }) => width}rem;
   gap: 0.25rem;
   color: ${({ theme }) => theme.text.weak};
