@@ -1,7 +1,10 @@
 import styled from "styled-components";
 
 const StyledButton = styled.button`
-  all: unset;
+  opacity: ${({ $visible }) => ($visible ? 1 : 0)};
+  visibility: ${({ $visible }) => ($visible ? "visible" : "hidden")};
+  transition: opacity 0.2s ease;
+
   box-sizing: border-box;
   cursor: pointer;
   padding: 0.31rem 0.38rem;
@@ -26,9 +29,14 @@ const StyledButton = styled.button`
   }
 `;
 
-export default function SubScribedButton({ id, width, children }) {
+export default function SubScribedButton({ id, width, children, visible }) {
   return (
-    <StyledButton id={id} $width={width}>
+    <StyledButton
+      id={id}
+      $width={width}
+      $visible={visible}
+      className="subscribe-btn"
+    >
       <svg
         width="12"
         height="12"

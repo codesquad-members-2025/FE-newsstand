@@ -26,7 +26,7 @@ export default function PressInformation({ pagedData }) {
     <NewsInformWrapper>
       <img src={pressLogo} />
       <RegDate>{regDate}</RegDate>
-      <SubScribedButton id={pressId} width={4.5}>
+      <SubScribedButton id={pressId} width={4.5} visible={true}>
         {subscribed}
       </SubScribedButton>
     </NewsInformWrapper>

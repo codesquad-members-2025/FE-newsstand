@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import React, { useContext } from "react";
 import { ThemeContext } from "../../../utils/ThemeContext";
+import SubScribedButton from "../../../utils/Buttons/SubScribedButton";
 
 const GridContainer = styled.div`
   display: grid;
@@ -13,6 +14,7 @@ const GridContainer = styled.div`
   padding: 0.063rem;
 `;
 const GridItem = styled.div`
+  position: relative;
   background-color: ${({ theme }) => theme.surface.default};
   text-align: center;
   display: flex;
@@ -23,12 +25,37 @@ const GridItem = styled.div`
     width: auto;
     height: 1.25rem;
   }
+  &:hover .subscribe-btn {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &:hover {
+    background-color: ${({ theme }) => theme.surface.alt};
+  }
+  &:hover img {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
 `;
+const ButtonWrapper = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+`;
+
 function makeItems(pagedData, theme) {
   const newsLogos = pagedData.map(({ logoDark, logoLight, pressId, name }) => {
     return (
       <GridItem key={pressId}>
         <img src={theme === "light" ? logoLight : logoDark} alt={name} />
+        <ButtonWrapper>
+          <SubScribedButton id={pressId} width={4.5} visible={false}>
+            구독하기
+          </SubScribedButton>
+        </ButtonWrapper>
       </GridItem>
     );
   });
