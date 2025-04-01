@@ -6,10 +6,10 @@ function NewsDashboard() {
   const [activeTab, setActiveTab] = useState("AllPress");
   const [displayMode, setDisplayMode] = useState("GridView");
 
-  useEffect(() => {
-    if (activeTab === "Subscribed") setDisplayMode("ListView");
-    else setDisplayMode("GridView");
-  }, [activeTab]);
+  // useEffect(() => {
+  //   if (activeTab === "Subscribed") setDisplayMode("ListView");
+  //   else setDisplayMode("GridView");
+  // }, [activeTab]);
 
   return (
     <>

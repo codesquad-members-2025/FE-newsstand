@@ -16,7 +16,11 @@ function NewsDashboardHeader({
 }) {
   return (
     <Header>
-      <MediaTabs activeTab={activeTab} setActiveTab={setActiveTab} />
+      <MediaTabs
+        activeTab={activeTab}
+        setActiveTab={setActiveTab}
+        setDisplayMode={setDisplayMode}
+      />
       <DisplayMode displayMode={displayMode} setDisplayMode={setDisplayMode} />
     </Header>
   );

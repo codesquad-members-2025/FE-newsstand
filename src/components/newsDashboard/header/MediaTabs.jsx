@@ -40,9 +40,12 @@ function getStyledButton(buttonName, activeButton) {
   };
 }
 
-function MediaTabs({ activeTab, setActiveTab }) {
+function MediaTabs({ activeTab, setActiveTab, setDisplayMode }) {
   function handleClick(buttonName) {
     setActiveTab(buttonName);
+
+    if (buttonName === "Subscribed") setDisplayMode("ListView");
+    else setDisplayMode("GridView");
   }
 
   return (
