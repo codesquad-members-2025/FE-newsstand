@@ -16,6 +16,7 @@ const Cell = styled.div`
   justify-content: center;
   border-right: 1px solid var(--border-default);
   border-bottom: 1px solid var(--border-default);
+  height: 97px;
 `;
 
 function GridContentArea({ activeTab }) {
@@ -38,10 +39,7 @@ function GridContentArea({ activeTab }) {
   return (
     <GridContent>
       {filledCells.map((press, index) => (
-        <Cell
-          key={press.id ? `${press.id}` : `empty-${index}`}
-          className="press"
-        >
+        <Cell key={press.id ?? `empty-${index}`} className="press">
           {press.name || ""}
         </Cell>
       ))}
