@@ -24,18 +24,19 @@ const GridItem = styled.div`
     height: 1.25rem;
   }
 `;
-function makeItems(items) {
-  const newsLogos = items.map(([name, logoUrl], idx) => {
+function makeItems(pagedData, theme) {
+  const newsLogos = pagedData.map(({ logoDark, logoLight, pressId, name }) => {
     return (
-      <GridItem key={idx}>
-        <img src={logoUrl} alt={name} />
+      <GridItem key={pressId}>
+        <img src={theme === "light" ? logoLight : logoDark} alt={name} />
       </GridItem>
     );
   });
-
   return newsLogos;
 }
 
-export default function GridView({ items }) {
-  return <GridContainer>{makeItems(items)}</GridContainer>;
+export default function GridView({ pagedData }) {
+  const { theme } = useContext(ThemeContext);
+
+  return <GridContainer>{makeItems(pagedData, theme)}</GridContainer>;
 }
