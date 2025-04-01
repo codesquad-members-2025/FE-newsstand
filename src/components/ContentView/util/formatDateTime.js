@@ -1,4 +1,4 @@
-function formatDateTime(input) {
+export default function formatDateTime(input) {
   const [datePart, timePart] = input.split(" ");
 
   const year = datePart.slice(0, 4);

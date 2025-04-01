@@ -4,6 +4,8 @@ import ListView from "./ListView";
 import LeftSwipeButton from "./SwipeButton/LeftSwipeButton";
 import RightSwipeButton from "./SwipeButton/RightSwipeButton";
 import styled from "styled-components";
+import parseOneCategoryNews from "./util/parseOneCategoryNews";
+import paginateData from "./util/paginateData";
 
 const ContentBoxWrapper = styled.div`
   display: flex;
@@ -14,39 +16,6 @@ const ContentBoxWrapper = styled.div`
     margin-right: 3rem;
   }
 `;
-
-function parseNewsLogo(newsData) {
-  const logos = {};
-  if (!newsData || !newsData["종합/경제"]) return logos; // ✅ null 방어
-
-  newsData["종합/경제"].forEach((item) => {
-    const name = item.name;
-    const logo = item.logoLight;
-    if (!logos[name]) {
-      logos[name] = logo;
-    }
-  });
-  return logos;
-}
-
-function parseOneCategoryNews(newsData, category) {
-  if (!newsData || !newsData[category]) return []; // ✅ null 방어
-  const parsedNewsArr = newsData[category].map((item) => {
-    const pressId = item.pid;
-    const name = item.name;
-    const logo = item.logoLight;
-    const regDate = item.regDate;
-    const materials = item.materials.map((material) => {
-      const title = material.title;
-      const url = material.url;
-      const image = material.image ? material.image.url : null;
-      const materialObj = { title, url, image };
-      return materialObj;
-    });
-    return { pressId, name, logo, regDate, materials };
-  });
-  return parsedNewsArr;
-}
 
 export default function ContentView({ listView }) {
   const [newsData, setnewsData] = useState(null);
@@ -62,6 +31,10 @@ export default function ContentView({ listView }) {
     fetchData();
   }, []);
 
+  useEffect(() => {
+    setpage(0);
+  }, [listView]);
+
   if (!newsData) return null; //조건부 렌더링
 
   function swipeNextPage() {
@@ -71,24 +44,16 @@ export default function ContentView({ listView }) {
     setpage((prev) => prev - 1);
   }
 
-  const newsLogo = parseNewsLogo(newsData);
-  const entries = Object.entries(newsLogo);
-  const pageSize = 24;
-  const pagedEntries = entries.slice(page * pageSize, pageSize * (1 + page));
-  const maxPage = Math.ceil(entries.length / pageSize);
-
-  //----------------------------------
-  //---------------------------------아래는 리스트 뷰 관련 로직
-
   const categoryNews = parseOneCategoryNews(newsData, category);
+  const [pagedData, maxPage] = paginateData(listView, categoryNews, page);
 
   return (
     <ContentBoxWrapper>
       <LeftSwipeButton swipePrevPage={swipePrevPage} visible={page > 0} />
       {listView ? (
-        <ListView categoryNews={categoryNews} page={page} />
+        <ListView pagedData={pagedData[0]} />
       ) : (
-        <GridView items={pagedEntries} />
+        <GridView pagedData={pagedData} />
       )}
       <RightSwipeButton
         swipeNextPage={swipeNextPage}

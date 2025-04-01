@@ -9,6 +9,10 @@ const SubNewsWrapper = styled.div`
 const SubNewsArticle = styled.a`
   color: ${({ theme }) => theme.text.strong};
   font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 33.13rem;
 `;
 
 const Caption = styled.div`
