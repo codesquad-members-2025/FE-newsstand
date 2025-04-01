@@ -9,7 +9,7 @@ const Container = styled.div`
   gap: 8px;
 `;
 
-const RollingArea = styled.div`
+const RollingBox = styled.div`
   background-color: var(--surface-alt);
   padding: 16px;
   display: flex;
@@ -19,7 +19,7 @@ const RollingArea = styled.div`
   border: 1px solid var(--border-default);
 `;
 
-const Title = styled.div`
+const PressName = styled.div`
   font: var(--display-bold14);
   color: var(--text-strong);
 `;
@@ -34,23 +34,23 @@ const Headline = styled.div`
   }
 `;
 
-function rollingArea() {
+function RollingArea() {
   return (
     <Container>
-      <RollingArea>
-        <Title>연합뉴스</Title>
+      <RollingBox>
+        <PressName>연합뉴스</PressName>
         <Headline as="a">
           [1보] 김기현·안철수·천하람·황교안, 與전대 본경선 진출
         </Headline>
-      </RollingArea>
-      <RollingArea>
-        <Title>연합뉴스</Title>
+      </RollingBox>
+      <RollingBox>
+        <PressName>연합뉴스</PressName>
         <Headline as="a">
           [속보] 與최고위원 본경선, 김병민·김용태·김재원·민영삼
         </Headline>
-      </RollingArea>
+      </RollingBox>
     </Container>
   );
 }
 
-export default rollingArea;
+export default RollingArea;
