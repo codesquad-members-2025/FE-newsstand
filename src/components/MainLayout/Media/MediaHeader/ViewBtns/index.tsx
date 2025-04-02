@@ -4,14 +4,14 @@ import ViewBtn from './ViewBtn'
 
 interface ViewBtnProps {
   currentView: ViewType
-  onViewChange: (view: ViewType) => void
+  setCurrentView: (view: ViewType) => void
 }
 
-function ViewBtns({ currentView, onViewChange }: ViewBtnProps) {
+function ViewBtns({ currentView, setCurrentView }: ViewBtnProps) {
   return (
     <Container>
-      <ViewBtn type="list" currentView={currentView} onViewChange={onViewChange} />
-      <ViewBtn type="grid" currentView={currentView} onViewChange={onViewChange} />
+      <ViewBtn type="list" currentView={currentView} setCurrentView={setCurrentView} />
+      <ViewBtn type="grid" currentView={currentView} setCurrentView={setCurrentView} />
     </Container>
   )
 }

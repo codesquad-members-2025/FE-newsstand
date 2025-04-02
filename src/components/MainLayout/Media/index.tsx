@@ -16,7 +16,7 @@ function Media() {
 
   return (
     <Container>
-      <MediaHeader onViewChange={setCurrentView} currentView={currentView} />
+      <MediaHeader setCurrentView={setCurrentView} currentView={currentView} />
       {loading ? (
         <p>Loading...</p>
       ) : currentView === 'grid' ? (

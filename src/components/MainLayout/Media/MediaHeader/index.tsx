@@ -7,14 +7,14 @@ import { ViewType } from '../index'
 
 interface MediaHeaderProps {
   currentView: ViewType
-  onViewChange: (view: ViewType) => void
+  setCurrentView: (view: ViewType) => void
 }
 
-function MediaHeader({ currentView, onViewChange }: MediaHeaderProps) {
+function MediaHeader({ currentView, setCurrentView }: MediaHeaderProps) {
   return (
     <Container>
       <TabBtns />
-      <ViewBtns onViewChange={onViewChange} currentView={currentView} />
+      <ViewBtns setCurrentView={setCurrentView} currentView={currentView} />
     </Container>
   )
 }
