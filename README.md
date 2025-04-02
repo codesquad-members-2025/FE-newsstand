@@ -24,7 +24,7 @@
 
 #### 사전 작업
 
-- [ ] mock 뉴스 데이터 재설계
+- [x] mock 뉴스 데이터 재설계
 - [ ] 뉴스 데이터 각 컴포넌트에 전달하기
 - [ ] Context API + useReducer 학습
 - [ ] Context API + useReducer 전역 데이터 관리 기능 구현
@@ -80,6 +80,7 @@
 #### 기타
 
 - [ ] 다크 모드 구현 마무리
+- [ ] Express 서버 연동
 - [ ] 버그 수정
 
 <br/><br/>

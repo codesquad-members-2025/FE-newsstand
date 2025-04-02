@@ -13,29 +13,39 @@
         "date": "2025-03-25T10:00:00Z"
       },
       {
+        "id": 2,
         "newsTitle": "서브 뉴스 1 - 조선일보 기사 제목",
         "thumbnailImage": "https://imgnews.naver.com/chosun_news2.png",
-        "link": "https://news.naver.com/chosun/news2"
+        "link": "https://news.naver.com/chosun/news2",
+        "date": "2025-03-25T10:00:00Z"
       },
       {
+        "id": 3,
         "newsTitle": "서브 뉴스 2 - 조선일보 기사 제목",
         "thumbnailImage": "https://imgnews.naver.com/chosun_news3.png",
-        "link": "https://news.naver.com/chosun/news3"
+        "link": "https://news.naver.com/chosun/news3",
+        "date": "2025-03-25T10:00:00Z"
       },
       {
+        "id": 4,
         "newsTitle": "서브 뉴스 3 - 조선일보 기사 제목",
         "thumbnailImage": "https://imgnews.naver.com/chosun_news4.png",
-        "link": "https://news.naver.com/chosun/news4"
+        "link": "https://news.naver.com/chosun/news4",
+        "date": "2025-03-25T10:00:00Z"
       },
       {
+        "id": 5,
         "newsTitle": "서브 뉴스 4 - 조선일보 기사 제목",
         "thumbnailImage": "https://imgnews.naver.com/chosun_news5.png",
-        "link": "https://news.naver.com/chosun/news5"
+        "link": "https://news.naver.com/chosun/news5",
+        "date": "2025-03-25T10:00:00Z"
       },
       {
+        "id": 6,
         "newsTitle": "서브 뉴스 5 - 조선일보 기사 제목",
         "thumbnailImage": "https://imgnews.naver.com/chosun_news6.png",
-        "link": "https://news.naver.com/chosun/news6"
+        "link": "https://news.naver.com/chosun/news6",
+        "date": "2025-03-25T10:00:00Z"
       }
     ]
   },
@@ -46,34 +56,46 @@
     "editedTime": "2025-03-25T10:30:00Z",
     "newsData": [
       {
+        "id": 1,
         "newsTitle": "메인 뉴스 - 중앙일보 주요 기사 제목",
         "thumbnailImage": "https://imgnews.naver.com/joongang_news1.png",
-        "link": "https://news.naver.com/joongang/news1"
+        "link": "https://news.naver.com/joongang/news1",
+        "date": "2025-03-25T10:30:00Z"
       },
       {
+        "id": 2,
         "newsTitle": "서브 뉴스 1 - 중앙일보 기사 제목",
         "thumbnailImage": "https://imgnews.naver.com/joongang_news2.png",
-        "link": "https://news.naver.com/joongang/news2"
+        "link": "https://news.naver.com/joongang/news2",
+        "date": "2025-03-25T10:30:00Z"
       },
       {
+        "id": 3,
         "newsTitle": "서브 뉴스 2 - 중앙일보 기사 제목",
         "thumbnailImage": "https://imgnews.naver.com/joongang_news3.png",
-        "link": "https://news.naver.com/joongang/news3"
+        "link": "https://news.naver.com/joongang/news3",
+        "date": "2025-03-25T10:30:00Z"
       },
       {
+        "id": 4,
         "newsTitle": "서브 뉴스 3 - 중앙일보 기사 제목",
         "thumbnailImage": "https://imgnews.naver.com/joongang_news4.png",
-        "link": "https://news.naver.com/joongang/news4"
+        "link": "https://news.naver.com/joongang/news4",
+        "date": "2025-03-25T10:30:00Z"
       },
       {
+        "id": 5,
         "newsTitle": "서브 뉴스 4 - 중앙일보 기사 제목",
         "thumbnailImage": "https://imgnews.naver.com/joongang_news5.png",
-        "link": "https://news.naver.com/joongang/news5"
+        "link": "https://news.naver.com/joongang/news5",
+        "date": "2025-03-25T10:30:00Z"
       },
       {
+        "id": 6,
         "newsTitle": "서브 뉴스 5 - 중앙일보 기사 제목",
         "thumbnailImage": "https://imgnews.naver.com/joongang_news6.png",
-        "link": "https://news.naver.com/joongang/news6"
+        "link": "https://news.naver.com/joongang/news6",
+        "date": "2025-03-25T10:30:00Z"
       }
     ]
   },
@@ -84,34 +106,46 @@
     "editedTime": "2025-03-25T11:00:00Z",
     "newsData": [
       {
+        "id": 1,
         "newsTitle": "메인 뉴스 - 동아일보 주요 기사 제목",
         "thumbnailImage": "https://imgnews.naver.com/donga_news1.png",
-        "link": "https://news.naver.com/donga/news1"
+        "link": "https://news.naver.com/donga/news1",
+        "date": "2025-03-25T11:00:00Z"
       },
       {
+        "id": 2,
         "newsTitle": "서브 뉴스 1 - 동아일보 기사 제목",
         "thumbnailImage": "https://imgnews.naver.com/donga_news2.png",
-        "link": "https://news.naver.com/donga/news2"
+        "link": "https://news.naver.com/donga/news2",
+        "date": "2025-03-25T11:00:00Z"
       },
       {
+        "id": 3,
         "newsTitle": "서브 뉴스 2 - 동아일보 기사 제목",
         "thumbnailImage": "https://imgnews.naver.com/donga_news3.png",
-        "link": "https://news.naver.com/donga/news3"
+        "link": "https://news.naver.com/donga/news3",
+        "date": "2025-03-25T11:00:00Z"
       },
       {
+        "id": 4,
         "newsTitle": "서브 뉴스 3 - 동아일보 기사 제목",
         "thumbnailImage": "https://imgnews.naver.com/donga_news4.png",
-        "link": "https://news.naver.com/donga/news4"
+        "link": "https://news.naver.com/donga/news4",
+        "date": "2025-03-25T11:00:00Z"
       },
       {
+        "id": 5,
         "newsTitle": "서브 뉴스 4 - 동아일보 기사 제목",
         "thumbnailImage": "https://imgnews.naver.com/donga_news5.png",
-        "link": "https://news.naver.com/donga/news5"
+        "link": "https://news.naver.com/donga/news5",
+        "date": "2025-03-25T11:00:00Z"
       },
       {
+        "id": 6,
         "newsTitle": "서브 뉴스 5 - 동아일보 기사 제목",
         "thumbnailImage": "https://imgnews.naver.com/donga_news6.png",
-        "link": "https://news.naver.com/donga/news6"
+        "link": "https://news.naver.com/donga/news6",
+        "date": "2025-03-25T11:00:00Z"
       }
     ]
   },
@@ -122,34 +156,46 @@
     "editedTime": "2025-03-25T11:30:00Z",
     "newsData": [
       {
+        "id": 1,
         "newsTitle": "메인 뉴스 - 한겨레 주요 기사 제목",
         "thumbnailImage": "https://imgnews.naver.com/hankyore_news1.png",
-        "link": "https://news.naver.com/hankyore/news1"
+        "link": "https://news.naver.com/hankyore/news1",
+        "date": "2025-03-25T11:30:00Z"
       },
       {
+        "id": 2,
         "newsTitle": "서브 뉴스 1 - 한겨레 기사 제목",
         "thumbnailImage": "https://imgnews.naver.com/hankyore_news2.png",
-        "link": "https://news.naver.com/hankyore/news2"
+        "link": "https://news.naver.com/hankyore/news2",
+        "date": "2025-03-25T11:30:00Z"
       },
       {
+        "id": 3,
         "newsTitle": "서브 뉴스 2 - 한겨레 기사 제목",
         "thumbnailImage": "https://imgnews.naver.com/hankyore_news3.png",
-        "link": "https://news.naver.com/hankyore/news3"
+        "link": "https://news.naver.com/hankyore/news3",
+        "date": "2025-03-25T11:30:00Z"
       },
       {
+        "id": 4,
         "newsTitle": "서브 뉴스 3 - 한겨레 기사 제목",
         "thumbnailImage": "https://imgnews.naver.com/hankyore_news4.png",
-        "link": "https://news.naver.com/hankyore/news4"
+        "link": "https://news.naver.com/hankyore/news4",
+        "date": "2025-03-25T11:30:00Z"
       },
       {
+        "id": 5,
         "newsTitle": "서브 뉴스 4 - 한겨레 기사 제목",
         "thumbnailImage": "https://imgnews.naver.com/hankyore_news5.png",
-        "link": "https://news.naver.com/hankyore/news5"
+        "link": "https://news.naver.com/hankyore/news5",
+        "date": "2025-03-25T11:30:00Z"
       },
       {
+        "id": 6,
         "newsTitle": "서브 뉴스 5 - 한겨레 기사 제목",
         "thumbnailImage": "https://imgnews.naver.com/hankyore_news6.png",
-        "link": "https://news.naver.com/hankyore/news6"
+        "link": "https://news.naver.com/hankyore/news6",
+        "date": "2025-03-25T11:30:00Z"
       }
     ]
   },
@@ -160,34 +206,46 @@
     "editedTime": "2025-03-25T12:00:00Z",
     "newsData": [
       {
+        "id": 1,
         "newsTitle": "메인 뉴스 - 경향신문 주요 기사 제목",
         "thumbnailImage": "https://imgnews.naver.com/kyunghyang_news1.png",
-        "link": "https://news.naver.com/kyunghyang/news1"
+        "link": "https://news.naver.com/kyunghyang/news1",
+        "date": "2025-03-25T12:00:00Z"
       },
       {
+        "id": 2,
         "newsTitle": "서브 뉴스 1 - 경향신문 기사 제목",
         "thumbnailImage": "https://imgnews.naver.com/kyunghyang_news2.png",
-        "link": "https://news.naver.com/kyunghyang/news2"
+        "link": "https://news.naver.com/kyunghyang/news2",
+        "date": "2025-03-25T12:00:00Z"
       },
       {
+        "id": 3,
         "newsTitle": "서브 뉴스 2 - 경향신문 기사 제목",
         "thumbnailImage": "https://imgnews.naver.com/kyunghyang_news3.png",
-        "link": "https://news.naver.com/kyunghyang/news3"
+        "link": "https://news.naver.com/kyunghyang/news3",
+        "date": "2025-03-25T12:00:00Z"
       },
       {
+        "id": 4,
         "newsTitle": "서브 뉴스 3 - 경향신문 기사 제목",
         "thumbnailImage": "https://imgnews.naver.com/kyunghyang_news4.png",
-        "link": "https://news.naver.com/kyunghyang/news4"
+        "link": "https://news.naver.com/kyunghyang/news4",
+        "date": "2025-03-25T12:00:00Z"
       },
       {
+        "id": 5,
         "newsTitle": "서브 뉴스 4 - 경향신문 기사 제목",
         "thumbnailImage": "https://imgnews.naver.com/kyunghyang_news5.png",
-        "link": "https://news.naver.com/kyunghyang/news5"
+        "link": "https://news.naver.com/kyunghyang/news5",
+        "date": "2025-03-25T12:00:00Z"
       },
       {
+        "id": 6,
         "newsTitle": "서브 뉴스 5 - 경향신문 기사 제목",
         "thumbnailImage": "https://imgnews.naver.com/kyunghyang_news6.png",
-        "link": "https://news.naver.com/kyunghyang/news6"
+        "link": "https://news.naver.com/kyunghyang/news6",
+        "date": "2025-03-25T12:00:00Z"
       }
     ]
   },
@@ -198,34 +256,46 @@
     "editedTime": "2025-03-25T12:30:00Z",
     "newsData": [
       {
+        "id": 1,
         "newsTitle": "메인 뉴스 - 서울신문 주요 기사 제목",
         "thumbnailImage": "https://imgnews.naver.com/seoul_news1.png",
-        "link": "https://news.naver.com/seoul/news1"
+        "link": "https://news.naver.com/seoul/news1",
+        "date": "2025-03-25T12:30:00Z"
       },
       {
+        "id": 2,
         "newsTitle": "서브 뉴스 1 - 서울신문 기사 제목",
         "thumbnailImage": "https://imgnews.naver.com/seoul_news2.png",
-        "link": "https://news.naver.com/seoul/news2"
+        "link": "https://news.naver.com/seoul/news2",
+        "date": "2025-03-25T12:30:00Z"
       },
       {
+        "id": 3,
         "newsTitle": "서브 뉴스 2 - 서울신문 기사 제목",
         "thumbnailImage": "https://imgnews.naver.com/seoul_news3.png",
-        "link": "https://news.naver.com/seoul/news3"
+        "link": "https://news.naver.com/seoul/news3",
+        "date": "2025-03-25T12:30:00Z"
       },
       {
+        "id": 4,
         "newsTitle": "서브 뉴스 3 - 서울신문 기사 제목",
         "thumbnailImage": "https://imgnews.naver.com/seoul_news4.png",
-        "link": "https://news.naver.com/seoul/news4"
+        "link": "https://news.naver.com/seoul/news4",
+        "date": "2025-03-25T12:30:00Z"
       },
       {
+        "id": 5,
         "newsTitle": "서브 뉴스 4 - 서울신문 기사 제목",
         "thumbnailImage": "https://imgnews.naver.com/seoul_news5.png",
-        "link": "https://news.naver.com/seoul/news5"
+        "link": "https://news.naver.com/seoul/news5",
+        "date": "2025-03-25T12:30:00Z"
       },
       {
+        "id": 6,
         "newsTitle": "서브 뉴스 5 - 서울신문 기사 제목",
         "thumbnailImage": "https://imgnews.naver.com/seoul_news6.png",
-        "link": "https://news.naver.com/seoul/news6"
+        "link": "https://news.naver.com/seoul/news6",
+        "date": "2025-03-25T12:30:00Z"
       }
     ]
   },
@@ -236,34 +306,46 @@
     "editedTime": "2025-03-25T13:00:00Z",
     "newsData": [
       {
+        "id": 1,
         "newsTitle": "메인 뉴스 - 매일경제 주요 기사 제목",
         "thumbnailImage": "https://imgnews.naver.com/maeil_news1.png",
-        "link": "https://news.naver.com/maeil/news1"
+        "link": "https://news.naver.com/maeil/news1",
+        "date": "2025-03-25T13:00:00Z"
       },
       {
+        "id": 2,
         "newsTitle": "서브 뉴스 1 - 매일경제 기사 제목",
         "thumbnailImage": "https://imgnews.naver.com/maeil_news2.png",
-        "link": "https://news.naver.com/maeil/news2"
+        "link": "https://news.naver.com/maeil/news2",
+        "date": "2025-03-25T13:00:00Z"
       },
       {
+        "id": 3,
         "newsTitle": "서브 뉴스 2 - 매일경제 기사 제목",
         "thumbnailImage": "https://imgnews.naver.com/maeil_news3.png",
-        "link": "https://news.naver.com/maeil/news3"
+        "link": "https://news.naver.com/maeil/news3",
+        "date": "2025-03-25T13:00:00Z"
       },
       {
+        "id": 4,
         "newsTitle": "서브 뉴스 3 - 매일경제 기사 제목",
         "thumbnailImage": "https://imgnews.naver.com/maeil_news4.png",
-        "link": "https://news.naver.com/maeil/news4"
+        "link": "https://news.naver.com/maeil/news4",
+        "date": "2025-03-25T13:00:00Z"
       },
       {
+        "id": 5,
         "newsTitle": "서브 뉴스 4 - 매일경제 기사 제목",
         "thumbnailImage": "https://imgnews.naver.com/maeil_news5.png",
-        "link": "https://news.naver.com/maeil/news5"
+        "link": "https://news.naver.com/maeil/news5",
+        "date": "2025-03-25T13:00:00Z"
       },
       {
+        "id": 6,
         "newsTitle": "서브 뉴스 5 - 매일경제 기사 제목",
         "thumbnailImage": "https://imgnews.naver.com/maeil_news6.png",
-        "link": "https://news.naver.com/maeil/news6"
+        "link": "https://news.naver.com/maeil/news6",
+        "date": "2025-03-25T13:00:00Z"
       }
     ]
   },
@@ -274,34 +356,46 @@
     "editedTime": "2025-03-25T13:30:00Z",
     "newsData": [
       {
+        "id": 1,
         "newsTitle": "메인 뉴스 - 한국경제 주요 기사 제목",
         "thumbnailImage": "https://imgnews.naver.com/hankyung_news1.png",
-        "link": "https://news.naver.com/hankyung/news1"
+        "link": "https://news.naver.com/hankyung/news1",
+        "date": "2025-03-25T13:30:00Z"
       },
       {
+        "id": 2,
         "newsTitle": "서브 뉴스 1 - 한국경제 기사 제목",
         "thumbnailImage": "https://imgnews.naver.com/hankyung_news2.png",
-        "link": "https://news.naver.com/hankyung/news2"
+        "link": "https://news.naver.com/hankyung/news2",
+        "date": "2025-03-25T13:30:00Z"
       },
       {
+        "id": 3,
         "newsTitle": "서브 뉴스 2 - 한국경제 기사 제목",
         "thumbnailImage": "https://imgnews.naver.com/hankyung_news3.png",
-        "link": "https://news.naver.com/hankyung/news3"
+        "link": "https://news.naver.com/hankyung/news3",
+        "date": "2025-03-25T13:30:00Z"
       },
       {
+        "id": 4,
         "newsTitle": "서브 뉴스 3 - 한국경제 기사 제목",
         "thumbnailImage": "https://imgnews.naver.com/hankyung_news4.png",
-        "link": "https://news.naver.com/hankyung/news4"
+        "link": "https://news.naver.com/hankyung/news4",
+        "date": "2025-03-25T13:30:00Z"
       },
       {
+        "id": 5,
         "newsTitle": "서브 뉴스 4 - 한국경제 기사 제목",
         "thumbnailImage": "https://imgnews.naver.com/hankyung_news5.png",
-        "link": "https://news.naver.com/hankyung/news5"
+        "link": "https://news.naver.com/hankyung/news5",
+        "date": "2025-03-25T13:30:00Z"
       },
       {
+        "id": 6,
         "newsTitle": "서브 뉴스 5 - 한국경제 기사 제목",
         "thumbnailImage": "https://imgnews.naver.com/hankyung_news6.png",
-        "link": "https://news.naver.com/hankyung/news6"
+        "link": "https://news.naver.com/hankyung/news6",
+        "date": "2025-03-25T13:30:00Z"
       }
     ]
   },
@@ -312,34 +406,46 @@
     "editedTime": "2025-03-25T14:00:00Z",
     "newsData": [
       {
+        "id": 1,
         "newsTitle": "메인 뉴스 - 머니투데이 주요 기사 제목",
         "thumbnailImage": "https://imgnews.naver.com/moneytoday_news1.png",
-        "link": "https://news.naver.com/moneytoday/news1"
+        "link": "https://news.naver.com/moneytoday/news1",
+        "date": "2025-03-25T14:00:00Z"
       },
       {
+        "id": 2,
         "newsTitle": "서브 뉴스 1 - 머니투데이 기사 제목",
         "thumbnailImage": "https://imgnews.naver.com/moneytoday_news2.png",
-        "link": "https://news.naver.com/moneytoday/news2"
+        "link": "https://news.naver.com/moneytoday/news2",
+        "date": "2025-03-25T14:00:00Z"
       },
       {
+        "id": 3,
         "newsTitle": "서브 뉴스 2 - 머니투데이 기사 제목",
         "thumbnailImage": "https://imgnews.naver.com/moneytoday_news3.png",
-        "link": "https://news.naver.com/moneytoday/news3"
+        "link": "https://news.naver.com/moneytoday/news3",
+        "date": "2025-03-25T14:00:00Z"
       },
       {
+        "id": 4,
         "newsTitle": "서브 뉴스 3 - 머니투데이 기사 제목",
         "thumbnailImage": "https://imgnews.naver.com/moneytoday_news4.png",
-        "link": "https://news.naver.com/moneytoday/news4"
+        "link": "https://news.naver.com/moneytoday/news4",
+        "date": "2025-03-25T14:00:00Z"
       },
       {
+        "id": 5,
         "newsTitle": "서브 뉴스 4 - 머니투데이 기사 제목",
         "thumbnailImage": "https://imgnews.naver.com/moneytoday_news5.png",
-        "link": "https://news.naver.com/moneytoday/news5"
+        "link": "https://news.naver.com/moneytoday/news5",
+        "date": "2025-03-25T14:00:00Z"
       },
       {
+        "id": 6,
         "newsTitle": "서브 뉴스 5 - 머니투데이 기사 제목",
         "thumbnailImage": "https://imgnews.naver.com/moneytoday_news6.png",
-        "link": "https://news.naver.com/moneytoday/news6"
+        "link": "https://news.naver.com/moneytoday/news6",
+        "date": "2025-03-25T14:00:00Z"
       }
     ]
   },
@@ -350,34 +456,46 @@
     "editedTime": "2025-03-25T14:30:00Z",
     "newsData": [
       {
+        "id": 1,
         "newsTitle": "메인 뉴스 - 서울경제 주요 기사 제목",
         "thumbnailImage": "https://imgnews.naver.com/seouls_news1.png",
-        "link": "https://news.naver.com/seouls/news1"
+        "link": "https://news.naver.com/seouls/news1",
+        "date": "2025-03-25T14:30:00Z"
       },
       {
+        "id": 2,
         "newsTitle": "서브 뉴스 1 - 서울경제 기사 제목",
         "thumbnailImage": "https://imgnews.naver.com/seouls_news2.png",
-        "link": "https://news.naver.com/seouls/news2"
+        "link": "https://news.naver.com/seouls/news2",
+        "date": "2025-03-25T14:30:00Z"
       },
       {
+        "id": 3,
         "newsTitle": "서브 뉴스 2 - 서울경제 기사 제목",
         "thumbnailImage": "https://imgnews.naver.com/seouls_news3.png",
-        "link": "https://news.naver.com/seouls/news3"
+        "link": "https://news.naver.com/seouls/news3",
+        "date": "2025-03-25T14:30:00Z"
       },
       {
+        "id": 4,
         "newsTitle": "서브 뉴스 3 - 서울경제 기사 제목",
         "thumbnailImage": "https://imgnews.naver.com/seouls_news4.png",
-        "link": "https://news.naver.com/seouls/news4"
+        "link": "https://news.naver.com/seouls/news4",
+        "date": "2025-03-25T14:30:00Z"
       },
       {
+        "id": 5,
         "newsTitle": "서브 뉴스 4 - 서울경제 기사 제목",
         "thumbnailImage": "https://imgnews.naver.com/seouls_news5.png",
-        "link": "https://news.naver.com/seouls/news5"
+        "link": "https://news.naver.com/seouls/news5",
+        "date": "2025-03-25T14:30:00Z"
       },
       {
+        "id": 6,
         "newsTitle": "서브 뉴스 5 - 서울경제 기사 제목",
         "thumbnailImage": "https://imgnews.naver.com/seouls_news6.png",
-        "link": "https://news.naver.com/seouls/news6"
+        "link": "https://news.naver.com/seouls/news6",
+        "date": "2025-03-25T14:30:00Z"
       }
     ]
   }

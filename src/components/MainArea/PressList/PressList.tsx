@@ -4,13 +4,18 @@ import styled from "@emotion/styled"; // styled-components or emotion 사용 시
 import PressListContentHeader from "./PressListContentHeader";
 import PressListContent from "./PressListContent";
 // import { Link } from "react-router-dom";
+import type { pressDataTypes } from "../../../types/pressDataTypes";
 
-// interface MyComponentProps {
-//   // 컴포넌트에 필요한 props 타입을 정의
-//   title?: string;
-// }
+interface MyComponentProps {
+  // 컴포넌트에 필요한 props 타입을 정의
+  currPressState?: string;
+  allNewsData?: pressDataTypes;
+}
 
-const PressListPage: FC = () => {
+const PressListPage: FC<MyComponentProps> = ({
+  currPressState,
+  allNewsData,
+}) => {
   return (
     <Container>
       <PressListContentHeader />
