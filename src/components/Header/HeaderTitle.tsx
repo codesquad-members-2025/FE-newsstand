@@ -8,8 +8,12 @@ import logo from "../../assets/press-icons/newsstand-logo.svg";
 // }
 
 const HeaderTitle: FC = () => {
+  const handleRefresh = () => {
+    window.location.reload();
+  };
+
   return (
-    <Container>
+    <Container onClick={handleRefresh}>
       <img src={logo} alt="logo" />
       <p>뉴스스탠드</p>
     </Container>
