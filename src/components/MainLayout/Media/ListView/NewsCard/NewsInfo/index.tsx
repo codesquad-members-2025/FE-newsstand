@@ -1,8 +1,8 @@
 import styled from '@emotion/styled'
 import BrandMark from './BrandMark'
 import EditDate from './EditDate'
-import SubscribeBtn from './SubscribeBtn'
-import UnSubscribeBtn from './UnSubscribeBtn'
+import SubscribeBtn from '@/components/Common/SubscribeBtn'
+import UnSubscribeBtn from '@/components/Common/UnSubscribeBtn'
 
 export interface BrandMarkProps {
   imageUrl: string
@@ -27,7 +27,11 @@ function NewsInfo() {
     <Container>
       <BrandMark imageUrl={imageUrl} alt={alt} />
       <EditDate editDate={editDate} />
-      {isSubscribed ? <UnSubscribeBtn /> : <SubscribeBtn />}
+      {isSubscribed ? (
+        <UnSubscribeBtn />
+      ) : (
+        <SubscribeBtn backgroundColor="rgba(245, 247, 249, 1)" />
+      )}
     </Container>
   )
 }

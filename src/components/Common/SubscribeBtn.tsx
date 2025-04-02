@@ -1,16 +1,24 @@
 import styled from '@emotion/styled'
 import PlusIcon from '@/assets/PlusIcon.svg?react'
 
-function SubscribeBtn() {
+interface ButtonProps {
+  bgColor: string
+}
+
+interface SubscribeBtnProps {
+  backgroundColor: string
+}
+
+function SubscribeBtn({ backgroundColor }: SubscribeBtnProps) {
   return (
-    <Button>
+    <Button bgColor={backgroundColor}>
       <PlusIcon />
       <Text>구독하기</Text>
     </Button>
   )
 }
 
-const Button = styled.button`
+const Button = styled.button<ButtonProps>`
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -20,7 +28,7 @@ const Button = styled.button`
   border: 1px solid rgba(210, 218, 224, 1);
   border-radius: 999px;
   padding: 0px 6px;
-  background-color: rgba(245, 247, 249, 1);
+  background-color: ${({ bgColor }) => bgColor};
 `
 
 const Text = styled.span`

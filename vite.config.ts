@@ -8,7 +8,15 @@ const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
 
 export default defineConfig({
-  plugins: [react(), svgr()],
+  plugins: [
+    react({
+      jsxImportSource: '@emotion/react',
+      babel: {
+        plugins: ['@emotion/babel-plugin'],
+      },
+    }),
+    svgr(),
+  ],
   resolve: {
     alias: {
       '@': resolve(__dirname, './src'),
