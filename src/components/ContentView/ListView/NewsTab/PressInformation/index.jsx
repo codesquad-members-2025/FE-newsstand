@@ -3,6 +3,7 @@ import { ThemeContext } from "../../../../../utils/ThemeContext";
 import styled from "styled-components";
 import SubScribedButton from "../../../../../utils/Buttons/SubScribedButton";
 import formatDateTime from "../../../util/formatDateTime";
+import { SubscribedContext } from "../../../../../utils/Subscribed/SubscribedContext";
 
 const NewsInformWrapper = styled.div`
   display: flex;
@@ -20,14 +21,19 @@ export default function PressInformation({ pagedData }) {
   const { logoDark, logoLight, pressId, regDate: rawRegDate } = pagedData;
   const pressLogo = theme === "light" ? logoLight : logoDark;
   const regDate = formatDateTime(rawRegDate);
-  const subscribed = "구독하기"; //구독 조건에 따라 반 문자열 반환도 추후 고려
-
+  const { subscribed, toggleSubscribed } = useContext(SubscribedContext);
+  const isSubscribed = subscribed.includes(pressId) ? null : "구독하기";
   return (
     <NewsInformWrapper>
       <img src={pressLogo} />
       <RegDate>{regDate}</RegDate>
-      <SubScribedButton id={pressId} width={4.5} visible={true}>
-        {subscribed}
+      <SubScribedButton
+        id={pressId}
+        width={isSubscribed ? 4.5 : 1.5}
+        visible={true}
+        onClick={(e) => toggleSubscribed(e.currentTarget.id)}
+      >
+        {isSubscribed}
       </SubScribedButton>
     </NewsInformWrapper>
   );

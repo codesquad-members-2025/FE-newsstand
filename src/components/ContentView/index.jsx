@@ -29,6 +29,10 @@ export default function ContentView({ listView }) {
     setpage((prev) => prev - 1);
   }
 
+  function moveCategory(target) {
+    setcategory(target);
+  }
+
   const categoryNews = parseOneCategoryNews(newsData, category);
   const [pagedData, maxPage] = paginateData(listView, categoryNews, page);
 
@@ -50,7 +54,11 @@ export default function ContentView({ listView }) {
     <ContentBoxWrapper>
       <LeftSwipeButton swipePrevPage={swipePrevPage} visible={page > 0} />
       {listView ? (
-        <ListView pagedData={pagedData[0]} />
+        <ListView
+          moveCategory={moveCategory}
+          newsData={newsData}
+          pagedData={pagedData[0]}
+        />
       ) : (
         <GridView pagedData={pagedData} />
       )}

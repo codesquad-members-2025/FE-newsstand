@@ -29,13 +29,20 @@ const StyledButton = styled.button`
   }
 `;
 
-export default function SubScribedButton({ id, width, children, visible }) {
+export default function SubScribedButton({
+  id,
+  width,
+  children,
+  visible,
+  onClick,
+}) {
   return (
     <StyledButton
       id={id}
       $width={width}
       $visible={visible}
       className="subscribe-btn"
+      onClick={onClick}
     >
       <svg
         width="12"

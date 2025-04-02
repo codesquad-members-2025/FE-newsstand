@@ -9,6 +9,13 @@ const StyledButton = styled.button`
   font-size: 0.88rem;
 `;
 
-export default function TabButton({ children }) {
-  return <StyledButton>{children}</StyledButton>;
+export default function TabButton({ children, dataCategory, moveCategory }) {
+  return (
+    <StyledButton
+      data-category={dataCategory}
+      onClick={(e) => moveCategory(e.currentTarget.dataset.category)}
+    >
+      {children}
+    </StyledButton>
+  );
 }
