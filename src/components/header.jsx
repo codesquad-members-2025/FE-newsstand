@@ -1,6 +1,6 @@
 import "../styles/header.css";
 
-function date() {
+function getDate() {
   const today = new Date();
   const formattedDate = new Intl.DateTimeFormat("ko-KR", {
     year: "numeric",
@@ -18,7 +18,7 @@ function Header() {
         <img src="/logo.png" className="logo-image" alt="logo" />
         <h1 className="logo">뉴스스탠드</h1>
       </div>
-      <p className="today">{date()}</p>
+      <p className="today">{getDate()}</p>
     </header>
   );
 }

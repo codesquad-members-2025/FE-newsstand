@@ -1,8 +1,8 @@
 import "./styles/reset.css";
 import "./styles/global.css";
-import Header from "./components/header.jsx";
-import RollingArea from "./components/rollingArea.jsx";
-import NewsDashboardArea from "./components/newsDashboard.jsx";
+import Header from "./components/Header.jsx";
+import RollingArea from "./components/rollingArea/RollingArea.jsx";
+import NewsDashboardArea from "./components/newsDashboard/NewsDashboard.jsx";
 
 function App() {
   return (
