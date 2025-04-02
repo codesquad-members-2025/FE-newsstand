@@ -12,7 +12,6 @@ const ListViewWrapper = styled.div`
 export default function ListView({ moveCategory, pagedData, newsCategory }) {
   return (
     <ListViewWrapper>
-      {/* HeaderTab도 작업 해야함!! 버튼 누르면 카테고리 이동 */}
       <HeaderTab moveCategory={moveCategory} newsCategory={newsCategory} />
       <NewsTab pagedData={pagedData} />
     </ListViewWrapper>

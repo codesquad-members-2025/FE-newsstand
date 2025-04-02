@@ -7,6 +7,8 @@ import styled from "styled-components";
 import parseOneCategoryNews from "./util/parseOneCategoryNews";
 import paginateData from "./util/paginateData";
 import transformNewsData from "./util/transformNewsData";
+import { useContext } from "react";
+import { SubscribedContext } from "../../utils/Subscribed/SubscribedContext";
 
 const ContentBoxWrapper = styled.div`
   display: flex;
@@ -22,6 +24,7 @@ export default function ContentView({ isAllpress, listView }) {
   const [newsData, setnewsData] = useState(null);
   const [page, setpage] = useState(0);
   const [category, setcategory] = useState("종합/경제");
+  const { subscribed } = useContext(SubscribedContext);
 
   function swipeNextPage() {
     setpage((prev) => prev + 1);
@@ -34,9 +37,9 @@ export default function ContentView({ isAllpress, listView }) {
     setcategory(target);
   }
 
-  //여기 수정 필요----------
-  const categoryNews = parseOneCategoryNews(newsData, category);
-  //----------
+  const categoryNews = isAllpress
+    ? parseOneCategoryNews(newsData, category)
+    : parseOneCategoryNews();
   const [pagedData, maxPage] = paginateData(listView, categoryNews, page);
   const newsCategory = newsData ? Object.keys(newsData) : null;
 
@@ -44,7 +47,6 @@ export default function ContentView({ isAllpress, listView }) {
     async function fetchData() {
       const res = await fetch("/crawler/press_by_category.json");
       const data = await res.json();
-      //-----------여기 수정
       const transFormedData = transformNewsData(data);
       setnewsData(() => transFormedData);
     }
