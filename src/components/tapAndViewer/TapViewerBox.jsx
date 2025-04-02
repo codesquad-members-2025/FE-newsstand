@@ -31,19 +31,27 @@ const SubscribeGroup = styled.div`
   gap: 0.25rem;
 `;
 
-export default function TapViewerBox({ toggleListView }) {
+export default function TapViewerBox({ setpress, toggleListView }) {
   function showListView() {
     toggleListView(() => true);
   }
   function showGridView() {
     toggleListView(() => false);
   }
+
+  function showAllpress() {
+    setpress(() => true);
+  }
+  function showSubscribedpress() {
+    setpress(() => true);
+  }
+
   return (
     <FlexRowWrapper>
       <LeftGroup>
-        <AllPress />
+        <AllPress showAllpress={showAllpress} />
         <SubscribeGroup>
-          <SubscribedPress />
+          <SubscribedPress showSubscribedpress={showSubscribedpress} />
           <Bedge />
         </SubscribeGroup>
       </LeftGroup>

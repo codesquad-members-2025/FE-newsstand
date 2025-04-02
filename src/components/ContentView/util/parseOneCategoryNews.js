@@ -1,6 +1,6 @@
 export default function parseOneCategoryNews(newsData, category) {
   if (!newsData || !newsData[category]) return []; // ✅ null 방어
-  const parsedNewsArr = newsData[category].map(
+  const parsedNewsArr = Object.values(newsData[category]).map(
     ({
       pid: pressId,
       name,
@@ -14,6 +14,7 @@ export default function parseOneCategoryNews(newsData, category) {
         url,
         image: image ? image.url : null,
       }));
+
       return { pressId, name, logoDark, logoLight, regDate, materials };
     }
   );

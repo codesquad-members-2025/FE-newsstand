@@ -5,6 +5,7 @@ const TabButtonWrapper = styled.div`
   display: flex;
   background-color: ${({ theme }) => theme.surface.alt};
   width: 58.13rem;
+  border-bottom: 1px solid ${({ theme }) => theme.border.default};
 `;
 
 function makeTabButtons(newsCategory, moveCategory) {
@@ -17,9 +18,7 @@ function makeTabButtons(newsCategory, moveCategory) {
   });
 }
 
-export default function HeaderTab({ newsData, moveCategory }) {
-  const newsCategory = Object.keys(newsData);
-
+export default function HeaderTab({ newsCategory, moveCategory }) {
   return (
     <TabButtonWrapper>
       {makeTabButtons(newsCategory, moveCategory)}

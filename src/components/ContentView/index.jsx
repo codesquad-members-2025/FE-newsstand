@@ -6,6 +6,7 @@ import RightSwipeButton from "./SwipeButton/RightSwipeButton";
 import styled from "styled-components";
 import parseOneCategoryNews from "./util/parseOneCategoryNews";
 import paginateData from "./util/paginateData";
+import transformNewsData from "./util/transformNewsData";
 
 const ContentBoxWrapper = styled.div`
   display: flex;
@@ -17,7 +18,7 @@ const ContentBoxWrapper = styled.div`
   }
 `;
 
-export default function ContentView({ listView }) {
+export default function ContentView({ isAllpress, listView }) {
   const [newsData, setnewsData] = useState(null);
   const [page, setpage] = useState(0);
   const [category, setcategory] = useState("종합/경제");
@@ -33,14 +34,19 @@ export default function ContentView({ listView }) {
     setcategory(target);
   }
 
+  //여기 수정 필요----------
   const categoryNews = parseOneCategoryNews(newsData, category);
+  //----------
   const [pagedData, maxPage] = paginateData(listView, categoryNews, page);
+  const newsCategory = newsData ? Object.keys(newsData) : null;
 
   useEffect(() => {
     async function fetchData() {
       const res = await fetch("/crawler/press_by_category.json");
       const data = await res.json();
-      setnewsData(() => data);
+      //-----------여기 수정
+      const transFormedData = transformNewsData(data);
+      setnewsData(() => transFormedData);
     }
     fetchData();
   }, []);
@@ -56,7 +62,7 @@ export default function ContentView({ listView }) {
       {listView ? (
         <ListView
           moveCategory={moveCategory}
-          newsData={newsData}
+          newsCategory={newsCategory}
           pagedData={pagedData[0]}
         />
       ) : (

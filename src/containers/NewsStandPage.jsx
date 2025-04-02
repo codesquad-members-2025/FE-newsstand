@@ -18,6 +18,7 @@ const AutoNewsBarContainer = styled.div`
 
 export default function NewsStandPage() {
   const [listView, setlistView] = useState(true);
+  const [press, setpress] = useState(true);
 
   return (
     <PageLayout>
@@ -27,8 +28,8 @@ export default function NewsStandPage() {
         <AutoRollingNews />
       </AutoNewsBarContainer>
       <SubscribedProvider>
-        <TapViewerBox toggleListView={setlistView} />
-        <ContentView listView={listView} />
+        <TapViewerBox setpress={setpress} toggleListView={setlistView} />
+        <ContentView isAllpress={press} listView={listView} />
       </SubscribedProvider>
     </PageLayout>
   );
