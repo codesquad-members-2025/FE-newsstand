@@ -4,6 +4,7 @@ import AutoRollingNews from "../components/AutoHeadline/AutoRollingNews";
 import TapViewerBox from "../components/tapAndViewer/tapViewerBox";
 import ContentView from "../components/ContentView";
 import { useState } from "react";
+import SubscribedProvider from "../utils/Subscribed/SubscribedProvider";
 const PageLayout = styled.div`
   display: flex;
   flex-direction: column;
@@ -17,6 +18,7 @@ const AutoNewsBarContainer = styled.div`
 
 export default function NewsStandPage() {
   const [listView, setlistView] = useState(true);
+  const [press, setpress] = useState(true);
 
   return (
     <PageLayout>
@@ -25,8 +27,10 @@ export default function NewsStandPage() {
         <AutoRollingNews />
         <AutoRollingNews />
       </AutoNewsBarContainer>
-      <TapViewerBox toggleListView={setlistView} />
-      <ContentView listView={listView} />
+      <SubscribedProvider>
+        <TapViewerBox setpress={setpress} toggleListView={setlistView} />
+        <ContentView isAllpress={press} listView={listView} />
+      </SubscribedProvider>
     </PageLayout>
   );
 }

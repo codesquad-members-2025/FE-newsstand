@@ -13,6 +13,7 @@ const SubNewsArticle = styled.a`
   text-overflow: ellipsis;
   white-space: nowrap;
   width: 33.13rem;
+  text-decoration: none;
 `;
 
 const Caption = styled.div`
@@ -21,15 +22,11 @@ const Caption = styled.div`
 `;
 
 function makeArticles(newsdata) {
-  return newsdata.map((news, idx) => {
-    const title = news.title;
-    const url = news.url;
-    return (
-      <SubNewsArticle key={idx} href={url}>
-        {title}
-      </SubNewsArticle>
-    );
-  });
+  return newsdata.map(({ title, url }) => (
+    <SubNewsArticle key={url} href={url}>
+      {title}
+    </SubNewsArticle>
+  ));
 }
 
 function captionComment(press) {

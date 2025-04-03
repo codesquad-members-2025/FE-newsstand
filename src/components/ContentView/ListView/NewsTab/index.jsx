@@ -17,15 +17,7 @@ const PressNewsWrapper = styled.div`
   color: ${({ theme }) => theme.text.default};
 `;
 
-// function parseCurrentPageNews(newsData, page) {
-//   const currentPageNews = newsData[page];
-//   return currentPageNews;
-// }
-//상위 컴포넌트에서 한개의 페이지 데이터를 줘서 이제 필요없음
-
 export default function NewsTab({ pagedData }) {
-  // const currentNews = parseCurrentPageNews(categoryNews, page); //한 페이지 뉴스 데이터-> 객체
-
   return (
     <NewsListWrapper>
       <PressInformation pagedData={pagedData} />
