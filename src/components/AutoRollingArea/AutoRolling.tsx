@@ -11,7 +11,7 @@ interface MyComponentProps {
 const AutoRolling: FC<MyComponentProps> = ({ position, news }) => {
   const [currIndex, setCurrIndex] = useState<number>(0);
   const [isPaused, setIsPaused] = useState<boolean>(false);
-  const offset = position === "left" ? 0 : 1;
+  const offset = position === "left" ? 0 : 1000;
 
   // 타이머, 타임아웃, 시작 시간, 남은 시간을 저장할 ref들
   const intervalRef = useRef<NodeJS.Timeout | null>(null); // 최초 업데이트 후 5초 주기로 계속 업데이트를 위한 setInterval 식별자
@@ -23,7 +23,8 @@ const AutoRolling: FC<MyComponentProps> = ({ position, news }) => {
 
   // 인덱스 업데이트 함수
   const updateIndex = () => {
-    setCurrIndex((prev) => (prev + 1) % (news?.length ?? 1));
+    // if (!news || news.length === 0) return; // 안전 체크
+    setCurrIndex((prev) => (prev + 1) % news.length);
     // 업데이트 시점을 재설정
     startTimeRef.current = Date.now();
   };
@@ -43,6 +44,10 @@ const AutoRolling: FC<MyComponentProps> = ({ position, news }) => {
       }, 5000);
     }, remaining);
   };
+
+  useEffect(() => {
+    setCurrIndex(0); // news가 바뀌면 인덱스 초기화
+  }, [news]);
 
   // 마운트 시, 혹은 일시정지 상태가 해제될 때 타이머 시작
   useEffect(() => {
@@ -74,7 +79,7 @@ const AutoRolling: FC<MyComponentProps> = ({ position, news }) => {
     setIsPaused(false);
     // 타이머 재시작: 좌측은 그대로, 우측은 +1000ms 추가
     elapsedTimeRef.current = Date.now() - startTimeRef.current;
-    const resumeDelay = 5000 - (elapsedTimeRef.current % 5000) + offset * 1000;
+    const resumeDelay = 5000 - (elapsedTimeRef.current % 5000) + offset;
 
     timeoutRef.current = setTimeout(() => {
       updateIndex();
@@ -86,13 +91,15 @@ const AutoRolling: FC<MyComponentProps> = ({ position, news }) => {
     }, resumeDelay);
   };
 
-  news?.map((newsItem) => {
-    console.log(newsItem["@type"]);
-    console.log(position);
-  });
+  // news?.map((newsItem) => {
+  //   console.log(newsItem["@type"]);
+  //   console.log(position);
+  // });
 
   // news 데이터가 없을 경우
-  if (!news || news.length === 0) {
+  console.log("news 상태:", news);
+  console.log("currIndex 상태:", currIndex);
+  if (!news || news.length === 0 || currIndex >= news.length) {
     return (
       <Container>
         <p className="rolling_left">연합뉴스</p>
