@@ -34,6 +34,10 @@ export default function ContentView({ isAllpress, listView }) {
     setpage((prev) => prev - 1);
   }
 
+  function initPage() {
+    setpage(() => 0);
+  }
+
   function moveCategory(target) {
     setcategory(() => target);
   }
@@ -73,8 +77,10 @@ export default function ContentView({ isAllpress, listView }) {
   useEffect(() => {
     if (isAllpress) {
       if (newsData) moveCategory(Object.keys(newsData)[0]);
+      initPage();
     } else {
       moveCategory(Object.keys(getSubscribedNewsObj)[0]);
+      initPage();
     }
   }, [isAllpress]);
 

@@ -1,13 +1,17 @@
 export default function parseOneCategoryNews(newsData, category) {
   if (!newsData || !newsData[category]) return []; // ✅ null 방어
-  const parsedNewsArr = Object.values(newsData[category]).map(
+  const validNewsItems = Object.values(newsData[category]).filter(
+    (item) => item
+  ); // undefined 제거
+
+  const parsedNewsArr = Object.values(validNewsItems).map(
     ({
       pid: pressId,
       name,
       logoDark,
       logoLight,
       regDate,
-      materials: rowMaterials,
+      materials: rowMaterials = [],
     }) => {
       const materials = rowMaterials.map(({ title, url, image }) => ({
         title,
