@@ -43,7 +43,7 @@ export default function TapViewerBox({ setpress, toggleListView }) {
     setpress(() => true);
   }
   function showSubscribedpress() {
-    setpress(() => true);
+    setpress(() => false);
   }
 
   return (

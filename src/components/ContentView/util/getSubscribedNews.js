@@ -1,11 +1,12 @@
-function getSubscribedNews(newsData, pressIdArr) {
+export default function getSubscribedNews(newsData, pressIdArr) {
   return pressIdArr.reduce((acc, pressId) => {
     const oneCategoryNews = Object.values(newsData).find(
       (oneCategoryNewsObj) => {
         return Object.hasOwn(oneCategoryNewsObj, pressId);
       }
     );
-    acc[pressId] = onePressNews ? oneCategoryNews[pressId] : null;
+    const matchedObj = oneCategoryNews[pressId];
+    acc[matchedObj.name] = { [pressId]: matchedObj };
     return acc;
   }, {});
 }

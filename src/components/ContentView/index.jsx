@@ -9,6 +9,7 @@ import paginateData from "./util/paginateData";
 import transformNewsData from "./util/transformNewsData";
 import { useContext } from "react";
 import { SubscribedContext } from "../../utils/Subscribed/SubscribedContext";
+import getSubscribedNews from "./util/getSubscribedNews";
 
 const ContentBoxWrapper = styled.div`
   display: flex;
@@ -37,11 +38,19 @@ export default function ContentView({ isAllpress, listView }) {
     setcategory(target);
   }
 
+  const getSubscribedNewsObj = getSubscribedNews(newsData, subscribed);
   const categoryNews = isAllpress
     ? parseOneCategoryNews(newsData, category)
-    : parseOneCategoryNews();
+    : parseOneCategoryNews(getSubscribedNewsObj, category);
   const [pagedData, maxPage] = paginateData(listView, categoryNews, page);
-  const newsCategory = newsData ? Object.keys(newsData) : null;
+  // const newsCategory = newsData ? Object.keys(newsData) : null;
+
+  let newsCategory = null;
+  if (newsData) {
+    newsCategory = isAllpress
+      ? Object.keys(newsData)
+      : Object.values(categoryNews).map((value) => value.name);
+  }
 
   useEffect(() => {
     async function fetchData() {
@@ -56,6 +65,10 @@ export default function ContentView({ isAllpress, listView }) {
   useEffect(() => {
     setpage(0);
   }, [listView]);
+
+  useEffect(() => {
+    newsCategory ? moveCategory(newsCategory[0]) : null;
+  }, [isAllpress]);
 
   if (!newsData) return null; //조건부 렌더링
   return (
