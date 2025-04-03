@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
-const StyledDiv = styled.div`
+const StyledButton = styled.button`
+  all: unset;
   color: ${({ theme }) => theme.text.strong};
   cursor: pointer;
   &:hover {
@@ -9,6 +10,6 @@ const StyledDiv = styled.div`
   font-weight: 700;
 `;
 
-export default function AllPress() {
-  return <StyledDiv>전체 언론사</StyledDiv>;
+export default function AllPress({ showAllpress }) {
+  return <StyledButton onClick={showAllpress}>전체 언론사</StyledButton>;
 }

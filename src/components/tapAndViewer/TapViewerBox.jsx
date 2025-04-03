@@ -11,6 +11,7 @@ const FlexRowWrapper = styled(Container)`
   justify-content: space-between;
   align-items: center;
   padding-top: 2rem;
+  padding-bottom: 1.56rem;
 `;
 
 const LeftGroup = styled.div`
@@ -30,19 +31,33 @@ const SubscribeGroup = styled.div`
   gap: 0.25rem;
 `;
 
-export default function TapViewerBox() {
+export default function TapViewerBox({ setpress, toggleListView }) {
+  function showListView() {
+    toggleListView(() => true);
+  }
+  function showGridView() {
+    toggleListView(() => false);
+  }
+
+  function showAllpress() {
+    setpress(() => true);
+  }
+  function showSubscribedpress() {
+    setpress(() => false);
+  }
+
   return (
     <FlexRowWrapper>
       <LeftGroup>
-        <AllPress />
+        <AllPress showAllpress={showAllpress} />
         <SubscribeGroup>
-          <SubscribedPress />
+          <SubscribedPress showSubscribedpress={showSubscribedpress} />
           <Bedge />
         </SubscribeGroup>
       </LeftGroup>
       <RightGroup>
-        <GridViewBtn />
-        <ListViewBtn />
+        <GridViewBtn showGridView={showGridView} />
+        <ListViewBtn showListView={showListView} />
       </RightGroup>
     </FlexRowWrapper>
   );
