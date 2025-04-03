@@ -1,19 +1,24 @@
 // src/types/mockPressData.d.ts
 export interface NewsItem {
-  id: number;
-  newsTitle: string;
-  thumbnailImage: string;
-  link: string;
-  date: string;
+  "@type": string;
+  gdid: string | null;
+  title: string;
+  url: string;
+  aid: string;
+  image: {
+    url: string;
+  } | null;
+  _id: string;
 }
 
 export interface Press {
-  pressName: string;
-  logoImage: string;
-  category: string;
-  editedTime: string;
-  newsData: NewsItem[];
+  pid: number;
+  name: string;
+  regDate: string;
+  logoDark: string;
+  logoLight: string;
+  materials: NewsItem[];
 }
 
-export type newsDataTypes = NewsItem[];
-export type pressDataTypes = Press[];
+export type newsItemTypes = NewsItem[];
+export type pressTypes = Press[];

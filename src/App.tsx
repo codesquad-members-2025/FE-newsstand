@@ -23,7 +23,7 @@ function App() {
     </EmotionThemeProvider>
   );
 }
-
+ 
 const GridLayout = styled.div`
   display: grid;
   grid-template-rows: 3.063rem 3.063rem auto;
