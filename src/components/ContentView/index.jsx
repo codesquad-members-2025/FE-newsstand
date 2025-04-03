@@ -35,10 +35,13 @@ export default function ContentView({ isAllpress, listView }) {
   }
 
   function moveCategory(target) {
-    setcategory(target);
+    setcategory(() => target);
   }
 
   const getSubscribedNewsObj = getSubscribedNews(newsData, subscribed);
+  // if (!isAllpress) {
+  //   moveCategory(Object.keys(getSubscribedNewsObj)[0]);
+  // }
   const categoryNews = isAllpress
     ? parseOneCategoryNews(newsData, category)
     : parseOneCategoryNews(getSubscribedNewsObj, category);
@@ -49,7 +52,7 @@ export default function ContentView({ isAllpress, listView }) {
   if (newsData) {
     newsCategory = isAllpress
       ? Object.keys(newsData)
-      : Object.values(categoryNews).map((value) => value.name);
+      : Object.keys(getSubscribedNewsObj);
   }
 
   useEffect(() => {
@@ -58,6 +61,7 @@ export default function ContentView({ isAllpress, listView }) {
       const data = await res.json();
       const transFormedData = transformNewsData(data);
       setnewsData(() => transFormedData);
+      moveCategory(Object.keys(transFormedData)[0]);
     }
     fetchData();
   }, []);
@@ -67,10 +71,20 @@ export default function ContentView({ isAllpress, listView }) {
   }, [listView]);
 
   useEffect(() => {
-    newsCategory ? moveCategory(newsCategory[0]) : null;
+    if (isAllpress) {
+      if (newsData) moveCategory(Object.keys(newsData)[0]);
+    } else {
+      moveCategory(Object.keys(getSubscribedNewsObj)[0]);
+    }
   }, [isAllpress]);
 
   if (!newsData) return null; //조건부 렌더링
+  if (!isAllpress && categoryNews.length === 0) {
+    return null;
+  }
+  if (isAllpress && categoryNews.length === 0) {
+    return null;
+  }
   return (
     <ContentBoxWrapper>
       <LeftSwipeButton swipePrevPage={swipePrevPage} visible={page > 0} />
