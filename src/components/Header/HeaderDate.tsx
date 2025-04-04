@@ -41,4 +41,5 @@ const Container = styled.div`
   font-size: 1rem;
   font-weight: bold;
   font-weight: 500;
+  color: ${({ theme }) => theme.colors.text.strong};
 `;

@@ -1,15 +1,17 @@
 import React, { FC } from "react"; // 리액트 및 타입 정의 import
 import styled from "@emotion/styled"; // styled-components or emotion 사용 시 (선택)
+import { useThemeState, useThemeDispatch } from "../../contexts/ThemeContext";
 
-interface MyComponentProps {
-  // 컴포넌트에 필요한 props 타입을 정의
-  toggleTheme: () => void;
-}
+const HeaderToggle: FC = () => {
+  const { isDarkMode } = useThemeState();
+  const dispatch = useThemeDispatch();
+  const handleToggle = () => {
+    dispatch({ type: "TOGGLE_THEME" });
+  };
 
-const HeaderToggle: FC<MyComponentProps> = ({ toggleTheme }) => {
   return (
     <Container>
-      <button onClick={toggleTheme}>테마 변경</button>
+      <button onClick={handleToggle}>{isDarkMode ? "🌙" : "☀️"}</button>
     </Container>
   );
 };
@@ -25,4 +27,24 @@ const Container = styled.div`
   font-weight: ${({ theme }) => theme.typo.regular12.fontWeight};
   font-size: ${({ theme }) => theme.typo.regular12.fontSize};
   line-height: ${({ theme }) => theme.typo.regular12.lineHeight};
+
+  button {
+    background: none;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    color: ${({ theme }) => theme.colors.text.weak};
+    font-size: ${({ theme }) => theme.typo.bold24.fontSize};
+
+    &:hover {
+      color: ${({ theme }) => theme.colors.text.strong};
+      border: none;
+    }
+
+    &:focus,
+    &:active {
+      outline: none;
+      border: none;
+    }
+  }
 `;

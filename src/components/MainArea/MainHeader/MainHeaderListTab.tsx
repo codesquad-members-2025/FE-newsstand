@@ -14,7 +14,9 @@ const MainHeaderListTab: FC<MyComponentProps> = ({ setCurrPressState }) => {
 
   return (
     <Container>
-      <div>전체 언론사</div>
+      <div>
+        <p>전체 언론사</p>
+      </div>
       <div className="my-press-area">
         <p>내가 구독한 언론사</p>
         <div className="my-press-count">8</div>

@@ -9,9 +9,15 @@ import styled from "@emotion/styled"; // styled-components or emotion 사용 시
 const PressListNav: FC = () => {
   return (
     <Container>
-      <div>언론사 로고</div>
-      <div>편집 시간</div>
-      <div>구독하기 버튼</div>
+      <div>
+        <p>언론사 로고</p>
+      </div>
+      <div>
+        <p>편집 시간</p>
+      </div>
+      <div>
+        <p>구독하기 버튼</p>
+      </div>
     </Container>
   );
 };
