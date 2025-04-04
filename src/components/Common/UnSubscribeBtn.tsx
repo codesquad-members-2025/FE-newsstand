@@ -1,9 +1,13 @@
 import styled from '@emotion/styled'
 import CloseIcon from '@/assets/CloseIcon.svg?react'
 
-function UnSubscribeBtn() {
+interface UnSubscribeBtnProps {
+  onClick: () => void
+}
+
+function UnSubscribeBtn({ onClick }: UnSubscribeBtnProps) {
   return (
-    <Button>
+    <Button onClick={onClick}>
       <CloseIcon />
     </Button>
   )

@@ -6,12 +6,13 @@ interface ButtonProps {
 }
 
 interface SubscribeBtnProps {
+  onClick: () => void
   backgroundColor: string
 }
 
-function SubscribeBtn({ backgroundColor }: SubscribeBtnProps) {
+function SubscribeBtn({ onClick, backgroundColor }: SubscribeBtnProps) {
   return (
-    <Button bgColor={backgroundColor}>
+    <Button onClick={onClick} bgColor={backgroundColor}>
       <PlusIcon />
       <Text>구독하기</Text>
     </Button>

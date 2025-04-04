@@ -1,13 +1,24 @@
 import styled from '@emotion/styled'
+import Badge from '@/components/Common/Badge'
+import { TabType } from '../..'
+import { act } from 'react'
 
-function TabBtns() {
+interface TabBtnsProps {
+  currentTab: string
+  setCurrentTab: (view: TabType) => void
+  count: number
+}
+
+function TabBtns({ currentTab, setCurrentTab, count }: TabBtnsProps) {
   return (
     <Container>
-      <AllPress>전체 언론사</AllPress>
-      <SubscribedPress>
+      <TabButton onClick={() => setCurrentTab('allPress')} active={currentTab === 'allPress'}>
+        전체 언론사
+      </TabButton>
+      <TabButton onClick={() => setCurrentTab('subPress')} active={currentTab === 'subPress'}>
         내가 구독한 언론사
-        <Count>5</Count>
-      </SubscribedPress>
+        <Badge count={count} />
+      </TabButton>
     </Container>
   )
 }
@@ -19,32 +30,17 @@ const Container = styled.div`
   gap: 24px;
 `
 
-const AllPress = styled.button`
-  font-weight: 700;
-  font-size: 16px;
-  color: rgba(20, 33, 43, 1);
-`
+interface BtnActiveProps {
+  active: boolean
+}
 
-const SubscribedPress = styled.button`
-  font-weight: 500;
+const TabButton = styled.button<BtnActiveProps>`
+  font-weight: ${({ active }) => (active ? '700' : '500')};
   font-size: 16px;
-  color: rgba(135, 146, 152, 1);
+  color: ${({ active }) => (active ? 'rgba(20, 33, 43, 1)' : 'rgba(135, 146, 152, 1)')};
   display: flex;
   align-items: center;
   gap: 4px;
-`
-
-const Count = styled.span`
-  width: 20px;
-  height: 20px;
-  border-radius: 8px;
-  background-color: rgba(120, 144, 231, 1);
-  font-weight: 500;
-  font-size: 12px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: rgba(255, 255, 255, 0.7);
 `
 
 export default TabBtns

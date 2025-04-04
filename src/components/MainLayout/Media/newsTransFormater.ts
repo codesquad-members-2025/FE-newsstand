@@ -9,6 +9,7 @@ function randomizePressData(data: any) {
     regDate: item.regDate,
     logoDark: item.logoDark,
     logoLight: item.logoLight,
+    isSubscribed: false,
   }))
 
   return suffle(processedData).slice(0, 96)

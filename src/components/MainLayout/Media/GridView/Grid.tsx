@@ -1,18 +1,41 @@
 import styled from '@emotion/styled'
+
 import SubscribeBtn from '@/components/Common/SubscribeBtn'
+import UnSubscribeBtn from '@/components/Common/UnSubscribeBtn'
+
+import { PressDataType } from '..'
 
 interface GridProps {
-  key: string
-  logoLight: string
-  name: string
+  press: PressDataType
+  setPressData: React.Dispatch<React.SetStateAction<PressDataType[]>>
+  isEmpty: boolean
 }
 
-function Grid({ key, logoLight, name }: GridProps) {
+function Grid({ press, setPressData, isEmpty }: GridProps) {
+  if (isEmpty) {
+    return <Container />
+  }
+
+  const subscribePress = () => {
+    setPressData(pressData => {
+      return pressData.map(curPress => {
+        if (curPress.pid === press.pid) {
+          return { ...curPress, isSubscribed: !curPress.isSubscribed }
+        }
+        return curPress
+      })
+    })
+  }
+
   return (
     <Container>
-      <Image key={key} src={logoLight} height="20" alt={name}></Image>
+      <Image key={press.pid} src={press.logoLight} height="20" alt={press.name}></Image>
       <BtnWrapper>
-        <SubscribeBtn backgroundColor={'rgba(255, 255, 255, 1)'} />
+        {press.isSubscribed ? (
+          <UnSubscribeBtn onClick={subscribePress} />
+        ) : (
+          <SubscribeBtn onClick={subscribePress} backgroundColor={'rgba(255, 255, 255, 1)'} />
+        )}
       </BtnWrapper>
     </Container>
   )
@@ -20,6 +43,7 @@ function Grid({ key, logoLight, name }: GridProps) {
 
 const Image = styled.img`
   display: block;
+  position: absolute;
 `
 
 const BtnWrapper = styled.div`

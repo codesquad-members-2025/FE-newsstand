@@ -5,28 +5,37 @@ import Grid from './Grid'
 import PrevPageBtn from './PrevPageBtn'
 import NextPageBtn from './NextPageBtn'
 
-interface PressDataItem {
-  pid: string
-  name: string
-  regDate: string
-  logoDark: string
-  logoLight: string
-}
+import { PressDataType } from '..'
+
+import extendArray from '@/utils/extendArray'
 
 interface GridViewProps {
-  data: PressDataItem[]
+  pressData: PressDataType[]
+  setPressData: React.Dispatch<React.SetStateAction<PressDataType[]>>
 }
 
-function GridView({ data }: GridViewProps) {
+function GridView({ pressData, setPressData }: GridViewProps) {
+  const totalPages = Math.ceil(pressData.length / 24) || 1
   const [currentPage, setCurrentPage] = useState(1)
-  const totalPages = Math.ceil(data.length / 24)
+  const emptyPressData = {
+    pid: '-1',
+    name: '',
+    regDate: '',
+    logoDark: '',
+    logoLight: '',
+    isSubscribed: false,
+  }
+
+  const newPressData = extendArray(pressData, totalPages * 24, emptyPressData)
 
   const pages = Array.from({ length: totalPages }, (_, i) => {
     const start = i * 24
     const end = start + 24
-    return data
+    return newPressData
       .slice(start, end)
-      .map(item => <Grid key={item.pid} logoLight={item.logoLight} name={item.name} />)
+      .map((item, idx) => (
+        <Grid key={idx} press={item} setPressData={setPressData} isEmpty={item.pid === '-1'} />
+      ))
   })
 
   return (
