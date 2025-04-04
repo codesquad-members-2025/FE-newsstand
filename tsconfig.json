@@ -3,5 +3,12 @@
   "references": [
     { "path": "./tsconfig.app.json" },
     { "path": "./tsconfig.node.json" }
+  ],
+  "compilerOptions": {
+    "jsx": "react-jsx", // 혹은 "react-jsxdev"
+    "jsxImportSource": "@emotion/react" // Emotion 지원
+  },
+  "include": [
+    "emotion.d.ts" // 또는 .d.ts 파일이 다른 위치라면 경로 맞춰주세요
   ]
 }

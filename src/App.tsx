@@ -1,18 +1,11 @@
 import React, { useState } from "react";
-import { ThemeProvider } from "@emotion/react";
+import { ThemeProvider as EmotionThemeProvider } from "@emotion/react";
 import styled from "@emotion/styled";
 import Header from "./components/Header/Header";
 import AutoRollingArea from "./components/AutoRollingArea/AutoRollingArea";
-import AppRoutes from "./AppRouter";
+import MainRoutes from "./components/MainArea/MainRoutes";
 import darkTheme from "./styles/theme/darkTheme";
 import lightTheme from "./styles/theme/lightTheme";
-
-const GridLayout = styled.div`
-  display: grid;
-  grid-template-rows: auto auto 1fr;
-  grid-template-columns: 1fr;
-  min-height: 100vh;
-`;
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
@@ -21,14 +14,22 @@ function App() {
   };
 
   return (
-    <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
+    <EmotionThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
       <GridLayout>
         <Header toggleTheme={toggleTheme} />
         <AutoRollingArea />
-        <AppRoutes />
+        <MainRoutes />
       </GridLayout>
-    </ThemeProvider>
+    </EmotionThemeProvider>
   );
 }
+ 
+const GridLayout = styled.div`
+  display: grid;
+  grid-template-rows: 3.063rem 3.063rem auto;
+  grid-template-columns: 58.125rem;
+  row-gap: 1.5rem;
+  min-height: 100vh;
+`;
 
 export default App;

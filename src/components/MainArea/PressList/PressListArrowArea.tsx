@@ -3,25 +3,24 @@ import styled from "@emotion/styled"; // styled-components or emotion 사용 시
 
 // interface MyComponentProps {
 //   // 컴포넌트에 필요한 props 타입을 정의
-//   title?: string;
+//   title?: [];
 // }
 
-const PressListContentHeader: FC = () => {
+const PressListArrowArea: FC = () => {
   return (
     <Container>
-      <p>이곳에 원하는 내용을 작성하세요.</p>
+      <p>왼쪽 화실표</p>
+      <p>오른쪽 화실표</p>
     </Container>
   );
 };
 
-export default PressListContentHeader;
+export default PressListArrowArea;
 
 // 아래는 Emotion styled 예시 (선택)
 const Container = styled.div`
   display: flex;
-  justify-content: start;
+  justify-content: center;
   align-items: center;
-  border: 1px solid ${({ theme }) => theme.colors.border.default};
-  border-bottom: none;
-  background-color: ${({ theme }) => theme.colors.surface.alt};
+  grid-area: 3 / 1 / 3 / 3;
 `;
