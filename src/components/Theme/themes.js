@@ -34,7 +34,7 @@ export const lightTheme = {
       brandAlt: '#7890E7',
     },
     border: {
-      bold: '#D2DAE0',
+      bold: '#6E8091',
       default: '#D2DAE0',
     },
   },

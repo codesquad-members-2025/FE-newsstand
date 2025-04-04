@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "title": "정부, 전기차 보조금 개편 발표",
+    "url": "https://news.example.com/article/1",
+    "press": "스타뉴스"
+  },
+  {
+    "id": 2,
+    "title": "삼성전자, 1분기 실적 발표…영업이익 5조",
+    "url": "https://news.example.com/article/2",
+    "press": "조선일보"
+  },
+  {
+    "id": 3,
+    "title": "중국, 디지털 위안화 시범 운영 확대",
+    "url": "https://news.example.com/article/3",
+    "press": "한겨레"
+  },
+  {
+    "id": 4,
+    "title": "코스피 2700선 회복…IT·바이오 강세",
+    "url": "https://news.example.com/article/4",
+    "press": "한국경제"
+  },
+  {
+    "id": 5,
+    "title": "AI로봇, 의료 현장에 본격 도입",
+    "url": "https://news.example.com/article/5",
+    "press": "동아일보"
+  },
+  {
+    "id": 6,
+    "title": "넷플릭스, 한국 콘텐츠에 2조 투자 발표",
+    "url": "https://news.example.com/article/6",
+    "press": "경향신문"
+  },
+  {
+    "id": 7,
+    "title": "미국 기준금리 동결…연내 인하 가능성",
+    "url": "https://news.example.com/article/7",
+    "press": "서울경제"
+  },
+  {
+    "id": 8,
+    "title": "서울시, 공공자전거 '따릉이' 확대 계획",
+    "url": "https://news.example.com/article/8",
+    "press": "KBS"
+  },
+  {
+    "id": 9,
+    "title": "스타트업 투자 유치 감소세…대책 시급",
+    "url": "https://news.example.com/article/9",
+    "press": "매일경제"
+  },
+  {
+    "id": 10,
+    "title": "대학 등록금 동결 검토…교육부 입장 발표",
+    "url": "https://news.example.com/article/10",
+    "press": "SBS"
+  }
+]

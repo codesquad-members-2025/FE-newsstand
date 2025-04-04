@@ -1,7 +1,8 @@
 import js from '@eslint/js';
+import importPlugin from 'eslint-plugin-import';
+import prettierPlugin from 'eslint-plugin-prettier';
 import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
-import prettierPlugin from 'eslint-plugin-prettier';
 import globals from 'globals';
 
 export default [
@@ -21,6 +22,7 @@ export default [
       'react-hooks': reactHooks,
       'react-refresh': reactRefresh,
       prettier: prettierPlugin,
+      import: importPlugin,
     },
     rules: {
       ...js.configs.recommended.rules,
@@ -31,6 +33,43 @@ export default [
         { allowConstantExport: true },
       ],
       'prettier/prettier': 'error',
+
+      // import 순서 정리
+      'import/order': [
+        'error',
+        {
+          groups: [
+            'builtin', // node 내장 모듈 (fs, path 등)
+            'external', // npm 패키지 (react, lodash 등)
+            'internal', // 프로젝트 내부 alias 경로 (@/components 등)
+            ['parent', 'sibling', 'index'], // 상대 경로 import
+          ],
+          pathGroups: [
+            {
+              pattern: '@/**',
+              group: 'internal',
+              position: 'after',
+            },
+          ],
+          pathGroupsExcludedImportTypes: ['builtin'],
+          'newlines-between': 'always', // 그룹 간 줄바꿈
+          alphabetize: {
+            order: 'asc', // 알파벳순 정렬
+            caseInsensitive: true,
+          },
+        },
+      ],
+    },
+    settings: {
+      'import/resolver': {
+        alias: {
+          map: [
+            ['@', './src'],
+            ['@components', './src/components'],
+          ],
+          extensions: ['.js', '.jsx'],
+        },
+      },
     },
   },
 ];

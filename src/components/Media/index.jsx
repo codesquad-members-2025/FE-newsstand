@@ -1,7 +1,8 @@
 import styled from '@emotion/styled';
-import { useState } from 'react';
-import MedaiTab from './MediaTab';
+import { useState, useEffect } from 'react';
+
 import MediaSection from './MediaSection';
+import MediaTab from './MediaTab';
 
 const MediaContainer = styled.div`
   width: 100%;
@@ -11,18 +12,44 @@ const MediaContainer = styled.div`
 `;
 
 const Media = () => {
-  const [isSubscribedTab, setIsSubscribedTab] = useState(false);
-  const [isListView, setIsListView] = useState(false);
+  const [gridData, setGridData] = useState([]);
+  const [listData, setListData] = useState([]);
+  const [tabType, setTabType] = useState('all');
+  const [viewType, setViewType] = useState('grid');
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    Promise.all([
+      fetch('/mockData/pressList.json').then((res) => res.json()),
+      fetch('/mockData/mockData.json').then((res) => res.json()),
+    ])
+      .then(([grid, list]) => {
+        setGridData(grid);
+        setListData(list);
+        setIsLoading(false);
+      })
+      .catch((err) => {
+        console.error('데이터 fetch error:', err);
+        setIsLoading(false);
+      });
+  }, []);
+
+  if (isLoading) {
+    return <div>로딩 중...</div>;
+  }
 
   return (
     <MediaContainer>
-      <MedaiTab
-        isSubscribedTab={isSubscribedTab}
-        setIsSubscribedTab={setIsSubscribedTab}
-        isListView={isListView}
-        setIsListView={setIsListView}
+      <MediaTab
+        tabType={tabType}
+        setTabType={setTabType}
+        viewType={viewType}
+        setViewType={setViewType}
       />
-      <MediaSection isListView={isListView} />
+      <MediaSection
+        viewType={viewType}
+        data={viewType === 'grid' ? gridData : listData}
+      />
     </MediaContainer>
   );
 };

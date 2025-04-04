@@ -1,0 +1,1472 @@
+[
+  {
+    "pid": "108",
+    "name": "스타뉴스",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/108.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/108.png"
+  },
+  {
+    "pid": "109",
+    "name": "OSEN",
+    "logoDark": "https://s.pstatic.net/static/newsstand/up/2020/0610/nsd151458769.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/up/2020/0610/nsd151458769.png"
+  },
+  {
+    "pid": "117",
+    "name": "마이데일리",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/117.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/117.png"
+  },
+  {
+    "pid": "139",
+    "name": "스포탈코리아",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/139.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/139.png"
+  },
+  {
+    "pid": "144",
+    "name": "스포츠경향",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/144.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/144.png"
+  },
+  {
+    "pid": "213",
+    "name": "TV리포트",
+    "logoDark": "https://s.pstatic.net/static/newsstand/up/2023/0714/nsd125510155.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/up/2023/0714/nsd125517690.png"
+  },
+  {
+    "pid": "241",
+    "name": "일간스포츠",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/241.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/up/2023/0112/nsd92558162.png"
+  },
+  {
+    "pid": "311",
+    "name": "엑스포츠뉴스",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/311.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/311.png"
+  },
+  {
+    "pid": "312",
+    "name": "텐아시아",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/312.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/312.png"
+  },
+  {
+    "pid": "314",
+    "name": "스포츠동아",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/314.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/314.png"
+  },
+  {
+    "pid": "396",
+    "name": "스포츠월드",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/396.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/396.png"
+  },
+  {
+    "pid": "410",
+    "name": "MK스포츠",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/410.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/410.png"
+  },
+  {
+    "pid": "416",
+    "name": "SBS연예뉴스",
+    "logoDark": "https://s.pstatic.net/static/newsstand/up/2020/1228/nsd1688305.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/up/2020/1228/nsd1681569.png"
+  },
+  {
+    "pid": "440",
+    "name": "티브이데일리",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/440.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/440.png"
+  },
+  {
+    "pid": "447",
+    "name": "뉴스엔",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/447.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/447.png"
+  },
+  {
+    "pid": "477",
+    "name": "스포티비뉴스",
+    "logoDark": "https://s.pstatic.net/static/newsstand/up/2021/1130/nsd101536636.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/up/2021/1130/nsd10159718.png"
+  },
+  {
+    "pid": "529",
+    "name": "스포츠춘추",
+    "logoDark": "https://s.pstatic.net/static/newsstand/up/2022/0116/nsd194523259.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/up/2022/0116/nsd19454239.png"
+  },
+  {
+    "pid": "802",
+    "name": "스포츠Q",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/802.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/802.png"
+  },
+  {
+    "pid": "830",
+    "name": "게임동아",
+    "logoDark": "https://s.pstatic.net/static/newsstand/up/2021/0211/nsd02332888.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/up/2021/0211/nsd02321523.png"
+  },
+  {
+    "pid": "915",
+    "name": "르몽드 디플로마티크",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/915.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/915.png"
+  },
+  {
+    "pid": "940",
+    "name": "스포츠투데이",
+    "logoDark": "https://s.pstatic.net/static/newsstand/up/2022/0328/nsd223257107.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/up/2022/0328/nsd223244325.png"
+  },
+  {
+    "pid": "962",
+    "name": "스포츠한국",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/962.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/962.png"
+  },
+  {
+    "pid": "076",
+    "name": "스포츠조선",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/076.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/076.png"
+  },
+  {
+    "pid": "073",
+    "name": "스포츠서울",
+    "logoDark": "https://s.pstatic.net/static/newsstand/up/2020/0708/nsd94820151.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/up/2020/0708/nsd94830278.png"
+  },
+  {
+    "pid": "120",
+    "name": "EBN",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/120.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/120.png"
+  },
+  {
+    "pid": "123",
+    "name": "조세일보",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/123.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/123.png"
+  },
+  {
+    "pid": "143",
+    "name": "쿠키뉴스",
+    "logoDark": "https://s.pstatic.net/static/newsstand/up/2024/0610/nsd181018320.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/up/2024/0610/nsd18952420.png"
+  },
+  {
+    "pid": "243",
+    "name": "이코노미스트",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/243.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/243.png"
+  },
+  {
+    "pid": "277",
+    "name": "아시아경제",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/277.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/277.png"
+  },
+  {
+    "pid": "327",
+    "name": "뉴데일리",
+    "logoDark": "https://s.pstatic.net/static/newsstand/up/2024/0124/nsd95520363.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/up/2024/0124/nsd95528325.png"
+  },
+  {
+    "pid": "353",
+    "name": "중앙SUNDAY",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/353.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/353.png"
+  },
+  {
+    "pid": "366",
+    "name": "조선비즈",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/366.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/366.png"
+  },
+  {
+    "pid": "368",
+    "name": "데일리안",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/368.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/368.png"
+  },
+  {
+    "pid": "417",
+    "name": "머니S",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/417.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/417.png"
+  },
+  {
+    "pid": "536",
+    "name": "더팩트",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/536.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/536.png"
+  },
+  {
+    "pid": "539",
+    "name": "위키트리",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/539.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/539.png"
+  },
+  {
+    "pid": "682",
+    "name": "여성경제신문",
+    "logoDark": "https://s.pstatic.net/static/newsstand/up/2022/1018/nsd132844419.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/up/2022/1018/nsd132851977.png"
+  },
+  {
+    "pid": "685",
+    "name": "서울와이어",
+    "logoDark": "https://s.pstatic.net/static/newsstand/up/2022/1024/nsd174424325.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/up/2022/1024/nsd174430433.png"
+  },
+  {
+    "pid": "687",
+    "name": "뉴스클레임",
+    "logoDark": "https://s.pstatic.net/static/newsstand/up/2022/1006/nsd205810265.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/up/2022/1006/nsd205818702.png"
+  },
+  {
+    "pid": "690",
+    "name": "정책브리핑",
+    "logoDark": "https://s.pstatic.net/static/newsstand/up/2022/1116/nsd113840778.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/up/2022/1116/nsd113848865.png"
+  },
+  {
+    "pid": "801",
+    "name": "위키리크스한국",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/801.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/801.png"
+  },
+  {
+    "pid": "803",
+    "name": "인더스트리뉴스",
+    "logoDark": "https://s.pstatic.net/static/newsstand/up/2021/0907/nsd94216114.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/up/2021/0907/nsd9423633.png"
+  },
+  {
+    "pid": "804",
+    "name": "데이터뉴스",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/804.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/804.png"
+  },
+  {
+    "pid": "809",
+    "name": "미디어펜",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/809.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/809.png"
+  },
+  {
+    "pid": "810",
+    "name": "신아일보",
+    "logoDark": "https://s.pstatic.net/static/newsstand/up/2021/0316/nsd104012979.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/up/2021/0316/nsd103953129.png"
+  },
+  {
+    "pid": "812",
+    "name": "딜사이트 경제TV",
+    "logoDark": "https://s.pstatic.net/static/newsstand/up/2024/0701/nsd10529721.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/up/2024/0701/nsd105216680.png"
+  },
+  {
+    "pid": "814",
+    "name": "미주한국일보",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/814.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/814.png"
+  },
+  {
+    "pid": "816",
+    "name": "시사오늘",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/816.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/816.png"
+  },
+  {
+    "pid": "822",
+    "name": "프라임경제",
+    "logoDark": "https://s.pstatic.net/static/newsstand/up/2020/0730/nsd13719939.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/up/2020/0730/nsd13728808.png"
+  },
+  {
+    "pid": "824",
+    "name": "서울파이낸스",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/824.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/824.png"
+  },
+  {
+    "pid": "825",
+    "name": "이로운넷",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/825.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/825.png"
+  },
+  {
+    "pid": "826",
+    "name": "톱데일리",
+    "logoDark": "https://s.pstatic.net/static/newsstand/up/2022/0817/nsd14499446.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/up/2022/0817/nsd14491516.png"
+  },
+  {
+    "pid": "913",
+    "name": "뉴스토마토",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/913.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/913.png"
+  },
+  {
+    "pid": "914",
+    "name": "뉴스핌",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/914.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/914.png"
+  },
+  {
+    "pid": "916",
+    "name": "머니투데이방송",
+    "logoDark": "https://s.pstatic.net/static/newsstand/up/2021/0420/nsd104943516.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/up/2021/0420/nsd105139164.png"
+  },
+  {
+    "pid": "920",
+    "name": "아시아투데이",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/920.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/920.png"
+  },
+  {
+    "pid": "921",
+    "name": "아주경제",
+    "logoDark": "https://s.pstatic.net/static/newsstand/up/2023/0731/nsd133759965.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/up/2023/0731/nsd13387289.png"
+  },
+  {
+    "pid": "922",
+    "name": "이투데이",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/922.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/922.png"
+  },
+  {
+    "pid": "923",
+    "name": "인민망",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/923.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/923.png"
+  },
+  {
+    "pid": "925",
+    "name": "일요신문",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/925.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/925.png"
+  },
+  {
+    "pid": "930",
+    "name": "뉴스타파",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/930.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/930.png"
+  },
+  {
+    "pid": "932",
+    "name": "CEO스코어데일리",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/932.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/932.png"
+  },
+  {
+    "pid": "941",
+    "name": "초이스경제",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/941.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/941.png"
+  },
+  {
+    "pid": "942",
+    "name": "비즈니스포스트",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/942.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/942.png"
+  },
+  {
+    "pid": "943",
+    "name": "비즈워치",
+    "logoDark": "https://s.pstatic.net/static/newsstand/up/2023/0213/nsd17100999.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/up/2023/0213/nsd17943530.png"
+  },
+  {
+    "pid": "944",
+    "name": "나우뉴스",
+    "logoDark": "https://s.pstatic.net/static/newsstand/up/2022/0804/nsd13457540.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/up/2022/0804/nsd1343054.png"
+  },
+  {
+    "pid": "954",
+    "name": "CNB뉴스",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/954.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/954.png"
+  },
+  {
+    "pid": "957",
+    "name": "시사위크",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/957.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/957.png"
+  },
+  {
+    "pid": "959",
+    "name": "M이코노미뉴스",
+    "logoDark": "https://s.pstatic.net/static/newsstand/up/2021/1221/nsd171157172.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/up/2021/1221/nsd15292271.png"
+  },
+  {
+    "pid": "960",
+    "name": "대한경제",
+    "logoDark": "https://s.pstatic.net/static/newsstand/up/2022/1115/nsd153934427.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/up/2022/1115/nsd153942530.png"
+  },
+  {
+    "pid": "961",
+    "name": "메트로신문",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/961.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/961.png"
+  },
+  {
+    "pid": "963",
+    "name": "에너지경제",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/963.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/963.png"
+  },
+  {
+    "pid": "964",
+    "name": "이뉴스투데이",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/964.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/964.png"
+  },
+  {
+    "pid": "968",
+    "name": "한국금융신문",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/968.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/968.png"
+  },
+  {
+    "pid": "969",
+    "name": "매일노동뉴스",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/969.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/969.png"
+  },
+  {
+    "pid": "970",
+    "name": "소비자가만드는신문",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/970.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/970.png"
+  },
+  {
+    "pid": "971",
+    "name": "일요시사",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/971.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/971.png"
+  },
+  {
+    "pid": "972",
+    "name": "PD저널",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/972.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/972.png"
+  },
+  {
+    "pid": "973",
+    "name": "비즈한국",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/973.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/973.png"
+  },
+  {
+    "pid": "974",
+    "name": "BBS NEWS",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/974.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/974.png"
+  },
+  {
+    "pid": "975",
+    "name": "시사저널이코노미",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/975.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/975.png"
+  },
+  {
+    "pid": "993",
+    "name": "허프포스트코리아",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/993.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/993.png"
+  },
+  {
+    "pid": "015",
+    "name": "한국경제",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/015.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/015.png"
+  },
+  {
+    "pid": "013",
+    "name": "연합인포맥스",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/013.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/013.png"
+  },
+  {
+    "pid": "018",
+    "name": "이데일리",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/018.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/018.png"
+  },
+  {
+    "pid": "031",
+    "name": "아이뉴스24",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/031.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/031.png"
+  },
+  {
+    "pid": "025",
+    "name": "중앙일보",
+    "logoDark": "https://s.pstatic.net/static/newsstand/up/2021/0823/nsd101834185.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/up/2021/0824/nsd115034872.png"
+  },
+  {
+    "pid": "038",
+    "name": "한국일보",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/038.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/038.png"
+  },
+  {
+    "pid": "028",
+    "name": "한겨레",
+    "logoDark": "https://s.pstatic.net/static/newsstand/up/2024/0219/nsd14592425.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/up/2024/0219/nsd145828169.png"
+  },
+  {
+    "pid": "021",
+    "name": "문화일보",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/021.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/021.png"
+  },
+  {
+    "pid": "081",
+    "name": "서울신문",
+    "logoDark": "https://s.pstatic.net/static/newsstand/up/2022/0208/nsd161212576.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/up/2022/0208/nsd16121208.png"
+  },
+  {
+    "pid": "079",
+    "name": "노컷뉴스",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/079.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/079.png"
+  },
+  {
+    "pid": "002",
+    "name": "프레시안",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/002.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/002.png"
+  },
+  {
+    "pid": "042",
+    "name": "데일��한국",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/042.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/042.png"
+  },
+  {
+    "pid": "006",
+    "name": "미디어오늘",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/006.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/006.png"
+  },
+  {
+    "pid": "022",
+    "name": "세계일보",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/022.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/022.png"
+  },
+  {
+    "pid": "009",
+    "name": "매일경제",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/009.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/009.png"
+  },
+  {
+    "pid": "047",
+    "name": "오마이뉴스",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/047.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/047.png"
+  },
+  {
+    "pid": "011",
+    "name": "서울경제",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/011.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2019/logo/011.png"
+  },
+  {
+    "pid": "005",
+    "name": "국민일보",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/005.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/005.png"
+  },
+  {
+    "pid": "032",
+    "name": "경향신문",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/032.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/032.png"
+  },
+  {
+    "pid": "023",
+    "name": "조선일보",
+    "logoDark": "https://s.pstatic.net/static/newsstand/up/2020/0903/nsd185246724.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/up/2020/0903/nsd185255316.png"
+  },
+  {
+    "pid": "020",
+    "name": "동아일보",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/020.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/020.png"
+  },
+  {
+    "pid": "016",
+    "name": "헤럴드경제",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/016.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/016.png"
+  },
+  {
+    "pid": "008",
+    "name": "머니투데이",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/008.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/008.png"
+  },
+  {
+    "pid": "014",
+    "name": "파이낸셜뉴스",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/014.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/014.png"
+  },
+  {
+    "pid": "122",
+    "name": "법률신문",
+    "logoDark": "https://s.pstatic.net/static/newsstand/up/2022/1103/nsd124320554.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/up/2022/1103/nsd124326426.png"
+  },
+  {
+    "pid": "135",
+    "name": "시사저널",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/135.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/135.png"
+  },
+  {
+    "pid": "140",
+    "name": "씨네21",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/140.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/140.png"
+  },
+  {
+    "pid": "296",
+    "name": "코메디닷컴",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/296.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/296.png"
+  },
+  {
+    "pid": "308",
+    "name": "시사IN",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/308.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/308.png"
+  },
+  {
+    "pid": "310",
+    "name": "여성신문",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/310.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/310.png"
+  },
+  {
+    "pid": "328",
+    "name": "에이블뉴스",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/328.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/328.png"
+  },
+  {
+    "pid": "329",
+    "name": "소년한국일보",
+    "logoDark": "https://s.pstatic.net/static/newsstand/up/2021/0728/nsd111059924.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/up/2021/0728/nsd1110888.png"
+  },
+  {
+    "pid": "345",
+    "name": "디자인정글",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/345.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/345.png"
+  },
+  {
+    "pid": "346",
+    "name": "헬스조선",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/346.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/346.png"
+  },
+  {
+    "pid": "354",
+    "name": "엘르",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/354.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/354.png"
+  },
+  {
+    "pid": "355",
+    "name": "사이언스타임즈",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/355.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/355.png"
+  },
+  {
+    "pid": "356",
+    "name": "게임메카",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/356.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/356.png"
+  },
+  {
+    "pid": "361",
+    "name": "채널예스",
+    "logoDark": "https://s.pstatic.net/static/newsstand/up/2023/0418/nsd124945796.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/up/2023/0418/nsd124959421.png"
+  },
+  {
+    "pid": "363",
+    "name": "동아사이언스",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/363.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/363.png"
+  },
+  {
+    "pid": "364",
+    "name": "디지털포스트(PC사랑)",
+    "logoDark": "https://s.pstatic.net/static/newsstand/up/2024/1121/nsd174650998.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/up/2024/1121/nsd174657186.png"
+  },
+  {
+    "pid": "384",
+    "name": "한국대학신문",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/384.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/384.png"
+  },
+  {
+    "pid": "388",
+    "name": "전남일보",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/388.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/388.png"
+  },
+  {
+    "pid": "686",
+    "name": "주간경향",
+    "logoDark": "https://s.pstatic.net/static/newsstand/up/2022/1007/nsd161842489.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/up/2022/1007/nsd161849944.png"
+  },
+  {
+    "pid": "691",
+    "name": "여성동아",
+    "logoDark": "https://s.pstatic.net/static/newsstand/up/2023/0418/nsd124439166.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/up/2023/0418/nsd124451202.png"
+  },
+  {
+    "pid": "805",
+    "name": "한경잡앤조이",
+    "logoDark": "https://s.pstatic.net/static/newsstand/up/2020/0615/nsd10311145.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/up/2020/0615/nsd10319824.png"
+  },
+  {
+    "pid": "806",
+    "name": "한경머니",
+    "logoDark": "https://s.pstatic.net/static/newsstand/up/2024/0531/nsd115449376.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/up/2024/0531/nsd115428801.png"
+  },
+  {
+    "pid": "807",
+    "name": "인사이트코리아",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/807.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/807.png"
+  },
+  {
+    "pid": "808",
+    "name": "산업일보",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/808.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/808.png"
+  },
+  {
+    "pid": "811",
+    "name": "한국농어촌���송",
+    "logoDark": "https://s.pstatic.net/static/newsstand/up/2022/0315/nsd18156958.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/up/2022/0315/nsd181452869.png"
+  },
+  {
+    "pid": "813",
+    "name": "이코노믹리뷰",
+    "logoDark": "https://s.pstatic.net/static/newsstand/up/2022/0418/nsd164818946.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/up/2022/0418/nsd164755323.png"
+  },
+  {
+    "pid": "815",
+    "name": "법률방송뉴스",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/815.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/815.png"
+  },
+  {
+    "pid": "819",
+    "name": "바이라인네트워크",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/819.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/819.png"
+  },
+  {
+    "pid": "820",
+    "name": "월간노동법률",
+    "logoDark": "https://s.pstatic.net/static/newsstand/up/2022/0817/nsd144754102.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/up/2022/0817/nsd14480190.png"
+  },
+  {
+    "pid": "827",
+    "name": "베이비뉴스",
+    "logoDark": "https://s.pstatic.net/static/newsstand/up/2021/0222/nsd13338358.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/up/2021/0222/nsd13325188.png"
+  },
+  {
+    "pid": "828",
+    "name": "식품저널 foodnews",
+    "logoDark": "https://s.pstatic.net/static/newsstand/up/2021/0211/nsd0439284.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/up/2021/0211/nsd0427277.png"
+  },
+  {
+    "pid": "829",
+    "name": "미디어스",
+    "logoDark": "https://s.pstatic.net/static/newsstand/up/2021/0211/nsd01153196.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/up/2021/0211/nsd01153196.png"
+  },
+  {
+    "pid": "905",
+    "name": "더스쿠프",
+    "logoDark": "https://s.pstatic.net/static/newsstand/up/2024/0304/nsd101639503.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/up/2024/0304/nsd101630742.png"
+  },
+  {
+    "pid": "908",
+    "name": "국방일보",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/908.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/908.png"
+  },
+  {
+    "pid": "911",
+    "name": "농민신문",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/911.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/911.png"
+  },
+  {
+    "pid": "924",
+    "name": "인벤",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/924.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/924.png"
+  },
+  {
+    "pid": "928",
+    "name": "컴퓨터월드",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/928.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/928.png"
+  },
+  {
+    "pid": "938",
+    "name": "그린포스트코리아",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/938.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/938.png"
+  },
+  {
+    "pid": "948",
+    "name": "한겨레21",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/948.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/948.png"
+  },
+  {
+    "pid": "950",
+    "name": "월간중앙",
+    "logoDark": "https://s.pstatic.net/static/newsstand/up/2024/1015/nsd14509252.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/up/2024/1015/nsd144951657.png"
+  },
+  {
+    "pid": "951",
+    "name": "포브스코리아",
+    "logoDark": "https://s.pstatic.net/static/newsstand/up/2025/0219/nsd122750849.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/up/2025/0219/nsd122730866.png"
+  },
+  {
+    "pid": "955",
+    "name": "독서신문",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/955.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/955.png"
+  },
+  {
+    "pid": "956",
+    "name": "철강금속신문",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/956.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/956.png"
+  },
+  {
+    "pid": "958",
+    "name": "베리타스알파",
+    "logoDark": "https://s.pstatic.net/static/newsstand/up/2023/0826/nsd0136682.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/up/2023/0826/nsd0145257.png"
+  },
+  {
+    "pid": "965",
+    "name": "전기신문",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/965.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/965.png"
+  },
+  {
+    "pid": "966",
+    "name": "정신의학신문",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/966.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/966.png"
+  },
+  {
+    "pid": "967",
+    "name": "코리아쉬핑가제트",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/967.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/967.png"
+  },
+  {
+    "pid": "979",
+    "name": "약사공론",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/979.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/979.png"
+  },
+  {
+    "pid": "982",
+    "name": "이코노미조선",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/982.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/982.png"
+  },
+  {
+    "pid": "984",
+    "name": "낚시춘추",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/984.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/984.png"
+  },
+  {
+    "pid": "986",
+    "name": "투데이신문",
+    "logoDark": "https://s.pstatic.net/static/newsstand/up/2020/1019/nsd144525568.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/up/2020/1019/nsd144531857.png"
+  },
+  {
+    "pid": "988",
+    "name": "이코노미사이언스",
+    "logoDark": "https://s.pstatic.net/static/newsstand/up/2024/1112/nsd95454919.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/up/2024/1112/nsd9551191.png"
+  },
+  {
+    "pid": "990",
+    "name": "주간조선",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/990.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/990.png"
+  },
+  {
+    "pid": "991",
+    "name": "데일리NK",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/991.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/991.png"
+  },
+  {
+    "pid": "995",
+    "name": "뉴스포스트",
+    "logoDark": "https://s.pstatic.net/static/newsstand/up/2021/1112/nsd102419893.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/up/2021/1112/nsd10248812.png"
+  },
+  {
+    "pid": "996",
+    "name": "매경헬스",
+    "logoDark": "https://s.pstatic.net/static/newsstand/up/2023/0330/nsd10148542.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/up/2023/0330/nsd10125746.png"
+  },
+  {
+    "pid": "997",
+    "name": "뉴스펭귄",
+    "logoDark": "https://s.pstatic.net/static/newsstand/up/2022/0405/nsd15014578.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/up/2022/0405/nsd15024245.png"
+  },
+  {
+    "pid": "998",
+    "name": "뉴스앤조이",
+    "logoDark": "https://s.pstatic.net/static/newsstand/up/2022/0328/nsd22509287.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/up/2022/0328/nsd22503109.png"
+  },
+  {
+    "pid": "075",
+    "name": "맥스무비",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/075.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/075.png"
+  },
+  {
+    "pid": "094",
+    "name": "월간 산",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/094.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/094.png"
+  },
+  {
+    "pid": "050",
+    "name": "한경비즈니스",
+    "logoDark": "https://s.pstatic.net/static/newsstand/up/2020/0928/nsd125026855.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/up/2020/0928/nsd125033437.png"
+  },
+  {
+    "pid": "024",
+    "name": "매경이코노미",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/024.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/024.png"
+  },
+  {
+    "pid": "138",
+    "name": "디지털데일리",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/138.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/138.png"
+  },
+  {
+    "pid": "326",
+    "name": "KBS World",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/326.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/326.png"
+  },
+  {
+    "pid": "818",
+    "name": "IT동아",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/818.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/818.png"
+  },
+  {
+    "pid": "910",
+    "name": "넥스트데일리",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/910.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/910.png"
+  },
+  {
+    "pid": "917",
+    "name": "IT조선",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/917.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/917.png"
+  },
+  {
+    "pid": "952",
+    "name": "보안뉴스",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/952.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/952.png"
+  },
+  {
+    "pid": "953",
+    "name": "디지털투데이",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/953.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/953.png"
+  },
+  {
+    "pid": "977",
+    "name": "헬로디디",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/977.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/977.png"
+  },
+  {
+    "pid": "994",
+    "name": "AI타임스",
+    "logoDark": "https://s.pstatic.net/static/newsstand/up/2021/1112/nsd102110770.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/up/2021/1112/nsd102040597.png"
+  },
+  {
+    "pid": "029",
+    "name": "디지털타임스",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/029.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/029.png"
+  },
+  {
+    "pid": "030",
+    "name": "전자신문",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/030.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/030.png"
+  },
+  {
+    "pid": "092",
+    "name": "지디넷코리아",
+    "logoDark": "https://s.pstatic.net/static/newsstand/up/2022/0905/nsd91639628.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/up/2022/0905/nsd131925414.png"
+  },
+  {
+    "pid": "214",
+    "name": "MBC",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/214.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/214.png"
+  },
+  {
+    "pid": "215",
+    "name": "한국경제TV",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/215.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/215.png"
+  },
+  {
+    "pid": "293",
+    "name": "블로터",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/293.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/293.png"
+  },
+  {
+    "pid": "340",
+    "name": "OBS",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/340.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/340.png"
+  },
+  {
+    "pid": "344",
+    "name": "EBS",
+    "logoDark": "https://s.pstatic.net/static/newsstand/up/2020/0803/nsd202358800.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/up/2020/0803/nsd20247547.png"
+  },
+  {
+    "pid": "374",
+    "name": "SBS Biz",
+    "logoDark": "https://s.pstatic.net/static/newsstand/up/2020/1229/nsd165811867.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/up/2020/1229/nsd165811867.png"
+  },
+  {
+    "pid": "376",
+    "name": "지지통신",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/376.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/376.png"
+  },
+  {
+    "pid": "421",
+    "name": "뉴스1",
+    "logoDark": "https://s.pstatic.net/static/newsstand/up/2024/0229/nsd10375418.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/up/2024/0229/nsd103734195.png"
+  },
+  {
+    "pid": "422",
+    "name": "연합뉴스TV",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/422.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/422.png"
+  },
+  {
+    "pid": "684",
+    "name": "TJB대전방송",
+    "logoDark": "https://s.pstatic.net/static/newsstand/up/2023/0103/nsd9522095.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/up/2023/0103/nsd95227559.png"
+  },
+  {
+    "pid": "902",
+    "name": "TV조선",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/902.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/902.png"
+  },
+  {
+    "pid": "903",
+    "name": "채널A",
+    "logoDark": "https://s.pstatic.net/static/newsstand/up/2024/0709/nsd114315719.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/up/2024/0709/nsd114253503.png"
+  },
+  {
+    "pid": "904",
+    "name": "JTBC",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/904.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/904.png"
+  },
+  {
+    "pid": "906",
+    "name": "KNN",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/906.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/906.png"
+  },
+  {
+    "pid": "934",
+    "name": "Arirang TV",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/934.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/934.png"
+  },
+  {
+    "pid": "945",
+    "name": "YTN사이언스",
+    "logoDark": "https://s.pstatic.net/static/newsstand/up/2020/0922/nsd152323211.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/up/2020/0922/nsd152336602.png"
+  },
+  {
+    "pid": "980",
+    "name": "KBC광주방송",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/980.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/980.png"
+  },
+  {
+    "pid": "981",
+    "name": "TBS",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/981.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/981.png"
+  },
+  {
+    "pid": "989",
+    "name": "TBC",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/989.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/989.png"
+  },
+  {
+    "pid": "052",
+    "name": "YTN",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/052.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/052.png"
+  },
+  {
+    "pid": "055",
+    "name": "SBS",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/055.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/055.png"
+  },
+  {
+    "pid": "003",
+    "name": "뉴시스",
+    "logoDark": "https://s.pstatic.net/static/newsstand/up/2024/0731/nsd141932398.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/up/2024/0731/nsd1419103.png"
+  },
+  {
+    "pid": "056",
+    "name": "KBS",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/056.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/056.png"
+  },
+  {
+    "pid": "057",
+    "name": "MBN",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/057.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/057.png"
+  },
+  {
+    "pid": "301",
+    "name": "광주드림",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/301.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/301.png"
+  },
+  {
+    "pid": "331",
+    "name": "충청투데이",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/331.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/331.png"
+  },
+  {
+    "pid": "332",
+    "name": "국제신문",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/332.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/332.png"
+  },
+  {
+    "pid": "333",
+    "name": "경남신문",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/333.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/333.png"
+  },
+  {
+    "pid": "334",
+    "name": "제주의소리",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/334.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/334.png"
+  },
+  {
+    "pid": "335",
+    "name": "강원도민일보",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/335.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/335.png"
+  },
+  {
+    "pid": "336",
+    "name": "전북일보",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/336.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/336.png"
+  },
+  {
+    "pid": "337",
+    "name": "경북일보",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/337.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/337.png"
+  },
+  {
+    "pid": "338",
+    "name": "경인일보",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/338.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/338.png"
+  },
+  {
+    "pid": "339",
+    "name": "경기일보",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/339.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/339.png"
+  },
+  {
+    "pid": "385",
+    "name": "영남일보",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/385.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/385.png"
+  },
+  {
+    "pid": "387",
+    "name": "인천일보",
+    "logoDark": "https://s.pstatic.net/static/newsstand/up/2022/0331/nsd15594915.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/up/2022/0331/nsd155937506.png"
+  },
+  {
+    "pid": "389",
+    "name": "제주도민일보",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/389.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/389.png"
+  },
+  {
+    "pid": "391",
+    "name": "충청일보",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/391.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/391.png"
+  },
+  {
+    "pid": "683",
+    "name": "MS투데이",
+    "logoDark": "https://s.pstatic.net/static/newsstand/up/2022/1017/nsd202933363.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/up/2022/1017/nsd202940832.png"
+  },
+  {
+    "pid": "688",
+    "name": "경기신문",
+    "logoDark": "https://s.pstatic.net/static/newsstand/up/2022/1017/nsd20268714.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/up/2022/1017/nsd202616515.png"
+  },
+  {
+    "pid": "689",
+    "name": "인천투데이",
+    "logoDark": "https://s.pstatic.net/static/newsstand/up/2022/1107/nsd105354391.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/up/2022/1107/nsd1054226.png"
+  },
+  {
+    "pid": "817",
+    "name": "미디어제주",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/817.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/817.png"
+  },
+  {
+    "pid": "821",
+    "name": "경남도민일보",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/821.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/821.png"
+  },
+  {
+    "pid": "901",
+    "name": "제민일보",
+    "logoDark": "https://s.pstatic.net/static/newsstand/up/2020/1119/nsd213339585.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/up/2020/1119/nsd213345745.png"
+  },
+  {
+    "pid": "907",
+    "name": "경북매일신문",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/907.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/907.png"
+  },
+  {
+    "pid": "909",
+    "name": "기호일보",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/909.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/909.png"
+  },
+  {
+    "pid": "926",
+    "name": "중부일보",
+    "logoDark": "https://s.pstatic.net/static/newsstand/up/2022/0704/nsd231545458.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/up/2022/0704/nsd231551300.png"
+  },
+  {
+    "pid": "927",
+    "name": "충북일보",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/927.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/927.png"
+  },
+  {
+    "pid": "935",
+    "name": "경상일보",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/935.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/935.png"
+  },
+  {
+    "pid": "936",
+    "name": "대구일보",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/936.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/936.png"
+  },
+  {
+    "pid": "937",
+    "name": "전북도민일보",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/937.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/937.png"
+  },
+  {
+    "pid": "976",
+    "name": "무등일보",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/976.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/976.png"
+  },
+  {
+    "pid": "978",
+    "name": "경북도민일보",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/978.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/978.png"
+  },
+  {
+    "pid": "983",
+    "name": "중부매일",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/983.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/983.png"
+  },
+  {
+    "pid": "087",
+    "name": "강원일보",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/087.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/087.png"
+  },
+  {
+    "pid": "089",
+    "name": "대전일보",
+    "logoDark": "https://s.pstatic.net/static/newsstand/up/2024/1219/nsd145170.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/up/2024/1219/nsd145047862.png"
+  },
+  {
+    "pid": "082",
+    "name": "부산일보",
+    "logoDark": "https://s.pstatic.net/static/newsstand/up/2021/0322/nsd215225866.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/up/2021/0322/nsd21527882.png"
+  },
+  {
+    "pid": "088",
+    "name": "매일신문",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/088.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/088.png"
+  },
+  {
+    "pid": "083",
+    "name": "광주일보",
+    "logoDark": "https://s.pstatic.net/static/newsstand/up/2023/0309/nsd1956932.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/up/2023/0309/nsd195548501.png"
+  },
+  {
+    "pid": "330",
+    "name": "중앙데일리",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/330.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/330.png"
+  },
+  {
+    "pid": "681",
+    "name": "이코노타임즈",
+    "logoDark": "https://s.pstatic.net/static/newsstand/up/2022/0615/nsd7244919.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/up/2022/0615/nsd7251644.png"
+  },
+  {
+    "pid": "946",
+    "name": "YONHAPNEWS",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/946.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/946.png"
+  },
+  {
+    "pid": "947",
+    "name": "조이뉴스24",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/947.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/947.png"
+  },
+  {
+    "pid": "040",
+    "name": "코리아타임스",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/040.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/040.png"
+  },
+  {
+    "pid": "044",
+    "name": "코리아헤럴드",
+    "logoDark": "https://s.pstatic.net/static/newsstand/2020/logo/dark/0604/044.png",
+    "logoLight": "https://s.pstatic.net/static/newsstand/2020/logo/light/0604/044.png"
+  }
+]

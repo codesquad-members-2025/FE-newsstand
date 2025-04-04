@@ -1,0 +1,42 @@
+{
+  "pid": "368",
+  "pressName": "데일리안",
+  "logoSrc": "src/assets/logos/sampleLogo.png",
+  "editedTime": "2023.02.10. 18:57",
+  "mainNews": {
+    "title": "대통령실, 도이치모터스 1심 판결에 \"김 여사 연루 의혹, 민주당 주장 깨졌다\"",
+    "thumbnail": "src/assets/images/Thumbnail.png"
+  },
+  "subNewsList": [
+    {
+      "id": 1,
+      "title": "이재명 \"공개소환, 회술레같은 수치\"",
+      "link": "https://example.com/news/1"
+    },
+    {
+      "id": 2,
+      "title": "위안부 후원금 횡령 의혹 벌금형",
+      "link": "https://example.com/news/2"
+    },
+    {
+      "id": 3,
+      "title": "민주, 이재명 출석 당일 맹폭",
+      "link": "https://example.com/news/3"
+    },
+    {
+      "id": 4,
+      "title": "\"매니저라 불러주세요\"",
+      "link": "https://example.com/news/4"
+    },
+    {
+      "id": 5,
+      "title": "초등생 사망, 학대·아내가 다 했다",
+      "link": "https://example.com/news/5"
+    },
+    {
+      "id": 6,
+      "title": "젤렌스키 유럽 순방 마무리",
+      "link": "https://example.com/news/6"
+    }
+  ]
+}
