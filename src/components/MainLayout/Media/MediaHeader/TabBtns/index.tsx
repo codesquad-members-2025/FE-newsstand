@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 
-function TabButton() {
+function TabBtns() {
   return (
     <Container>
       <AllPress>전체 언론사</AllPress>
@@ -47,4 +47,4 @@ const Count = styled.span`
   color: rgba(255, 255, 255, 0.7);
 `
 
-export default TabButton
+export default TabBtns

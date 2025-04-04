@@ -1,7 +1,7 @@
 import styled from '@emotion/styled'
 import NewsBar from './NewsBar'
 
-function Roller() {
+function AutoRollingBar() {
   return (
     <Container>
       <NewsBar />
@@ -17,4 +17,4 @@ const Container = styled.div`
   gap: 8px;
 `
 
-export default Roller
+export default AutoRollingBar
