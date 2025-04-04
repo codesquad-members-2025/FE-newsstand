@@ -77,11 +77,10 @@ export default function ContentView({ isAllpress, listView }) {
   useEffect(() => {
     if (isAllpress) {
       if (newsData) moveCategory(Object.keys(newsData)[0]);
-      initPage();
     } else {
       moveCategory(Object.keys(getSubscribedNewsObj)[0]);
-      initPage();
     }
+    initPage();
   }, [isAllpress]);
 
   if (!newsData) return null; //조건부 렌더링
