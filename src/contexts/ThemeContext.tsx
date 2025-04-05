@@ -10,6 +10,7 @@ type ThemeState = {
 
 type ThemeAction = { type: "TOGGLE_THEME" };
 
+// Reducer 함수
 function themeReducer(state: ThemeState, action: ThemeAction): ThemeState {
   switch (action.type) {
     case "TOGGLE_THEME":
@@ -19,11 +20,13 @@ function themeReducer(state: ThemeState, action: ThemeAction): ThemeState {
   }
 }
 
+// Context 생성
 const ThemeStateContext = createContext<ThemeState | null>(null);
 const ThemeDispatchContext = createContext<React.Dispatch<ThemeAction> | null>(
   null
 );
 
+// ThemeProvider 컴포넌트
 interface ThemeProviderProps {
   children: ReactNode;
 }
