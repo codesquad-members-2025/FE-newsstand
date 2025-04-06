@@ -20,13 +20,13 @@ export default function AutoNewsBarContainer() {
   }, []);
 
   if (headLineNews.length === 0) return null;
-  const leftNews = headLineNews.slice(0, 5);
-  const rightNews = headLineNews.slice(5);
+  const leftNewsData = headLineNews.slice(0, 5);
+  const rightNewsData = headLineNews.slice(5);
 
   return (
     <RollingBarWrapper>
-      <NewsContainer newsData={leftNews} />
-      <NewsContainer newsData={rightNews} />
+      <NewsContainer leftNewsData={leftNewsData} />
+      <NewsContainer rightNewsData={rightNewsData} />
     </RollingBarWrapper>
   );
 }
