@@ -23,24 +23,29 @@ function GridContentArea({ activeTab }) {
   const [pressData, setPressData] = useState([]);
 
   useEffect(() => {
-    fetch("/mockData.json")
+    fetch("http://localhost:3000/pressList")
       .then((response) => response.json())
       .then((data) => {
-        activeTab === "AllPress"
-          ? setPressData(data.AllPress)
-          : setPressData(data.Subscribed);
+        const subscribedIds = ["게임동아", "연합뉴스", "조선일보"];
+
+        const filteredData =
+          activeTab === "AllPress"
+            ? data
+            : data.filter((press) => subscribedIds.includes(press.name));
+
+        setPressData(filteredData);
       })
       .catch((error) => console.error("Error:", error));
   }, [activeTab]);
 
-  const emptyCells = 24 - pressData.length;
+  const emptyCells = Math.max(0, 24 - pressData.length);
   const filledCells = [...pressData, ...new Array(emptyCells).fill("")];
 
   return (
     <GridContent>
       {filledCells.map((press, index) => (
-        <Cell key={press.id ?? `empty-${index}`} className="press">
-          {press.name || ""}
+        <Cell key={press.name ?? `empty-${index}`} className="press">
+          <img src={press.logoUrl || ""} height="20px" />
         </Cell>
       ))}
     </GridContent>
