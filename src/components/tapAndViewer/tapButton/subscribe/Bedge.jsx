@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { useContext } from "react";
+import { SubscribedContext } from "../../../../utils/Subscribed/SubscribedContext";
 
 const StyledDiv = styled.div`
   color: ${({ theme }) => theme.text.whiteWeak};
@@ -10,5 +12,6 @@ const StyledDiv = styled.div`
   padding: 0.19rem 0.34rem;
 `;
 export default function Bedge() {
-  return <StyledDiv>8</StyledDiv>;
+  const { subscribed } = useContext(SubscribedContext);
+  return <StyledDiv>{subscribed.length}</StyledDiv>;
 }
