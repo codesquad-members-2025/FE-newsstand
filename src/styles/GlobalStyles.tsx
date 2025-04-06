@@ -1,11 +1,12 @@
 /** @jsxImportSource @emotion/react */
 import { Global, css } from "@emotion/react";
+import "pretendard/dist/web/variable/pretendardvariable.css";
 
 const GlobalStyles = () => (
   <Global
     styles={css`
       :root {
-        font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+        font-family: "Pretendard Variable", sans-serif;
         line-height: 1.5;
         font-weight: 400;
 
@@ -17,23 +18,44 @@ const GlobalStyles = () => (
         text-rendering: optimizeLegibility;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
 
+      /* 기본 밑줄 제거 */
       a {
-        font-weight: 500;
-        color: #646cff;
-        text-decoration: inherit;
+        text-decoration: none;
       }
+
+      /* 아직 방문하지 않은 링크의 글자색 정의 */
+      a:link {
+        color: pink;
+      }
+
+      /* 사용자가 방문한 적이 있는(클릭한 이후) 링크의 글자색 정의 */
+      a:visited {
+        color: black;
+      }
+
+      /* 마우스를 링크에 올려두었을 때, 글자색을 정의 */
       a:hover {
-        color: #535bf2;
+        color: red;
+      }
+
+      /* 마우스로 링크를 클릭하고 뗄 때까지의 글자색을 정의 */
+      a:active {
+        color: green;
       }
 
       body {
         margin: 0;
         display: flex;
         place-items: center;
-        min-width: 320px;
+        min-width: 930px;
         min-height: 100vh;
+        box-sizing: border-box;
       }
 
       h1 {
