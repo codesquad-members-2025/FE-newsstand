@@ -25,8 +25,6 @@ function getCategoryData(data: any, category: string) {
 
 function getNewsCardData(categoryData: any, index: any) {
   const newsCardData = categoryData[index]
-  console.log(categoryData)
-  console.log(index)
   const newsInfo = {
     pid: newsCardData.pid,
     name: newsCardData.name,
