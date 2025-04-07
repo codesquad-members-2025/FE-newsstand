@@ -26,6 +26,7 @@ export default function NewsStandPage() {
       <AutoNewsBarContainer />
       <SubscribedProvider>
         <TapViewerBox
+          press={press}
           listView={listView}
           setpress={setpress}
           toggleListView={setlistView}

@@ -95,6 +95,7 @@ export default function ContentView({ isAllpress, listView }) {
       <LeftSwipeButton swipePrevPage={swipePrevPage} visible={page > 0} />
       {listView ? (
         <ListView
+          category={category}
           moveCategory={moveCategory}
           newsCategory={newsCategory}
           pagedData={pagedData[0]}
