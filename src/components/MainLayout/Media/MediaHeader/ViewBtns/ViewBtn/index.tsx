@@ -5,13 +5,13 @@ import ListViewIcon from '@/assets/ListViewIcon.svg?react'
 
 interface ViewerButtonProps {
   type: 'list' | 'grid'
-  currentView: ViewType
-  setCurrentView: (view: ViewType) => void
+  viewType: ViewType
+  setViewType: (view: ViewType) => void
 }
 
-function ViewBtn({ type, currentView, setCurrentView }: ViewerButtonProps) {
+function ViewBtn({ type, viewType, setViewType }: ViewerButtonProps) {
   return (
-    <Button active={currentView === type} onClick={() => setCurrentView(type)}>
+    <Button active={viewType === type} onClick={() => setViewType(type)}>
       {type === 'grid' ? <GridViewIcon /> : <ListViewIcon />}
     </Button>
   )

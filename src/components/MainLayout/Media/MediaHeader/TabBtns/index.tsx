@@ -4,18 +4,18 @@ import { TabType } from '../..'
 import { act } from 'react'
 
 interface TabBtnsProps {
-  currentTab: string
-  setCurrentTab: (view: TabType) => void
+  tabType: string
+  setTabType: (view: TabType) => void
   count: number
 }
 
-function TabBtns({ currentTab, setCurrentTab, count }: TabBtnsProps) {
+function TabBtns({ tabType, setTabType, count }: TabBtnsProps) {
   return (
     <Container>
-      <TabButton onClick={() => setCurrentTab('allPress')} active={currentTab === 'allPress'}>
+      <TabButton onClick={() => setTabType('allPress')} active={tabType === 'allPress'}>
         전체 언론사
       </TabButton>
-      <TabButton onClick={() => setCurrentTab('subPress')} active={currentTab === 'subPress'}>
+      <TabButton onClick={() => setTabType('subPress')} active={tabType === 'subPress'}>
         내가 구독한 언론사
         <Badge count={count} />
       </TabButton>

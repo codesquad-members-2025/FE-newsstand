@@ -23,8 +23,8 @@ export interface PressDataType {
 
 function Media() {
   const { data: pressData, loading } = useFetch('/mock/press_by_category.json')
-  const [currentView, setCurrentView] = useState<ViewType>('grid')
-  const [currentTab, setCurrentTab] = useState<TabType>('allPress')
+  const [viewType, setViewType] = useState<ViewType>('grid')
+  const [tabType, setTabType] = useState<TabType>('allPress')
   const [randomizedPressList, setRandomizedPressList] = useState<PressDataType[]>([])
 
   useEffect(() => {
@@ -36,17 +36,17 @@ function Media() {
   return (
     <Container>
       <MediaHeader
-        setCurrentView={setCurrentView}
-        currentView={currentView}
-        setCurrentTab={setCurrentTab}
-        currentTab={currentTab}
+        setViewType={setViewType}
+        viewType={viewType}
+        setTabType={setTabType}
+        tabType={tabType}
         count={subScribedPressData.length}
       />
       {loading ? (
         <p>Loading...</p>
-      ) : currentView === 'grid' ? (
+      ) : viewType === 'grid' ? (
         <GridView
-          pressData={currentTab === 'allPress' ? randomizedPressList : subScribedPressData}
+          pressData={tabType === 'allPress' ? randomizedPressList : subScribedPressData}
           setPressData={setRandomizedPressList}
         />
       ) : (

@@ -7,24 +7,18 @@ import { ViewType } from '../index'
 import { TabType } from '../index'
 
 interface MediaHeaderProps {
-  currentView: ViewType
-  setCurrentView: (view: ViewType) => void
-  currentTab: TabType
-  setCurrentTab: (view: TabType) => void
+  viewType: ViewType
+  setViewType: (view: ViewType) => void
+  tabType: TabType
+  setTabType: (view: TabType) => void
   count: number
 }
 
-function MediaHeader({
-  currentView,
-  setCurrentView,
-  currentTab,
-  setCurrentTab,
-  count,
-}: MediaHeaderProps) {
+function MediaHeader({ viewType, setViewType, tabType, setTabType, count }: MediaHeaderProps) {
   return (
     <Container>
-      <TabBtns currentTab={currentTab} setCurrentTab={setCurrentTab} count={count} />
-      <ViewBtns setCurrentView={setCurrentView} currentView={currentView} />
+      <TabBtns tabType={tabType} setTabType={setTabType} count={count} />
+      <ViewBtns setViewType={setViewType} viewType={viewType} />
     </Container>
   )
 }

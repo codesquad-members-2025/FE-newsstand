@@ -3,15 +3,15 @@ import { ViewType } from '../../index'
 import ViewBtn from './ViewBtn'
 
 interface ViewBtnProps {
-  currentView: ViewType
-  setCurrentView: (view: ViewType) => void
+  viewType: ViewType
+  setViewType: (view: ViewType) => void
 }
 
-function ViewBtns({ currentView, setCurrentView }: ViewBtnProps) {
+function ViewBtns({ viewType, setViewType }: ViewBtnProps) {
   return (
     <Container>
-      <ViewBtn type="list" currentView={currentView} setCurrentView={setCurrentView} />
-      <ViewBtn type="grid" currentView={currentView} setCurrentView={setCurrentView} />
+      <ViewBtn type="list" viewType={viewType} setViewType={setViewType} />
+      <ViewBtn type="grid" viewType={viewType} setViewType={setViewType} />
     </Container>
   )
 }
