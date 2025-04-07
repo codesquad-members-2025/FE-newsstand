@@ -2,8 +2,8 @@ import { useState } from 'react'
 
 import styled from '@emotion/styled'
 import Grid from './Grid'
-import PrevPageBtn from './PrevPageBtn'
-import NextPageBtn from './NextPageBtn'
+import NextPageBtn from '@/components/Common/NextPageBtn'
+import PrevPageBtn from '@/components/Common/PrevPageBtn'
 
 import { PressDataType } from '..'
 
@@ -40,15 +40,23 @@ function GridView({ pressData, setPressData }: GridViewProps) {
       ))
   })
 
+  const handleNextPage = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage(prev => prev + 1)
+    }
+  }
+
+  const handlePrevPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(prev => prev - 1)
+    }
+  }
+
   return (
     <Container>
       {pages[currentPage - 1]}
-      <PrevPageBtn currentPage={currentPage} setCurrentPage={setCurrentPage} />
-      <NextPageBtn
-        totalPages={totalPages}
-        currentPage={currentPage}
-        setCurrentPage={setCurrentPage}
-      />
+      <PrevPageBtn onClick={handlePrevPage} disabled={currentPage === 1} />
+      <NextPageBtn onClick={handleNextPage} disabled={currentPage === totalPages} />
     </Container>
   )
 }

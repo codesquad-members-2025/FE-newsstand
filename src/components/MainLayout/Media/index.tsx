@@ -57,7 +57,6 @@ function Media() {
 }
 
 const Container = styled.div`
-  position: relative;
   width: 930px;
   display: flex;
   flex-direction: column;
