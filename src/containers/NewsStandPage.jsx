@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import TopHeader from "../components/TopHeader/TopHeader";
-import AutoRollingNews from "../components/AutoHeadline/AutoRollingNews";
 import TapViewerBox from "../components/tapAndViewer/tapViewerBox";
 import ContentView from "../components/ContentView";
 import { useState } from "react";
