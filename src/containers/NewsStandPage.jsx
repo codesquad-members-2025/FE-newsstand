@@ -5,16 +5,17 @@ import TapViewerBox from "../components/tapAndViewer/tapViewerBox";
 import ContentView from "../components/ContentView";
 import { useState } from "react";
 import SubscribedProvider from "../utils/Subscribed/SubscribedProvider";
+import AutoNewsBarContainer from "../components/AutoNewsBarContainer";
 const PageLayout = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
 `;
-const AutoNewsBarContainer = styled.div`
-  display: flex;
-  gap: 0.5rem;
-  padding-top: 2.5rem;
-`;
+// const AutoNewsBarContainer = styled.div`
+//   display: flex;
+//   gap: 0.5rem;
+//   padding-top: 2.5rem;
+// `;
 
 export default function NewsStandPage() {
   const [listView, setlistView] = useState(true);
@@ -23,10 +24,7 @@ export default function NewsStandPage() {
   return (
     <PageLayout>
       <TopHeader />
-      <AutoNewsBarContainer>
-        <AutoRollingNews />
-        <AutoRollingNews />
-      </AutoNewsBarContainer>
+      <AutoNewsBarContainer />
       <SubscribedProvider>
         <TapViewerBox setpress={setpress} toggleListView={setlistView} />
         <ContentView isAllpress={press} listView={listView} />
