@@ -12,7 +12,7 @@ export interface NewsItem {
 }
 
 export interface Press {
-  pid: number;
+  pid: string;
   name: string;
   regDate: string;
   logoDark: string;

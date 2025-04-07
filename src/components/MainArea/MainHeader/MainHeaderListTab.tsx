@@ -3,13 +3,19 @@ import styled from "@emotion/styled"; // styled-components or emotion 사용 시
 
 interface MyComponentProps {
   // 컴포넌트에 필요한 props 타입을 정의
+  currPressState: string;
   setCurrPressState: React.Dispatch<React.SetStateAction<string>>;
 }
 
-const MainHeaderListTab: FC<MyComponentProps> = ({ setCurrPressState }) => {
+const MainHeaderListTab: FC<MyComponentProps> = ({
+  currPressState,
+  setCurrPressState,
+}) => {
+  console.log(currPressState);
+
   // const [newsData, setNewsData] = React.useState([]);
-  setCurrPressState("all-press");
   setCurrPressState("my-press");
+  setCurrPressState("all-press");
   // 아직 미구현 - UI 먼저 작업 중
 
   return (

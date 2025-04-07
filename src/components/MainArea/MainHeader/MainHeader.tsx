@@ -17,7 +17,9 @@ const MainHeader: FC<MyComponentProps> = ({
 }) => {
   return (
     <Container>
-      <MainHeaderListTab setCurrPressState={setCurrPressState} />
+      <MainHeaderListTab
+        currPressState={currShowState}
+        setCurrPressState={setCurrPressState} />
       <MainHeaderPressTab
         currShowState={currShowState}
         setCurrShowState={setCurrShowState}

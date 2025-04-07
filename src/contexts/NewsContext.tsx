@@ -4,6 +4,7 @@ import React, {
   useContext,
   useEffect,
   ReactNode,
+  useState,
 } from "react";
 import { pressTypes } from "../types/pressDataTypes";
 
@@ -28,7 +29,7 @@ function newsReducer(state: NewsState, action: NewsAction): NewsState {
   }
 }
 
-// Context 타입 정의
+// NewsContext 타입 정의
 type NewsContextType = {
   state: NewsState;
   dispatch: React.Dispatch<NewsAction>;

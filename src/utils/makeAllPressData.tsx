@@ -17,6 +17,14 @@ const makeAllPressData = (newsData: pressTypes) => {
     }
   }
 
+  // Fisher-Yates Shuffle 알고리즘을 사용하여 배열을 무작위로 섞기
+  for (let i = allPressData.length - 1; i > 0; i--) {
+    // 0부터 i 사이의 임의의 인덱스 j 선택
+    const j = Math.floor(Math.random() * (i + 1));
+    // 배열의 요소 교환
+    [allPressData[i], allPressData[j]] = [allPressData[j], allPressData[i]];
+  }
+
   return allPressData;
 };
 
