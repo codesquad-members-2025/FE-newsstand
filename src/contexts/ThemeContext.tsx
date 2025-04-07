@@ -3,14 +3,15 @@ import { ThemeProvider as EmotionThemeProvider } from "@emotion/react";
 import darkTheme from "../styles/theme/darkTheme";
 import lightTheme from "../styles/theme/lightTheme";
 
-// 타입 정의
+// theme 타입 정의
 type ThemeState = {
   isDarkMode: boolean;
 };
 
+// 액션 타입 정의
 type ThemeAction = { type: "TOGGLE_THEME" };
 
-// Reducer 함수
+// Reducer 함수: TOGGLE_THEME 액션으로 상태 업데이트
 function themeReducer(state: ThemeState, action: ThemeAction): ThemeState {
   switch (action.type) {
     case "TOGGLE_THEME":
@@ -52,7 +53,7 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
   );
 }
 
-// Custom Hooks
+// Custom Hooks: ThemeContext를 쉽게 사용하기 위한 hook들
 export function useThemeState() {
   const state = useContext(ThemeStateContext);
   if (!state) throw new Error("Cannot find ThemeProvider");

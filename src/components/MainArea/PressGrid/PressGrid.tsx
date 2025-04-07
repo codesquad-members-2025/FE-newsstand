@@ -4,6 +4,7 @@ import styled from "@emotion/styled"; // styled-components or emotion 사용 시
 // import { Link } from "react-router-dom";
 import PressGridElem from "./PressGridElem";
 import { useNewsContext } from "../../../contexts/NewsContext";
+import makeAllPressData from "../../../utils/makeAllPressData";
 
 interface MyComponentProps {
   // 컴포넌트에 필요한 props 타입을 정의
@@ -11,15 +12,21 @@ interface MyComponentProps {
 }
 
 const PressGridPage: FC<MyComponentProps> = ({ currPressState }) => {
-  const newsContext = useNewsContext();
-  console.log("newsContext", newsContext);
+  const { state } = useNewsContext();
+  const newsData = state.data;
+
+  const allPressData = newsData ? makeAllPressData(newsData) : [];
+
+  // console.log(newsData);
   console.log(currPressState);
+  console.log(allPressData);
 
   // if (currPressState === "all-press") {
   //   // 전체 언론사 보기
   // } else if (currPressState === "my-press") {
   //   // 내가 구독한 언론사 보기 (전역 데이터에서 불러오기)
   // }
+
   return (
     <Container>
       {/* <Link to="/press-list">Press List</Link> */}

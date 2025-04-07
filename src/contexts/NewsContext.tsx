@@ -18,7 +18,7 @@ type NewsAction = {
   payload: pressTypes;
 };
 
-// 리듀서 함수: SET_NEWS 액션으로 상태 업데이트
+// Reducer 함수: SET_NEWS 액션으로 상태 업데이트
 function newsReducer(state: NewsState, action: NewsAction): NewsState {
   switch (action.type) {
     case "SET_NEWS":
@@ -38,8 +38,15 @@ type NewsContextType = {
 const NewsContext = createContext<NewsContextType | undefined>(undefined);
 
 // NewsProvider 컴포넌트: 마운트 시 뉴스 데이터를 fetch하여 저장
-export function NewsProvider({ children }: { children: ReactNode }) {
-  const [state, dispatch] = useReducer(newsReducer, { data: null });
+interface NewsProviderProps {
+  children: ReactNode;
+}
+
+export function NewsProvider({ children }: NewsProviderProps) {
+  const [state, dispatch] = useReducer(
+    newsReducer,
+    { data: null } // 초기값
+  );
 
   useEffect(() => {
     const fetchNewsData = async () => {
@@ -65,7 +72,7 @@ export function NewsProvider({ children }: { children: ReactNode }) {
   );
 }
 
-// 커스텀 훅: NewsContext를 쉽게 사용하기 위한 hook
+// Custom Hook: NewsContext를 쉽게 사용하기 위한 hook
 export function useNewsContext() {
   const context = useContext(NewsContext);
   if (context === undefined) {

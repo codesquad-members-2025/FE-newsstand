@@ -5,7 +5,7 @@ import { keyframes } from "@emotion/react";
 import { NewsItem } from "../../types/pressDataTypes";
 
 const CYCLE_TIME = 5000; // 5초 주기
-const ANIMATION_TIME = 500; // 애니메이션 시간 (0.5초)
+const ANIMATION_TIME = CYCLE_TIME / 10; // 애니메이션 시간 (0.5초)
 
 interface MyComponentProps {
   position: "left" | "right"; // 'left' 또는 'right' 중 하나의 값
@@ -16,7 +16,7 @@ const AutoRolling: FC<MyComponentProps> = ({ position, news }) => {
   const [currIndex, setCurrIndex] = useState(0);
   const [prevIndex, setPrevIndex] = useState<number | null>(null);
   const [isPaused, setIsPaused] = useState(false);
-  const offset = position === "left" ? 0 : 1000;
+  const offset: number = position === "left" ? 0 : 1000;
 
   const intervalRef = useRef<NodeJS.Timeout | null>(null); // 최초 업데이트 후 5초 주기로 계속 업데이트를 위한 setInterval 식별자
   const timeoutRef = useRef<NodeJS.Timeout | null>(null); // 최초 업데이트를 위한 setTimeout 식별자
