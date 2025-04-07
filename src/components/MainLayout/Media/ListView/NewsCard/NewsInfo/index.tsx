@@ -4,28 +4,20 @@ import EditDate from './EditDate'
 import SubscribeBtn from '@/components/Common/SubscribeBtn'
 import UnSubscribeBtn from '@/components/Common/UnSubscribeBtn'
 
-export interface BrandMarkProps {
-  imageUrl: string
-  alt: string
+import { newsInfoType } from '..'
+
+interface NewsInfoProps {
+  newsInfo: newsInfoType
 }
 
-export interface EditDateProps {
-  editDate: string
-}
-
-export interface SubscribeBtn {
-  isSubscribed: boolean
-}
-
-function NewsInfo() {
-  const imageUrl = 'https://s.pstatic.net/static/newsstand/2020/logo/light/0604/277.png'
-  const alt = '언론사 로고'
-  const editDate = '2023.02.10. 18:53 편집'
+function NewsInfo({ newsInfo }: NewsInfoProps) {
+  const imageUrl = newsInfo.logoLight
+  const editDate = newsInfo.regDate
   const isSubscribed = false
 
   return (
     <Container>
-      <BrandMark imageUrl={imageUrl} alt={alt} />
+      <BrandMark imageUrl={imageUrl} />
       <EditDate editDate={editDate} />
       {isSubscribed ? (
         <UnSubscribeBtn />

@@ -1,13 +1,18 @@
 import styled from '@emotion/styled'
 import Label from './Label'
 import Count from './Count'
-import { ProgressBtnProps } from '../index'
 
-function ProgressBtn({ text, currentIndex, totalCount }: ProgressBtnProps) {
+interface ProgressBtnProps {
+  text: string
+  pageIndex: number
+  totalPageCount: number
+}
+
+function ProgressBtn({ text, pageIndex, totalPageCount }: ProgressBtnProps) {
   return (
     <Container>
       <Label text={text} />
-      <Count currentIndex={currentIndex} totalCount={totalCount} />
+      <Count pageIndex={pageIndex} totalPageCount={totalPageCount} />
     </Container>
   )
 }

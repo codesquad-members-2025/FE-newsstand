@@ -2,10 +2,15 @@ import styled from '@emotion/styled'
 
 interface TitleProps {
   text: string
+  url: string
 }
 
-function Title({ text }: TitleProps) {
-  return <Text>{text}</Text>
+function Title({ text, url }: TitleProps) {
+  return (
+    <Link href={url}>
+      <Text>{text}</Text>
+    </Link>
+  )
 }
 
 const Text = styled.span`
@@ -15,6 +20,10 @@ const Text = styled.span`
   line-height: 22px;
   letter-spacing: 0%;
   color: rgba(75, 89, 102, 1);
+`
+
+const Link = styled.a`
+  text-decoration: none;
 `
 
 export default Title

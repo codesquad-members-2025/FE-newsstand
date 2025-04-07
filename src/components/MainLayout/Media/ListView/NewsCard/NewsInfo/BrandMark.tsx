@@ -2,11 +2,10 @@ import styled from '@emotion/styled'
 
 interface BrandMarkProps {
   imageUrl: string
-  alt: string
 }
 
-function BrandMark({ imageUrl, alt }: BrandMarkProps) {
-  return <Img src={imageUrl} alt={alt}></Img>
+function BrandMark({ imageUrl }: BrandMarkProps) {
+  return <Img src={imageUrl} alt="언론사 로고"></Img>
 }
 
 const Img = styled.img`

@@ -6,7 +6,7 @@ import GridView from './GridView'
 import ListView from './ListView'
 
 import useFetch from '@/hooks/useFetch'
-import { randomizePressData } from './newsTransFormater'
+import { formatGridViewData } from '@/utils/newsTransFormater'
 import filterArray from '@/utils/filterArray'
 
 export type ViewType = 'grid' | 'list'
@@ -28,7 +28,7 @@ function Media() {
   const [randomizedPressList, setRandomizedPressList] = useState<PressDataType[]>([])
 
   useEffect(() => {
-    setRandomizedPressList(randomizePressData(pressData))
+    setRandomizedPressList(formatGridViewData(pressData))
   }, [pressData])
 
   const subScribedPressData = filterArray(randomizedPressList, 'isSubscribed', true)
@@ -50,7 +50,7 @@ function Media() {
           setPressData={setRandomizedPressList}
         />
       ) : (
-        <ListView />
+        <ListView pressData={pressData} tabType={tabType} />
       )}
     </Container>
   )

@@ -2,11 +2,13 @@ import styled from '@emotion/styled'
 import Thumbnail from './Thumbnail'
 import Title from './Title'
 
-function Main() {
+import { mainNewsType } from '../..'
+
+function Main({ mainNews }: { mainNews: mainNewsType }) {
   return (
     <Container>
-      <Thumbnail />
-      <Title />
+      <Thumbnail imageUrl={mainNews.imageUrl} />
+      <Title title={mainNews.title} url={mainNews.url} />
     </Container>
   )
 }

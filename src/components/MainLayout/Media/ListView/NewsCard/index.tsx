@@ -2,11 +2,40 @@ import styled from '@emotion/styled'
 import NewsInfo from './NewsInfo'
 import NewsContent from './NewsContent'
 
-function PressNews() {
+export interface newsInfoType {
+  pid: string
+  name: string
+  regDate: string
+  logoDark: string
+  logoLight: string
+}
+
+export interface mainNewsType {
+  title: string
+  url: string
+  imageUrl: string
+}
+
+export interface subNewsListType {
+  title: string
+  url: string
+}
+
+interface listPageDataType {
+  newsInfo: newsInfoType
+  mainNews: mainNewsType
+  subNewsList: subNewsListType[]
+}
+
+interface NewsCardProps {
+  newsCardData: listPageDataType
+}
+
+function NewsCard({ newsCardData }: NewsCardProps) {
   return (
     <Container>
-      <NewsInfo />
-      <NewsContent />
+      <NewsInfo newsInfo={newsCardData.newsInfo} />
+      <NewsContent mainNews={newsCardData.mainNews} subNewsList={newsCardData.subNewsList} />
     </Container>
   )
 }
@@ -22,4 +51,4 @@ const Container = styled.div`
   padding: 24px;
 `
 
-export default PressNews
+export default NewsCard

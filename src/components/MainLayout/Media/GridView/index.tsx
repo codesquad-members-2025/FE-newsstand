@@ -14,6 +14,8 @@ interface GridViewProps {
   setPressData: React.Dispatch<React.SetStateAction<PressDataType[]>>
 }
 
+const PAGE_GRID_NUMBER = 24
+
 function GridView({ pressData, setPressData }: GridViewProps) {
   const totalPages = Math.ceil(pressData.length / 24) || 1
   const [currentPage, setCurrentPage] = useState(1)
@@ -26,11 +28,11 @@ function GridView({ pressData, setPressData }: GridViewProps) {
     isSubscribed: false,
   }
 
-  const newPressData = extendArray(pressData, totalPages * 24, emptyPressData)
+  const newPressData = extendArray(pressData, totalPages * PAGE_GRID_NUMBER, emptyPressData)
 
   const pages = Array.from({ length: totalPages }, (_, i) => {
-    const start = i * 24
-    const end = start + 24
+    const start = i * PAGE_GRID_NUMBER
+    const end = start + PAGE_GRID_NUMBER
     return newPressData
       .slice(start, end)
       .map((item, idx) => (

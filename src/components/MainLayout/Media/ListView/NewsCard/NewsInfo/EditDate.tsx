@@ -1,11 +1,12 @@
 import styled from '@emotion/styled'
+import { formatDate } from '@/utils/dateFormatter'
 
 interface EditDateProps {
   editDate: string
 }
 
 function EditDate({ editDate }: EditDateProps) {
-  return <Text>{editDate}</Text>
+  return <Text>{`${formatDate(editDate)} 편집`}</Text>
 }
 
 const Text = styled.span`

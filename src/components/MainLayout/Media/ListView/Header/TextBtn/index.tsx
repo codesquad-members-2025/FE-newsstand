@@ -1,8 +1,13 @@
 import styled from '@emotion/styled'
-import { TextBtnProps } from '../index'
 
-function TextBtn({ text }: TextBtnProps) {
-  return <Container>{text}</Container>
+interface TextBtnProps {
+  text: string
+  setButtonIndex: React.Dispatch<React.SetStateAction<number>>
+  index: number
+}
+
+function TextBtn({ text, setButtonIndex, index }: TextBtnProps) {
+  return <Container onClick={() => setButtonIndex(index)}>{text}</Container>
 }
 
 const Container = styled.button`

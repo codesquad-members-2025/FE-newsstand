@@ -1,7 +1,16 @@
 import styled from '@emotion/styled'
 
-function Title() {
-  return <Text>또 국민연금의 몽니…현대百 지주사 불발</Text>
+interface TitleProps {
+  title: string
+  url: string
+}
+
+function Title({ title, url }: TitleProps) {
+  return (
+    <Link href={url}>
+      <Text>{title}</Text>
+    </Link>
+  )
 }
 
 const Text = styled.span`
@@ -9,6 +18,10 @@ const Text = styled.span`
   font-size: 16px;
   line-height: 22px;
   color: rgba(20, 33, 43, 1);
+`
+
+const Link = styled.a`
+  text-decoration: none;
 `
 
 export default Title

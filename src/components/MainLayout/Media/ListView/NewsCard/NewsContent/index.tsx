@@ -2,11 +2,18 @@ import styled from '@emotion/styled'
 import Main from './Main'
 import Sub from './Sub'
 
-function NewsArea() {
+import { mainNewsType, subNewsListType } from '..'
+
+interface NewsAreaProps {
+  mainNews: mainNewsType
+  subNewsList: subNewsListType[]
+}
+
+function NewsArea({ mainNews, subNewsList }: NewsAreaProps) {
   return (
     <Container>
-      <Main />
-      <Sub />
+      <Main mainNews={mainNews} />
+      <Sub subNewsList={subNewsList} />
     </Container>
   )
 }

@@ -1,16 +1,16 @@
 import styled from '@emotion/styled'
 
 interface CountProps {
-  currentIndex: number
-  totalCount: number
+  pageIndex: number
+  totalPageCount: number
 }
 
-function Count({ currentIndex, totalCount }: CountProps) {
+function Count({ pageIndex, totalPageCount }: CountProps) {
   return (
     <Container>
-      <CurrentIndex>{currentIndex}</CurrentIndex>
+      <CurrentIndex>{pageIndex + 1}</CurrentIndex>
       <Division>/</Division>
-      <TotalCount>{totalCount}</TotalCount>
+      <TotalCount>{totalPageCount}</TotalCount>
     </Container>
   )
 }
