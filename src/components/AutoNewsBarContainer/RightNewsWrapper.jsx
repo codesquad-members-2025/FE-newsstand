@@ -14,7 +14,7 @@ function makeNewsItem(newsData) {
   ));
 }
 
-export default function LeftNewsWrapper({
+export default function RightNewsWrapper({
   isHoverRef,
   newsData,
   onMouseEnter,

@@ -2,10 +2,6 @@ function timeDelay(ms) {
   return new Promise((res) => setTimeout(res, ms));
 }
 
-function moveNextNews(setcurNews) {
-  setcurNews((prev) => (prev + 1) % 5);
-}
-
 export async function rollinginterval(
   newsRef,
   indexRef,
@@ -17,7 +13,7 @@ export async function rollinginterval(
   while (true) {
     if (isHoverRef.current) {
       console.log(`111111마우스 올라감!`);
-      await timeDelay(100);
+      // await timeDelay(100);
       continue;
     }
     console.log("슬라이드 시작", indexRef.current); // 🔍 여기에 찍어보기
@@ -25,7 +21,7 @@ export async function rollinginterval(
     await timeDelay(slideDelayMs);
     if (isHoverRef.current) {
       console.log(`2222222마우스 올라감!`);
-      await timeDelay(100);
+      // await timeDelay(100);
       continue;
     }
     newsRef.current.style.transition = `transform 0.5s ease-out`;
@@ -33,7 +29,7 @@ export async function rollinginterval(
     await timeDelay(transitionMs);
     if (isHoverRef.current) {
       console.log(`중간 과정에 마우스 올라감!`);
-      await timeDelay(100);
+      // await timeDelay(100);
       continue;
     }
     newsRef.current.style.transition = `none`;

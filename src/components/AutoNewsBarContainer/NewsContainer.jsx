@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import LeftNewsWrapper from "./LeftNewsWrapper";
-import RightNewsWrapper from "./RightNewsWrapper copy";
+import RightNewsWrapper from "./RightNewsWrapper";
 
 const OuterBox = styled.div`
   background-color: ${({ theme }) => theme.surface.alt};
