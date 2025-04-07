@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import NewsContainer from "./NewsContainer";
 
 const RollingBarWrapper = styled.div`
@@ -10,6 +10,8 @@ const RollingBarWrapper = styled.div`
 
 export default function AutoNewsBarContainer() {
   const [headLineNews, setheadLineNews] = useState([]);
+  const isHoverRef = useRef(false);
+
   useEffect(() => {
     async function fetchData() {
       const res = await fetch("/HeadLineNews/HeadLineNews.json");
@@ -25,8 +27,26 @@ export default function AutoNewsBarContainer() {
 
   return (
     <RollingBarWrapper>
-      <NewsContainer leftNewsData={leftNewsData} />
-      <NewsContainer rightNewsData={rightNewsData} />
+      <NewsContainer
+        isHoverRef={isHoverRef}
+        onMouseEnter={() => {
+          isHoverRef.current = true;
+        }}
+        onMouseLeave={() => {
+          isHoverRef.current = false;
+        }}
+        leftNewsData={leftNewsData}
+      />
+      <NewsContainer
+        isHoverRef={isHoverRef}
+        onMouseEnter={() => {
+          isHoverRef.current = true;
+        }}
+        onMouseLeave={() => {
+          isHoverRef.current = false;
+        }}
+        rightNewsData={rightNewsData}
+      />
     </RollingBarWrapper>
   );
 }

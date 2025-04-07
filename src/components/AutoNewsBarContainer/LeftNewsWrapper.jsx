@@ -14,48 +14,44 @@ function makeNewsItem(newsData) {
   ));
 }
 
-export default function LeftNewsWrapper({ newsData }) {
+export default function LeftNewsWrapper({
+  isHoverRef,
+  newsData,
+  onMouseEnter,
+  onMouseLeave,
+}) {
   const newsRef = useRef();
   const [curNews, setcurNews] = useState(0);
+  // const [isHover, setisHover] = useState(false); -> 호버의 상태가 바뀐다고 재렌더링이 발생해야할까?
+  const indexRef = useRef(0);
+  const hasStartedRef = useRef(false);
 
   const newsSet =
     curNews === newsData.length - 1
       ? [newsData[curNews], newsData[0]]
       : newsData.slice(curNews, curNews + 2);
 
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     if (!newsRef.current) return;
-  //     setTimeout(() => {
-  //       if (!newsRef.current) return;
-  //       newsRef.current.style.transition = `transform 0.5s ease-out`;
-  //       newsRef.current.style.transform = `translateY(-17px)`;
-  //       // moveNewxtNews();
-  //     }, 5000);
-  //     return () => {
-  //       clearInterval(interval);
-  //     };
-  //   }, 5500);
-  // }, []);
-
   useEffect(() => {
-    // const runInterval = async () => {
-    //   if (!newsRef.current) return;
-    //   await timeDelay(1000);
-    //   newsRef.current.style.transition = `transform 0.5s ease-out`;
-    //   newsRef.current.style.transform = `translateY(-17px)`;
-    //   await timeDelay(500);
-    //   moveNextNews(setcurNews);
-    //   newsRef.current.style.transition = `none`;
-    //   newsRef.current.style.transform = `translateY(0px)`;
-    // };
+    if (hasStartedRef.current) return;
+    let isMounted = true;
+    hasStartedRef.current = true;
 
-    rollinginterval(newsRef.current, 1000, 500, setcurNews);
-  }, [curNews]);
+    rollinginterval(newsRef, indexRef, 1000, 500, setcurNews, isHoverRef);
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
 
   return (
     <>
-      <StyledDiv ref={newsRef}>{makeNewsItem(newsSet)}</StyledDiv>
+      <StyledDiv
+        onMouseEnter={onMouseEnter}
+        onMouseLeave={onMouseLeave}
+        ref={newsRef}
+      >
+        {makeNewsItem(newsSet)}
+      </StyledDiv>
     </>
   );
 }

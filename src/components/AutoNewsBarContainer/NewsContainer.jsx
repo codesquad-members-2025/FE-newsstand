@@ -22,9 +22,19 @@ export default function NewsContainer(prop) {
       <OuterBox>
         <InnerBox>
           {prop.leftNewsData ? (
-            <LeftNewsWrapper newsData={prop.leftNewsData} />
+            <LeftNewsWrapper
+              isHoverRef={prop.isHoverRef}
+              newsData={prop.leftNewsData}
+              onMouseEnter={prop.onMouseEnter}
+              onMouseLeave={prop.onMouseLeave}
+            />
           ) : (
-            <RightNewsWrapper newsData={prop.rightNewsData} />
+            <RightNewsWrapper
+              isHoverRef={prop.isHoverRef}
+              newsData={prop.rightNewsData}
+              onMouseEnter={prop.onMouseEnter}
+              onMouseLeave={prop.onMouseLeave}
+            />
           )}
         </InnerBox>
       </OuterBox>
