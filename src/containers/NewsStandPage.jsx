@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import TopHeader from "../components/TopHeader/TopHeader";
-import TapViewerBox from "../components/tapAndViewer/tapViewerBox";
+import TapViewerBox from "../components/tapAndViewer/TapViewerBox";
 import ContentView from "../components/ContentView";
 import { useState } from "react";
 import SubscribedProvider from "../utils/Subscribed/SubscribedProvider";
@@ -17,7 +17,7 @@ const PageLayout = styled.div`
 // `;
 
 export default function NewsStandPage() {
-  const [listView, setlistView] = useState(true);
+  const [listView, setlistView] = useState(false);
   const [press, setpress] = useState(true);
 
   return (
@@ -25,7 +25,11 @@ export default function NewsStandPage() {
       <TopHeader />
       <AutoNewsBarContainer />
       <SubscribedProvider>
-        <TapViewerBox setpress={setpress} toggleListView={setlistView} />
+        <TapViewerBox
+          listView={listView}
+          setpress={setpress}
+          toggleListView={setlistView}
+        />
         <ContentView isAllpress={press} listView={listView} />
       </SubscribedProvider>
     </PageLayout>
