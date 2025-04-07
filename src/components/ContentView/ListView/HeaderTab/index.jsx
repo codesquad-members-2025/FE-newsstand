@@ -8,10 +8,18 @@ const TabButtonWrapper = styled.div`
   border-bottom: 1px solid ${({ theme }) => theme.border.default};
 `;
 
-function makeTabButtons(newsCategory, moveCategory, curCategory) {
+function makeTabButtons(
+  newsCategory,
+  moveCategory,
+  curCategory,
+  page,
+  maxPage
+) {
   return newsCategory.map((category, idx) => {
     return (
       <TabButton
+        page={page}
+        maxPage={maxPage}
         curCategory={curCategory}
         dataCategory={category}
         moveCategory={moveCategory}
@@ -23,10 +31,16 @@ function makeTabButtons(newsCategory, moveCategory, curCategory) {
   });
 }
 
-export default function HeaderTab({ curCategory, newsCategory, moveCategory }) {
+export default function HeaderTab({
+  page,
+  maxPage,
+  curCategory,
+  newsCategory,
+  moveCategory,
+}) {
   return (
     <TabButtonWrapper>
-      {makeTabButtons(newsCategory, moveCategory, curCategory)}
+      {makeTabButtons(newsCategory, moveCategory, curCategory, page, maxPage)}
     </TabButtonWrapper>
   );
 }

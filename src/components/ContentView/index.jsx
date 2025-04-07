@@ -28,10 +28,28 @@ export default function ContentView({ isAllpress, listView }) {
   const { subscribed } = useContext(SubscribedContext);
 
   function swipeNextPage() {
-    setpage((prev) => prev + 1);
+    if (page === maxPage - 1) {
+      const curCategoryIndex = newsCategory.findIndex(
+        (perCategory) => perCategory === category
+      );
+      const prevCategoryIndex =
+        curCategoryIndex === newsCategory.length - 1 ? 0 : curCategoryIndex + 1;
+      moveCategory(newsCategory[prevCategoryIndex]);
+    } else {
+      setpage((prev) => prev + 1);
+    }
   }
   function swipePrevPage() {
-    setpage((prev) => prev - 1);
+    if (page === 0) {
+      const curCategoryIndex = newsCategory.findIndex(
+        (perCategory) => perCategory === category
+      );
+      const prevCategoryIndex =
+        curCategoryIndex === 0 ? newsCategory.length - 1 : curCategoryIndex - 1;
+      moveCategory(newsCategory[prevCategoryIndex]);
+    } else {
+      setpage((prev) => prev - 1);
+    }
   }
 
   function initPage() {
@@ -39,6 +57,7 @@ export default function ContentView({ isAllpress, listView }) {
   }
 
   function moveCategory(target) {
+    setpage(() => 0);
     setcategory(() => target);
   }
 
@@ -92,9 +111,14 @@ export default function ContentView({ isAllpress, listView }) {
   }
   return (
     <ContentBoxWrapper>
-      <LeftSwipeButton swipePrevPage={swipePrevPage} visible={page > 0} />
+      <LeftSwipeButton
+        swipePrevPage={swipePrevPage}
+        visible={listView ? true : page > 0}
+      />
       {listView ? (
         <ListView
+          page={page}
+          maxPage={maxPage}
           category={category}
           moveCategory={moveCategory}
           newsCategory={newsCategory}
@@ -105,7 +129,7 @@ export default function ContentView({ isAllpress, listView }) {
       )}
       <RightSwipeButton
         swipeNextPage={swipeNextPage}
-        visible={page < maxPage - 1}
+        visible={listView ? true : page < maxPage - 1}
       />
     </ContentBoxWrapper>
   );

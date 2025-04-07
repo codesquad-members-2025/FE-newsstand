@@ -14,10 +14,14 @@ export default function ListView({
   moveCategory,
   pagedData,
   newsCategory,
+  page,
+  maxPage,
 }) {
   return (
     <ListViewWrapper>
       <HeaderTab
+        page={page}
+        maxPage={maxPage}
         curCategory={category}
         moveCategory={moveCategory}
         newsCategory={newsCategory}
