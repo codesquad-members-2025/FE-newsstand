@@ -1,8 +1,19 @@
-export default function parseOneCategoryNews(newsData, category) {
+export default function parseOneCategoryNews(
+  newsData,
+  category,
+  isAllpress = null,
+  listView = null
+) {
   if (!newsData || !newsData[category]) return []; // ✅ null 방어
-  const validNewsItems = Object.values(newsData[category]).filter(
-    (item) => item
-  ); // undefined 제거
+
+  let validNewsItems;
+  if (isAllpress === false && listView === false) {
+    validNewsItems = Object.values(newsData).flatMap((item) => {
+      return Object.values(item);
+    });
+  } else {
+    validNewsItems = Object.values(newsData[category]).filter((item) => item); // undefined 제거
+  }
 
   const parsedNewsArr = Object.values(validNewsItems).map(
     ({

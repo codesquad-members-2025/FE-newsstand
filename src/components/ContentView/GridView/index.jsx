@@ -2,6 +2,8 @@ import styled from "styled-components";
 import React, { useContext } from "react";
 import { ThemeContext } from "../../../utils/ThemeContext";
 import SubScribedButton from "../../../utils/Buttons/SubScribedButton";
+import { SubscribedContext } from "../../../utils/Subscribed/SubscribedContext";
+import { SubscribedModalContext } from "../../../utils/Subscribed/SubscribedModal/SubscribedModalContext";
 
 const GridContainer = styled.div`
   display: grid;
@@ -47,13 +49,29 @@ const ButtonWrapper = styled.div`
 `;
 
 function makeItems(pagedData, theme) {
+  const { subscribed } = useContext(SubscribedContext);
+  const { clickSubscribedModal } = useContext(SubscribedModalContext);
+
   const newsLogos = pagedData.map(({ logoDark, logoLight, pressId, name }) => {
+    const isSubscribed = subscribed.includes(pressId) ? null : "구독하기";
     return (
       <GridItem key={pressId}>
         <img src={theme === "light" ? logoLight : logoDark} alt={name} />
-        <ButtonWrapper>
-          <SubScribedButton id={pressId} width={4.5} visible={false}>
-            구독하기
+        <ButtonWrapper id={name}>
+          <SubScribedButton
+            id={pressId}
+            width={isSubscribed ? 4.5 : 1.5}
+            visible={false}
+            onClick={(e) => {
+              const className = e.currentTarget.closest(`#${name}`).id; // GridItem
+              clickSubscribedModal(
+                e.currentTarget.id,
+                className,
+                !isSubscribed
+              );
+            }}
+          >
+            {isSubscribed}
           </SubScribedButton>
         </ButtonWrapper>
       </GridItem>

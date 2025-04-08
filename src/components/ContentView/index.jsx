@@ -71,7 +71,12 @@ export default function ContentView({ isAllpress, listView }) {
   // }
   const categoryNews = isAllpress
     ? parseOneCategoryNews(newsData, category)
-    : parseOneCategoryNews(getSubscribedNewsObj, category);
+    : parseOneCategoryNews(
+        getSubscribedNewsObj,
+        category,
+        isAllpress,
+        listView
+      );
   const [pagedData, maxPage] = paginateData(listView, categoryNews, page);
   // const newsCategory = newsData ? Object.keys(newsData) : null;
 
