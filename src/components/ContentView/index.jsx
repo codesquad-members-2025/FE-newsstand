@@ -11,6 +11,7 @@ import { useContext } from "react";
 import { SubscribedContext } from "../../utils/Subscribed/SubscribedContext";
 import getSubscribedNews from "./util/getSubscribedNews";
 import SubscribedModal from "../../utils/Subscribed/SubscribedModal";
+import { SubscribedModalContext } from "../../utils/Subscribed/SubscribedModal/SubscribedModalContext";
 
 const ContentBoxWrapper = styled.div`
   display: flex;
@@ -28,6 +29,7 @@ export default function ContentView({ isAllpress, listView }) {
   const [page, setpage] = useState(0);
   const [category, setcategory] = useState("종합/경제");
   const { subscribed } = useContext(SubscribedContext);
+  const { isModalOpen } = useContext(SubscribedModalContext);
 
   function swipeNextPage() {
     if (page === maxPage - 1) {
@@ -129,11 +131,11 @@ export default function ContentView({ isAllpress, listView }) {
       ) : (
         <GridView pagedData={pagedData} />
       )}
+      {isModalOpen ? <SubscribedModal /> : null}
       <RightSwipeButton
         swipeNextPage={swipeNextPage}
         visible={listView ? true : page < maxPage - 1}
       />
-      <SubscribedModal></SubscribedModal>
     </ContentBoxWrapper>
   );
 }

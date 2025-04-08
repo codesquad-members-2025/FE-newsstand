@@ -1,5 +1,21 @@
 import styled from "styled-components";
+import { SubscribedModalContext } from "./SubscribedModalContext";
+import { useEffect, useContext } from "react";
+import { SubscribedContext } from "../SubscribedContext";
 
+const ModalBackdrop = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: all; /* 클릭 막음 */
+`;
 const AlertModalWrapper = styled.div`
   width: 20rem;
   height: 8.75rem;
@@ -50,28 +66,49 @@ const RefuseButton = styled.button`
 `;
 
 function getNoticeText(press, isSubscribe) {
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, []);
   return (
     <>
       <span>
         <strong>{press}</strong>을(를)
       </span>
-      <span>구독{isSubscribe ? null : 해지}하시겠습니까?</span>
+      <span>구독{isSubscribe ? "해지" : null}하시겠습니까?</span>
     </>
   );
 }
 const approveText = `예, 해지합니다`;
 const refuseText = `아니오`;
 
-export default function SubscribedModal({ press, isSubscribe }) {
+export default function SubscribedModal() {
+  const { toggleSubscribed } = useContext(SubscribedContext); //모달에서 관리해야함
+
+  const { targetPress, isSubscribed, targetPid, clickSubscribedModal } =
+    useContext(SubscribedModalContext);
   return (
-    <AlertModalWrapper>
-      <NoticeWrapper>
-        <NoticeText>{getNoticeText(press, isSubscribe)}</NoticeText>
-      </NoticeWrapper>
-      <ButtonWrapper>
-        <ApproveButton>{approveText}</ApproveButton>
-        <RefuseButton>{refuseText}</RefuseButton>
-      </ButtonWrapper>
-    </AlertModalWrapper>
+    <ModalBackdrop>
+      <AlertModalWrapper>
+        <NoticeWrapper>
+          <NoticeText>{getNoticeText(targetPress, isSubscribed)}</NoticeText>
+        </NoticeWrapper>
+        <ButtonWrapper>
+          <ApproveButton
+            onClick={() => {
+              clickSubscribedModal();
+              toggleSubscribed(targetPid);
+            }}
+          >
+            {approveText}
+          </ApproveButton>
+          <RefuseButton onClick={clickSubscribedModal}>
+            {refuseText}
+          </RefuseButton>
+        </ButtonWrapper>
+      </AlertModalWrapper>
+    </ModalBackdrop>
   );
 }

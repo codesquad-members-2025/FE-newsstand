@@ -5,6 +5,8 @@ import ContentView from "../components/ContentView";
 import { useState } from "react";
 import SubscribedProvider from "../utils/Subscribed/SubscribedProvider";
 import AutoNewsBarContainer from "../components/AutoNewsBarContainer";
+import SubscribedModalProvider from "../utils/Subscribed/SubscribedModal/SubscribedModalProvider";
+
 const PageLayout = styled.div`
   display: flex;
   flex-direction: column;
@@ -31,7 +33,9 @@ export default function NewsStandPage() {
           setpress={setpress}
           toggleListView={setlistView}
         />
-        <ContentView isAllpress={press} listView={listView} />
+        <SubscribedModalProvider>
+          <ContentView isAllpress={press} listView={listView} />
+        </SubscribedModalProvider>
       </SubscribedProvider>
     </PageLayout>
   );
