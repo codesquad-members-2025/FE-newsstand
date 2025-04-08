@@ -1,9 +1,9 @@
 import styled from '@emotion/styled'
-import Header from '@/components/MainLayout/Header'
-import AutoRollingBar from '@/components/MainLayout/AutoRollingBar'
-import Media from '@/components/MainLayout/Media'
+import Header from '@/components/Main/Header'
+import AutoRollingBar from '@/components/Main/AutoRollingBar'
+import Media from '@/components/Main/Media'
 
-function MainLayout() {
+function Main() {
   return (
     <Container>
       <Header />
@@ -22,4 +22,4 @@ const Container = styled.div`
   padding: 50px 0px 0px;
 `
 
-export default MainLayout
+export default Main
