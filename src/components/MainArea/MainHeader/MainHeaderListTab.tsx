@@ -1,5 +1,6 @@
 import React, { FC } from "react"; // 리액트 및 타입 정의 import
 import styled from "@emotion/styled"; // styled-components or emotion 사용 시 (선택)
+import { useSubscribedState } from "../../../contexts/SubscribedContext";
 
 interface MyComponentProps {
   // 컴포넌트에 필요한 props 타입을 정의
@@ -11,6 +12,8 @@ const MainHeaderListTab: FC<MyComponentProps> = ({
   currPressState,
   setCurrPressState,
 }) => {
+  const { subscriptions } = useSubscribedState();
+
   console.log(currPressState);
 
   // const [newsData, setNewsData] = React.useState([]);
@@ -25,7 +28,7 @@ const MainHeaderListTab: FC<MyComponentProps> = ({
       </div>
       <div className="my-press-area">
         <p>내가 구독한 언론사</p>
-        <div className="my-press-count">8</div>
+        <div className="my-press-count">{subscriptions.length}</div>
       </div>
     </Container>
   );
