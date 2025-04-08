@@ -15,7 +15,7 @@ export default function AutoNewsBarContainer() {
 
   useEffect(() => {
     async function fetchData() {
-      const res = await fetch("/HeadLineNews/HeadLineNews.json");
+      const res = await fetch("http://localhost:3000/api/HeadLineNews");
       const data = await res.json();
       setheadLineNews(() => data.newsHeadLine);
     }
