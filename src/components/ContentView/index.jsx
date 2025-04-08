@@ -10,9 +10,12 @@ import transformNewsData from "./util/transformNewsData";
 import { useContext } from "react";
 import { SubscribedContext } from "../../utils/Subscribed/SubscribedContext";
 import getSubscribedNews from "./util/getSubscribedNews";
+import SubscribedModal from "../../utils/Subscribed/SubscribedModal";
+import { SubscribedModalContext } from "../../utils/Subscribed/SubscribedModal/SubscribedModalContext";
 
 const ContentBoxWrapper = styled.div`
   display: flex;
+  position: relative;
   & > :nth-child(1) {
     margin-right: 2.94rem;
   }
@@ -26,12 +29,31 @@ export default function ContentView({ isAllpress, listView }) {
   const [page, setpage] = useState(0);
   const [category, setcategory] = useState("종합/경제");
   const { subscribed } = useContext(SubscribedContext);
+  const { isModalOpen } = useContext(SubscribedModalContext);
 
   function swipeNextPage() {
-    setpage((prev) => prev + 1);
+    if (page === maxPage - 1) {
+      const curCategoryIndex = newsCategory.findIndex(
+        (perCategory) => perCategory === category
+      );
+      const prevCategoryIndex =
+        curCategoryIndex === newsCategory.length - 1 ? 0 : curCategoryIndex + 1;
+      moveCategory(newsCategory[prevCategoryIndex]);
+    } else {
+      setpage((prev) => prev + 1);
+    }
   }
   function swipePrevPage() {
-    setpage((prev) => prev - 1);
+    if (page === 0) {
+      const curCategoryIndex = newsCategory.findIndex(
+        (perCategory) => perCategory === category
+      );
+      const prevCategoryIndex =
+        curCategoryIndex === 0 ? newsCategory.length - 1 : curCategoryIndex - 1;
+      moveCategory(newsCategory[prevCategoryIndex]);
+    } else {
+      setpage((prev) => prev - 1);
+    }
   }
 
   function initPage() {
@@ -39,6 +61,7 @@ export default function ContentView({ isAllpress, listView }) {
   }
 
   function moveCategory(target) {
+    setpage(() => 0);
     setcategory(() => target);
   }
 
@@ -81,7 +104,7 @@ export default function ContentView({ isAllpress, listView }) {
       moveCategory(Object.keys(getSubscribedNewsObj)[0]);
     }
     initPage();
-  }, [isAllpress]);
+  }, [isAllpress, subscribed]);
 
   if (!newsData) return null; //조건부 렌더링
   if (!isAllpress && categoryNews.length === 0) {
@@ -92,9 +115,15 @@ export default function ContentView({ isAllpress, listView }) {
   }
   return (
     <ContentBoxWrapper>
-      <LeftSwipeButton swipePrevPage={swipePrevPage} visible={page > 0} />
+      <LeftSwipeButton
+        swipePrevPage={swipePrevPage}
+        visible={listView ? true : page > 0}
+      />
       {listView ? (
         <ListView
+          page={page}
+          maxPage={maxPage}
+          category={category}
           moveCategory={moveCategory}
           newsCategory={newsCategory}
           pagedData={pagedData[0]}
@@ -102,9 +131,10 @@ export default function ContentView({ isAllpress, listView }) {
       ) : (
         <GridView pagedData={pagedData} />
       )}
+      {isModalOpen ? <SubscribedModal /> : null}
       <RightSwipeButton
         swipeNextPage={swipeNextPage}
-        visible={page < maxPage - 1}
+        visible={listView ? true : page < maxPage - 1}
       />
     </ContentBoxWrapper>
   );

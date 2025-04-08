@@ -7,13 +7,15 @@ const StyledButton = styled.button`
 `;
 
 const StyledSvg = styled.svg`
-  fill: ${({ theme }) => theme.text.weak};
+  fill: ${({ theme, $listView }) =>
+    $listView ? theme.text.weak : theme.text.point};
 `;
 
-export default function GridViewBtn({ showGridView }) {
+export default function GridViewBtn({ listView, showGridView }) {
   return (
     <StyledButton onClick={showGridView}>
       <StyledSvg
+        $listView={listView}
         width="18"
         height="18"
         viewBox="0 0 18 18"
