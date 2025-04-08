@@ -1,20 +1,14 @@
 import React, { createContext, useReducer, useContext, ReactNode } from "react";
-
-// 언론사 데이터 타입 정의 (필요에 따라 속성을 추가하세요)
-interface Media {
-  pid: string;
-  // 예: name, logo, 기타 필요한 속성들...
-  [key: string]: unknown;
-}
+import { pressTypes, pressType } from "../types/pressDataTypes";
 
 // 전역 상태 타입: 구독한 언론사들을 배열로 관리
 type SubscribedState = {
-  subscriptions: Media[];
+  subscriptions: pressTypes;
 };
 
 // 액션 타입 정의
 type SubscribedAction =
-  | { type: "ADD_SUBSCRIPTION"; payload: Media }
+  | { type: "ADD_SUBSCRIPTION"; payload: pressType }
   | { type: "REMOVE_SUBSCRIPTION"; payload: string }; // payload는 pid
 
 // Reducer 함수: 액션에 따라 상태 업데이트

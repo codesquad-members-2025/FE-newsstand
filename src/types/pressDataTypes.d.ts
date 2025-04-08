@@ -22,3 +22,4 @@ export interface Press {
 
 export type newsItemTypes = NewsItem[];
 export type pressTypes = Press[];
+export type pressType = Press;
