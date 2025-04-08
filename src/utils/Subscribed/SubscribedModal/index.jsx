@@ -81,7 +81,11 @@ function getNoticeText(press, isSubscribe) {
     </>
   );
 }
-const approveText = `예, 해지합니다`;
+function getApproveText(isSubscribed) {
+  const approveText = isSubscribed ? `예, 해지합니다` : `예, 구독합니다`;
+  return approveText;
+}
+
 const refuseText = `아니오`;
 
 export default function SubscribedModal() {
@@ -102,7 +106,7 @@ export default function SubscribedModal() {
               toggleSubscribed(targetPid);
             }}
           >
-            {approveText}
+            {getApproveText(isSubscribed)}
           </ApproveButton>
           <RefuseButton onClick={clickSubscribedModal}>
             {refuseText}
