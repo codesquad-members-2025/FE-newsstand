@@ -10,9 +10,11 @@ import transformNewsData from "./util/transformNewsData";
 import { useContext } from "react";
 import { SubscribedContext } from "../../utils/Subscribed/SubscribedContext";
 import getSubscribedNews from "./util/getSubscribedNews";
+import SubscribedModal from "../../utils/Subscribed/SubscribedModal";
 
 const ContentBoxWrapper = styled.div`
   display: flex;
+  position: relative;
   & > :nth-child(1) {
     margin-right: 2.94rem;
   }
@@ -131,6 +133,7 @@ export default function ContentView({ isAllpress, listView }) {
         swipeNextPage={swipeNextPage}
         visible={listView ? true : page < maxPage - 1}
       />
+      <SubscribedModal></SubscribedModal>
     </ContentBoxWrapper>
   );
 }
