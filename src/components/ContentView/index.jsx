@@ -104,7 +104,7 @@ export default function ContentView({ isAllpress, listView }) {
       moveCategory(Object.keys(getSubscribedNewsObj)[0]);
     }
     initPage();
-  }, [isAllpress]);
+  }, [isAllpress, subscribed]);
 
   if (!newsData) return null; //조건부 렌더링
   if (!isAllpress && categoryNews.length === 0) {
