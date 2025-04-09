@@ -1,62 +1,85 @@
-import { useState } from 'react'
-
+import { useState, useContext, useMemo, useEffect } from 'react'
 import styled from '@emotion/styled'
 import Grid from './Grid'
 import NextPageBtn from '@/components/Common/NextPageBtn'
 import PrevPageBtn from '@/components/Common/PrevPageBtn'
 
-import { PressDataType } from '..'
-
-import extendArray from '@/utils/extendArray'
+import { PressDataType, TabType } from '..'
+import { SubscriptionContext } from '@/contexts/SubscriptionContext'
+import { getGridViewData } from '@/utils/newsTransFormater'
+import { shuffle } from '@/utils/suffleArray'
 
 interface GridViewProps {
   pressData: PressDataType[]
-  setPressData: React.Dispatch<React.SetStateAction<PressDataType[]>>
+  tabType: TabType
 }
 
-const PAGE_GRID_NUMBER = 24
+const MAX_GRID_PRESS_COUNT = 24
 
-function GridView({ pressData, setPressData }: GridViewProps) {
-  const totalPages = Math.ceil(pressData.length / 24) || 1
-  const [currentPage, setCurrentPage] = useState(1)
-  const emptyPressData = {
-    pid: '-1',
-    name: '',
-    regDate: '',
-    logoDark: '',
-    logoLight: '',
-    isSubscribed: false,
-  }
-
-  const newPressData = extendArray(pressData, totalPages * PAGE_GRID_NUMBER, emptyPressData)
-
-  const pages = Array.from({ length: totalPages }, (_, i) => {
-    const start = i * PAGE_GRID_NUMBER
-    const end = start + PAGE_GRID_NUMBER
-    return newPressData
-      .slice(start, end)
-      .map((item, idx) => (
-        <Grid key={idx} press={item} setPressData={setPressData} isEmpty={item.pid === '-1'} />
-      ))
+function GridView({ pressData, tabType }: GridViewProps) {
+  // 1. 데이터 준비 및 필터링
+  const { subscribedPressMap, gridItems, setGridItems } = useContext(SubscriptionContext)
+  const [pageIndices, setPageIndices] = useState({
+    all: 1,
+    subscribed: 1,
   })
+  useEffect(() => {
+    if (gridItems.length === 0) {
+      setGridItems(shuffle(getGridViewData(pressData)))
+    }
+  }, [])
 
+  const filteredPressList =
+    tabType === 'subscribed'
+      ? gridItems.filter(press => subscribedPressMap.has(press.pid))
+      : gridItems
+
+  // 2. 페이지네이션 데이터 처리
+  const totalPages = Math.ceil(filteredPressList.length / MAX_GRID_PRESS_COUNT)
+  const currentPageIndex = pageIndices[tabType]
+
+  const currentPageItems = useMemo(() => {
+    const startIndex = (currentPageIndex - 1) * MAX_GRID_PRESS_COUNT
+    const items = [...filteredPressList.slice(startIndex, startIndex + MAX_GRID_PRESS_COUNT)]
+
+    while (items.length < MAX_GRID_PRESS_COUNT) {
+      items.push({ pid: `empty-${items.length}` } as PressDataType)
+    }
+
+    return items.map(item => (
+      <Grid
+        key={`grid-${tabType}-${item.pid}`}
+        pressData={item}
+        isEmpty={item.pid.startsWith('empty')}
+      />
+    ))
+  }, [filteredPressList, currentPageIndex, tabType])
+
+  // 3. 페이지 이동 핸들러
   const handleNextPage = () => {
-    if (currentPage < totalPages) {
-      setCurrentPage(prev => prev + 1)
+    if (currentPageIndex < totalPages) {
+      setPageIndices(prev => ({
+        ...prev,
+        [tabType]: prev[tabType] + 1,
+      }))
     }
   }
 
   const handlePrevPage = () => {
-    if (currentPage > 1) {
-      setCurrentPage(prev => prev - 1)
+    if (currentPageIndex > 1) {
+      setPageIndices(prev => ({
+        ...prev,
+        [tabType]: prev[tabType] - 1,
+      }))
     }
   }
 
+  // 4. 렌더링
   return (
     <Container>
-      {pages[currentPage - 1]}
-      <PrevPageBtn onClick={handlePrevPage} disabled={currentPage === 1} />
-      <NextPageBtn onClick={handleNextPage} disabled={currentPage === totalPages} />
+      {currentPageItems}
+      <PrevPageBtn onClick={handlePrevPage} disabled={currentPageIndex === 1} />
+      <NextPageBtn onClick={handleNextPage} disabled={currentPageIndex === totalPages} />
     </Container>
   )
 }

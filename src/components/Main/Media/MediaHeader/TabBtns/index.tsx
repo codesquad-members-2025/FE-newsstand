@@ -12,10 +12,10 @@ interface TabBtnsProps {
 function TabBtns({ tabType, setTabType, count }: TabBtnsProps) {
   return (
     <Container>
-      <TabButton onClick={() => setTabType('allPress')} active={tabType === 'allPress'}>
+      <TabButton onClick={() => setTabType('all')} active={tabType === 'all'}>
         전체 언론사
       </TabButton>
-      <TabButton onClick={() => setTabType('subPress')} active={tabType === 'subPress'}>
+      <TabButton onClick={() => setTabType('subscribed')} active={tabType === 'subscribed'}>
         내가 구독한 언론사
         <Badge count={count} />
       </TabButton>

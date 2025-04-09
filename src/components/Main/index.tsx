@@ -2,13 +2,16 @@ import styled from '@emotion/styled'
 import Header from '@/components/Main/Header'
 import AutoRollingBar from '@/components/Main/AutoRollingBar'
 import Media from '@/components/Main/Media'
+import SubscriptionProvider from '@/contexts/SubscriptionContext'
 
 function Main() {
   return (
     <Container>
       <Header />
       <AutoRollingBar />
-      <Media />
+      <SubscriptionProvider>
+        <Media />
+      </SubscriptionProvider>
     </Container>
   )
 }

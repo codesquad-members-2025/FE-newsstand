@@ -1,4 +1,5 @@
 import styled from '@emotion/styled'
+import ChevronRight from '@/assets/ChevronRight.svg?react'
 
 interface CountProps {
   pageIndex: number
@@ -8,9 +9,15 @@ interface CountProps {
 function Count({ pageIndex, totalPageCount }: CountProps) {
   return (
     <Container>
-      <CurrentIndex>{pageIndex + 1}</CurrentIndex>
-      <Division>/</Division>
-      <TotalCount>{totalPageCount}</TotalCount>
+      {totalPageCount === 1 ? (
+        <ChevronRight />
+      ) : (
+        <>
+          <CurrentIndex>{pageIndex + 1}</CurrentIndex>
+          <Division>/</Division>
+          <TotalCount>{totalPageCount}</TotalCount>
+        </>
+      )}
     </Container>
   )
 }

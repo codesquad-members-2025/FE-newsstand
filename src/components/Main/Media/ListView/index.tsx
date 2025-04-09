@@ -1,15 +1,22 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import styled from '@emotion/styled'
 import Header from './Header'
 import NewsCard from './NewsCard'
 
 import { PressDataType } from '..'
 import { TabType } from '..'
+import { SubscriptionContext } from '@/contexts/SubscriptionContext'
 
 import NextPageBtn from '@/components/Common/NextPageBtn'
 import PrevPageBtn from '@/components/Common/PrevPageBtn'
 
-import { formatCategories, getCategoryData, getNewsCardData } from '@/utils/newsTransFormater'
+import {
+  getCategories,
+  getNewsCardData,
+  getSubscribedPressNames,
+  getPidByIndex,
+  getCategoryPressCount,
+} from '@/utils/newsTransFormater'
 
 interface ListViewProps {
   pressData: PressDataType[]
@@ -19,22 +26,42 @@ interface ListViewProps {
 function ListView({ pressData, tabType }: ListViewProps) {
   const [buttonIndex, setButtonIndex] = useState(0)
   const [pageIndex, setPageIndex] = useState(0)
+  const { subscribedPressMap } = useContext(SubscriptionContext)
 
-  const categories = formatCategories(pressData)
-  const categoryData = getCategoryData(pressData, categories[buttonIndex])
-  const newsCardData = getNewsCardData(categoryData, pageIndex)
+  if (tabType === 'subscribed' && subscribedPressMap.size === 0) {
+    return (
+      <Container>
+        <SkeletonHeader />
+        <SkeletonNewsCard />
+      </Container>
+    )
+  }
 
-  const maxButtonIndex = categories.length - 1
-  const maxPageIndex = categoryData.length - 1
+  let categories
+  let newsCardData
+  let totalCount
+
+  if (tabType === 'all') {
+    categories = getCategories(pressData)
+    const currentPid = getPidByIndex(pressData, buttonIndex, pageIndex)
+    newsCardData = getNewsCardData(pressData, currentPid)
+    totalCount = getCategoryPressCount(pressData, buttonIndex)
+  } else {
+    categories = getSubscribedPressNames(pressData, subscribedPressMap)
+    const subscribedPids = Array.from(subscribedPressMap.keys())
+    const currentPid = subscribedPids[buttonIndex]
+    newsCardData = getNewsCardData(pressData, currentPid)
+    totalCount = 1
+  }
 
   const handleNextPage = () => {
-    if (pageIndex < maxPageIndex) {
+    if (tabType === 'all' && pageIndex < totalCount - 1) {
       setPageIndex(prev => prev + 1)
     }
   }
 
   const handlePrevPage = () => {
-    if (pageIndex > 0) {
+    if (tabType === 'all' && pageIndex > 0) {
       setPageIndex(prev => prev - 1)
     }
   }
@@ -47,11 +74,15 @@ function ListView({ pressData, tabType }: ListViewProps) {
         setButtonIndex={setButtonIndex}
         pageIndex={pageIndex}
         setPageIndex={setPageIndex}
-        totalPageCount={categoryData.length}
+        totalPageCount={totalCount}
       />
       <NewsCard newsCardData={newsCardData} />
-      <NextPageBtn onClick={handleNextPage} disabled={pageIndex === maxPageIndex} />
-      <PrevPageBtn onClick={handlePrevPage} disabled={pageIndex === 0} />
+      {tabType === 'all' && (
+        <>
+          <NextPageBtn onClick={handleNextPage} disabled={pageIndex === totalCount - 1} />
+          <PrevPageBtn onClick={handlePrevPage} disabled={pageIndex === 0} />
+        </>
+      )}
     </Container>
   )
 }
@@ -61,6 +92,20 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0px;
+`
+
+const SkeletonHeader = styled.div`
+  width: 930px;
+  height: 40px;
+  border: 1px solid rgba(210, 218, 224, 1);
+  background-color: rgba(245, 247, 249, 1);
+`
+
+const SkeletonNewsCard = styled.div`
+  width: 930px;
+  height: 348px;
+  border: 1px solid rgba(210, 218, 224, 1);
+  border-top: none;
 `
 
 export default ListView

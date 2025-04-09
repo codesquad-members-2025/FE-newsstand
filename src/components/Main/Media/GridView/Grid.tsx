@@ -1,4 +1,6 @@
 import styled from '@emotion/styled'
+import { useContext } from 'react'
+import { SubscriptionContext } from '@/contexts/SubscriptionContext'
 
 import SubscribeBtn from '@/components/Common/SubscribeBtn'
 import UnSubscribeBtn from '@/components/Common/UnSubscribeBtn'
@@ -6,35 +8,40 @@ import UnSubscribeBtn from '@/components/Common/UnSubscribeBtn'
 import { PressDataType } from '..'
 
 interface GridProps {
-  press: PressDataType
-  setPressData: React.Dispatch<React.SetStateAction<PressDataType[]>>
+  pressData: PressDataType
   isEmpty: boolean
 }
 
-function Grid({ press, setPressData, isEmpty }: GridProps) {
+function Grid({ pressData, isEmpty }: GridProps) {
+  const { subscribedPressMap, setSubscribedPressMap } = useContext(SubscriptionContext)
+
+  const handleSubscribe = (pressId: string) => {
+    setSubscribedPressMap(prev => new Map(prev).set(pressId, true))
+  }
+
+  const handleUnsubscribe = (pressId: string) => {
+    setSubscribedPressMap(prev => {
+      const newMap = new Map(prev)
+      newMap.delete(pressId)
+      return newMap
+    })
+  }
+
   if (isEmpty) {
     return <Container />
   }
 
-  const subscribePress = () => {
-    setPressData(pressData => {
-      return pressData.map(curPress => {
-        if (curPress.pid === press.pid) {
-          return { ...curPress, isSubscribed: !curPress.isSubscribed }
-        }
-        return curPress
-      })
-    })
-  }
-
   return (
     <Container>
-      <Image key={press.pid} src={press.logoLight} height="20" alt={press.name}></Image>
+      <Image key={pressData.pid} src={pressData.logoLight} height="20" alt={pressData.name}></Image>
       <BtnWrapper>
-        {press.isSubscribed ? (
-          <UnSubscribeBtn onClick={subscribePress} />
+        {subscribedPressMap.has(pressData.pid) ? (
+          <UnSubscribeBtn onClick={() => handleUnsubscribe(pressData.pid)} />
         ) : (
-          <SubscribeBtn onClick={subscribePress} backgroundColor={'rgba(255, 255, 255, 1)'} />
+          <SubscribeBtn
+            onClick={() => handleSubscribe(pressData.pid)}
+            backgroundColor={'rgba(255, 255, 255, 1)'}
+          />
         )}
       </BtnWrapper>
     </Container>

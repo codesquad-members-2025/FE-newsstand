@@ -29,20 +29,27 @@ function Header({
   setPageIndex,
   totalPageCount,
 }: HeaderProps) {
+  const getBtn = (category: string, index: number) => {
+    return index === buttonIndex ? (
+      <ProgressBtn
+        key={index}
+        text={category}
+        pageIndex={pageIndex}
+        totalPageCount={totalPageCount}
+      />
+    ) : (
+      <TextBtn
+        key={index}
+        text={category}
+        setButtonIndex={setButtonIndex}
+        setPageIndex={setPageIndex}
+        index={index}
+      />
+    )
+  }
+
   const headerBtns = categories.reduce((btns, category, index): any => {
-    return [
-      ...btns,
-      index === buttonIndex ? (
-        <ProgressBtn
-          key={index}
-          text={category}
-          pageIndex={pageIndex}
-          totalPageCount={totalPageCount}
-        />
-      ) : (
-        <TextBtn key={index} text={category} setButtonIndex={setButtonIndex} index={index} />
-      ),
-    ]
+    return [...btns, getBtn(category, index)]
   }, [])
 
   return <Container>{headerBtns}</Container>

@@ -1,16 +1,15 @@
-import { useEffect, useState } from 'react'
+import { useState, useContext } from 'react'
 import styled from '@emotion/styled'
 
+import { SubscriptionContext } from '@/contexts/SubscriptionContext'
 import MediaHeader from './MediaHeader'
 import GridView from './GridView'
 import ListView from './ListView'
 
 import useFetch from '@/hooks/useFetch'
-import { formatGridViewData } from '@/utils/newsTransFormater'
-import filterArray from '@/utils/filterArray'
 
+export type TabType = 'all' | 'subscribed'
 export type ViewType = 'grid' | 'list'
-export type TabType = 'allPress' | 'subPress'
 
 export interface PressDataType {
   pid: string
@@ -22,16 +21,10 @@ export interface PressDataType {
 }
 
 function Media() {
-  const { data: pressData, loading } = useFetch('/mock/press_by_category.json')
+  const { data, loading } = useFetch('/mock/press_by_category.json')
+  const [tabType, setTabType] = useState<TabType>('all')
   const [viewType, setViewType] = useState<ViewType>('grid')
-  const [tabType, setTabType] = useState<TabType>('allPress')
-  const [randomizedPressList, setRandomizedPressList] = useState<PressDataType[]>([])
-
-  useEffect(() => {
-    setRandomizedPressList(formatGridViewData(pressData))
-  }, [pressData])
-
-  const subScribedPressData = filterArray(randomizedPressList, 'isSubscribed', true)
+  const { subscribedPressMap } = useContext(SubscriptionContext)
 
   return (
     <Container>
@@ -40,17 +33,14 @@ function Media() {
         viewType={viewType}
         setTabType={setTabType}
         tabType={tabType}
-        count={subScribedPressData.length}
+        count={subscribedPressMap.size}
       />
       {loading ? (
         <p>Loading...</p>
       ) : viewType === 'grid' ? (
-        <GridView
-          pressData={tabType === 'allPress' ? randomizedPressList : subScribedPressData}
-          setPressData={setRandomizedPressList}
-        />
+        <GridView pressData={data} tabType={tabType} />
       ) : (
-        <ListView pressData={pressData} tabType={tabType} />
+        <ListView pressData={data} tabType={tabType} />
       )}
     </Container>
   )

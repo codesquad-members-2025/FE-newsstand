@@ -1,6 +1,13 @@
-import { suffle } from '@/utils/suffleArray'
+interface Press {
+  pid: string
+  name: string
+  regDate: string
+  logoDark: string
+  logoLight: string
+  materials: any[]
+}
 
-function formatGridViewData(data: any) {
+function getGridViewData(data: any) {
   const combinedData = Object.values(data).flat()
 
   const processedData = combinedData.map((item: any) => ({
@@ -12,19 +19,21 @@ function formatGridViewData(data: any) {
     isSubscribed: false,
   }))
 
-  return suffle(processedData).slice(0, 96)
+  return processedData.slice(0, 96)
 }
 
-function formatCategories(data: any) {
+function getCategories(data: any) {
   return Object.keys(data)
 }
 
-function getCategoryData(data: any, category: string) {
-  return data[category]
-}
+function getNewsCardData(data: any, pid: string) {
+  const allPress = Object.values(data).flat() as Press[]
+  const newsCardData = allPress.find(press => press.pid === pid)
 
-function getNewsCardData(categoryData: any, index: any) {
-  const newsCardData = categoryData[index]
+  if (!newsCardData) {
+    throw new Error(`Cannot find press with pid: ${pid}`)
+  }
+
   const newsInfo = {
     pid: newsCardData.pid,
     name: newsCardData.name,
@@ -56,10 +65,43 @@ function getNewsCardData(categoryData: any, index: any) {
   )
 
   return {
-    newsInfo: newsInfo,
-    mainNews: mainNews,
-    subNewsList: subNewsList,
+    newsInfo,
+    mainNews,
+    subNewsList,
   }
 }
 
-export { formatGridViewData, formatCategories, getCategoryData, getNewsCardData }
+function getSubscribedPressNames(data: any, subscribedPressMap: any) {
+  const allPress = Object.values(data).flat()
+  const subscribedPids = Array.from(subscribedPressMap.keys())
+  // console.log(allPress, subscribedPids)
+  return subscribedPids
+    .map(pid => {
+      const press: any = allPress.find((press: any) => press.pid === pid)
+      return press?.name
+    })
+    .filter(name => name !== undefined)
+}
+
+function getPidByIndex(data: any, categoryIndex: number, pageIndex: number): string {
+  const categories = Object.keys(data)
+  const currentCategory = categories[categoryIndex]
+  const categoryData = data[currentCategory]
+
+  return categoryData[pageIndex].pid
+}
+
+function getCategoryPressCount(data: any, categoryIndex: number): number {
+  const categories = Object.keys(data)
+  const currentCategory = categories[categoryIndex]
+  return data[currentCategory].length
+}
+
+export {
+  getGridViewData,
+  getCategories,
+  getNewsCardData,
+  getSubscribedPressNames,
+  getPidByIndex,
+  getCategoryPressCount,
+}
