@@ -1,5 +1,5 @@
-// 필요한 리액트 훅과 styled-components import
 import styled from "styled-components";
+import { useState, useEffect } from "react";
 
 const RollingContainer = styled.div`
   margin-top: 40px;
@@ -19,7 +19,9 @@ const RollingBox = styled.div`
   overflow: hidden;
 `;
 
-const RollingTitle = styled.div`
+const RollingList = styled.div``;
+
+const RollingItem = styled.div`
   display: flex;
   gap: 16px;
   padding: 16px;
@@ -50,23 +52,41 @@ export default function RollingArea() {
     { press: "경향신문", title: "기후변화로 여름 더 길어졌다" },
   ];
 
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((pre) => pre + 1);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const getRollingStyle = {
+    transform: `translateY(-${index * 49}px)`,
+    transition: "transform 0.5s ease-in-out",
+  };
   return (
     <RollingContainer>
       <RollingBox>
-        {newsList.map((news, i) => (
-          <RollingTitle key={i}>
-            <PressName>{news.press}</PressName>
-            <PressNewsTitle as="a">{news.title}</PressNewsTitle>
-          </RollingTitle>
-        ))}
+        <RollingList style={getRollingStyle}>
+          {newsList.map((news, i) => (
+            <RollingItem key={i}>
+              <PressName>{news.press}</PressName>
+              <PressNewsTitle as="a">{news.title}</PressNewsTitle>
+            </RollingItem>
+          ))}
+        </RollingList>
       </RollingBox>
       <RollingBox>
-        {newsList.map((news, i) => (
-          <RollingTitle key={i}>
-            <PressName>{news.press}</PressName>
-            <PressNewsTitle as="a">{news.title}</PressNewsTitle>
-          </RollingTitle>
-        ))}
+        <RollingList style={getRollingStyle}>
+          {newsList.map((news, i) => (
+            <RollingItem key={i}>
+              <PressName>{news.press}</PressName>
+              <PressNewsTitle as="a">{news.title}</PressNewsTitle>
+            </RollingItem>
+          ))}
+        </RollingList>
       </RollingBox>
     </RollingContainer>
   );
