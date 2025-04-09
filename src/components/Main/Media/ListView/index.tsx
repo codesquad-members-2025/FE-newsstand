@@ -15,7 +15,7 @@ import {
   getNewsCardData,
   getSubscribedPressNames,
   getPidByIndex,
-  getCategoryPressCount,
+  getCategoryPressLength,
 } from '@/utils/newsTransFormater'
 
 interface ListViewProps {
@@ -44,35 +44,41 @@ function ListView({ pressData, tabType }: ListViewProps) {
 
   let categories
   let newsCardData
-  let totalCount
+  let maxPageIndex
   let headerIndex = tabType === 'all' ? headerIndexAll : headerIndexSubscribed
+  const setHeaderIndex = tabType === 'all' ? setHeaderIndexAll : setHeaderIndexSubscribed
 
   if (tabType === 'all') {
     categories = getCategories(pressData)
     const currentPid = getPidByIndex(pressData, headerIndex, pageIndex)
     newsCardData = getNewsCardData(pressData, currentPid)
-    totalCount = getCategoryPressCount(pressData, headerIndex)
+    maxPageIndex = getCategoryPressLength(pressData, headerIndex) - 1
   } else {
     categories = getSubscribedPressNames(pressData, subscribedPressMap)
     const subscribedPids = Array.from(subscribedPressMap.keys())
     const currentPid = subscribedPids[headerIndex]
     newsCardData = getNewsCardData(pressData, currentPid)
-    totalCount = 1
+    maxPageIndex = 0
   }
 
   const handleNextPage = () => {
-    if (tabType === 'all' && pageIndex < totalCount - 1) {
-      setPageIndex(prev => prev + 1)
+    if (tabType === 'subscribed') {
+      setHeaderIndex(prev => (prev + 1) % categories.length)
+    } else if (tabType === 'all' && pageIndex === maxPageIndex) {
+      setHeaderIndex(prev => (prev + 1) % categories.length)
+      setPageIndex(0)
+    } else {
+      setPageIndex(prev => (prev + 1) % (maxPageIndex + 1))
     }
   }
 
   const handlePrevPage = () => {
-    if (tabType === 'all' && pageIndex > 0) {
-      setPageIndex(prev => prev - 1)
+    if (tabType === 'subscribed') {
+      setHeaderIndex(prev => (headerIndex === 0 ? categories.length - 1 : prev - 1))
+    } else if (pageIndex === 0) {
+      setHeaderIndex(prev => (headerIndex === 0 ? categories.length - 1 : prev - 1))
     }
   }
-
-  const setHeaderIndex = tabType === 'all' ? setHeaderIndexAll : setHeaderIndexSubscribed
 
   return (
     <Container>
@@ -82,15 +88,11 @@ function ListView({ pressData, tabType }: ListViewProps) {
         setHeaderIndex={setHeaderIndex}
         pageIndex={pageIndex}
         setPageIndex={setPageIndex}
-        totalPageCount={totalCount}
+        totalPageCount={maxPageIndex + 1}
       />
       <NewsCard newsCardData={newsCardData} />
-      {tabType === 'all' && (
-        <>
-          <NextPageBtn onClick={handleNextPage} disabled={pageIndex === totalCount - 1} />
-          <PrevPageBtn onClick={handlePrevPage} disabled={pageIndex === 0} />
-        </>
-      )}
+      <NextPageBtn onClick={handleNextPage} disabled={false} />
+      <PrevPageBtn onClick={handlePrevPage} disabled={false} />
     </Container>
   )
 }

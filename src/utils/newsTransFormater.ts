@@ -91,7 +91,7 @@ function getPidByIndex(data: any, categoryIndex: number, pageIndex: number): str
   return categoryData[pageIndex].pid
 }
 
-function getCategoryPressCount(data: any, categoryIndex: number): number {
+function getCategoryPressLength(data: any, categoryIndex: number): number {
   const categories = Object.keys(data)
   const currentCategory = categories[categoryIndex]
   return data[currentCategory].length
@@ -103,5 +103,5 @@ export {
   getNewsCardData,
   getSubscribedPressNames,
   getPidByIndex,
-  getCategoryPressCount,
+  getCategoryPressLength,
 }
