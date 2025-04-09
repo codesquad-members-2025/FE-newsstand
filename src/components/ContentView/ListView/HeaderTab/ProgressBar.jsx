@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 const ProgressBarWrapper = styled.div`
   position: absolute;
@@ -15,17 +15,19 @@ const ProgressBarWrapper = styled.div`
 
 export default function ProgressBar({ swipeNextPage, page, curCategory }) {
   const [progress, setProgress] = useState(0);
+  const hasSwipeRef = useRef(false);
 
   useEffect(() => {
-    console.log(page);
     setProgress(0);
+    hasSwipeRef.current = false;
     const intervalId = setInterval(() => {
       setProgress((prev) => {
-        if (prev >= 100) {
+        if (prev >= 100 && !hasSwipeRef.current) {
+          hasSwipeRef.current = true;
           swipeNextPage();
           return 0;
         }
-        return prev + 1;
+        return prev < 100 ? prev + 1 : prev;
       });
     }, 100);
     return () => clearInterval(intervalId);
