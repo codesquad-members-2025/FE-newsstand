@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react'
+import { useState, useContext, useEffect } from 'react'
 import styled from '@emotion/styled'
 import Header from './Header'
 import NewsCard from './NewsCard'
@@ -23,23 +23,29 @@ interface ListViewProps {
   tabType: TabType
 }
 
+function skeletonListView() {
+  return (
+    <Container>
+      <SkeletonHeader />
+      <SkeletonNewsCard />
+    </Container>
+  )
+}
+
 function ListView({ pressData, tabType }: ListViewProps) {
-  const [headerIndex, setHeaderIndex] = useState(0)
+  const [headerIndexAll, setHeaderIndexAll] = useState(0)
+  const [headerIndexSubscribed, setHeaderIndexSubscribed] = useState(0)
   const [pageIndex, setPageIndex] = useState(0)
   const { subscribedPressMap } = useContext(MediaContext)
 
-  if (tabType === 'subscribed' && subscribedPressMap.size === 0) {
-    return (
-      <Container>
-        <SkeletonHeader />
-        <SkeletonNewsCard />
-      </Container>
-    )
-  }
+  const subscriptionCount = subscribedPressMap.size
+
+  if (tabType === 'subscribed' && subscriptionCount === 0) return skeletonListView()
 
   let categories
   let newsCardData
   let totalCount
+  let headerIndex = tabType === 'all' ? headerIndexAll : headerIndexSubscribed
 
   if (tabType === 'all') {
     categories = getCategories(pressData)
@@ -65,6 +71,8 @@ function ListView({ pressData, tabType }: ListViewProps) {
       setPageIndex(prev => prev - 1)
     }
   }
+
+  const setHeaderIndex = tabType === 'all' ? setHeaderIndexAll : setHeaderIndexSubscribed
 
   return (
     <Container>

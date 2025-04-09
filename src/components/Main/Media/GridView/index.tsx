@@ -19,10 +19,9 @@ const MAX_GRID_PRESS_COUNT = 24
 function GridView({ pressData, tabType }: GridViewProps) {
   // 1. 데이터 준비 및 필터링
   const { subscribedPressMap, gridItems, setGridItems } = useContext(MediaContext)
-  const [pageIndices, setPageIndices] = useState({
-    all: 1,
-    subscribed: 1,
-  })
+  const [pageIndexAll, setPageIndexAll] = useState(1)
+  const [pageIndexSubscribed, setPageIndexSubscribed] = useState(1)
+
   useEffect(() => {
     if (gridItems.length === 0) {
       setGridItems(shuffle(getGridViewData(pressData)))
@@ -35,8 +34,8 @@ function GridView({ pressData, tabType }: GridViewProps) {
       : gridItems
 
   // 2. 페이지네이션 데이터 처리
-  const totalPages = Math.ceil(filteredPressList.length / MAX_GRID_PRESS_COUNT)
-  const currentPageIndex = pageIndices[tabType]
+  const totalPages = Math.ceil(filteredPressList.length / MAX_GRID_PRESS_COUNT) || 1
+  const currentPageIndex = tabType === 'all' ? pageIndexAll : pageIndexSubscribed
 
   const currentPageItems = useMemo(() => {
     const startIndex = (currentPageIndex - 1) * MAX_GRID_PRESS_COUNT
@@ -55,22 +54,18 @@ function GridView({ pressData, tabType }: GridViewProps) {
     ))
   }, [filteredPressList, currentPageIndex, tabType])
 
+  const setPageIndex = tabType === 'all' ? setPageIndexAll : setPageIndexSubscribed
+
   // 3. 페이지 이동 핸들러
   const handleNextPage = () => {
     if (currentPageIndex < totalPages) {
-      setPageIndices(prev => ({
-        ...prev,
-        [tabType]: prev[tabType] + 1,
-      }))
+      setPageIndex(prev => prev + 1)
     }
   }
 
   const handlePrevPage = () => {
     if (currentPageIndex > 1) {
-      setPageIndices(prev => ({
-        ...prev,
-        [tabType]: prev[tabType] - 1,
-      }))
+      setPageIndex(prev => prev - 1)
     }
   }
 
