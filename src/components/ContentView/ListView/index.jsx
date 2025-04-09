@@ -16,6 +16,7 @@ export default function ListView({
   newsCategory,
   page,
   maxPage,
+  swipeNextPage,
 }) {
   return (
     <ListViewWrapper>
@@ -25,6 +26,7 @@ export default function ListView({
         curCategory={category}
         moveCategory={moveCategory}
         newsCategory={newsCategory}
+        swipeNextPage={swipeNextPage}
       />
       <NewsTab pagedData={pagedData} />
     </ListViewWrapper>

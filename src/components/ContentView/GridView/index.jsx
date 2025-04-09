@@ -48,35 +48,42 @@ const ButtonWrapper = styled.div`
   transform: translate(-50%, -50%);
 `;
 
+function transformId(rowId) {
+  return rowId.replace(/\s/g, "");
+}
+
 function makeItems(pagedData, theme) {
   const { subscribed } = useContext(SubscribedContext);
   const { clickSubscribedModal } = useContext(SubscribedModalContext);
 
-  const newsLogos = pagedData.map(({ logoDark, logoLight, pressId, name }) => {
-    const isSubscribed = subscribed.includes(pressId) ? null : "구독하기";
-    return (
-      <GridItem key={pressId}>
-        <img src={theme === "light" ? logoLight : logoDark} alt={name} />
-        <ButtonWrapper id={name}>
-          <SubScribedButton
-            id={pressId}
-            width={isSubscribed ? 4.5 : 1.5}
-            visible={false}
-            onClick={(e) => {
-              const className = e.currentTarget.closest(`#${name}`).id; // GridItem
-              clickSubscribedModal(
-                e.currentTarget.id,
-                className,
-                !isSubscribed
-              );
-            }}
-          >
-            {isSubscribed}
-          </SubScribedButton>
-        </ButtonWrapper>
-      </GridItem>
-    );
-  });
+  const newsLogos = pagedData.map(
+    ({ logoDark, logoLight, pressId, name: rowName }) => {
+      const name = transformId(rowName);
+      const isSubscribed = subscribed.includes(pressId) ? null : "구독하기";
+      return (
+        <GridItem key={pressId}>
+          <img src={theme === "light" ? logoLight : logoDark} alt={name} />
+          <ButtonWrapper id={name}>
+            <SubScribedButton
+              id={pressId}
+              width={isSubscribed ? 4.5 : 1.5}
+              visible={false}
+              onClick={(e) => {
+                const className = e.currentTarget.closest(`#${name}`).id; // GridItem
+                clickSubscribedModal(
+                  e.currentTarget.id,
+                  className,
+                  !isSubscribed
+                );
+              }}
+            >
+              {isSubscribed}
+            </SubScribedButton>
+          </ButtonWrapper>
+        </GridItem>
+      );
+    }
+  );
   return newsLogos;
 }
 

@@ -1,7 +1,9 @@
 import styled from "styled-components";
+import ProgressBar from "./ProgressBar";
 
 const StyledButton = styled.button`
   all: unset;
+  position: relative;
   box-sizing: border-box;
   cursor: pointer;
   padding: 0.72rem 1rem;
@@ -16,9 +18,6 @@ const StyledButton = styled.button`
     $curCategory === $dataCategory ? "10.38rem" : null};
 `;
 const CategoryWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   gap: 0.5rem;
 `;
 
@@ -35,6 +34,14 @@ const MaxPage = styled.div`
   color: ${({ theme }) => theme.text.whiteWeak};
 `;
 
+const CategoryTextWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+`;
+
 export default function TabButton({
   children,
   dataCategory,
@@ -42,6 +49,7 @@ export default function TabButton({
   curCategory,
   page,
   maxPage,
+  swipeNextPage,
 }) {
   return (
     <StyledButton
@@ -50,15 +58,25 @@ export default function TabButton({
       data-category={dataCategory}
       onClick={(e) => moveCategory(e.currentTarget.dataset.category)}
     >
+      {curCategory === dataCategory && (
+        <ProgressBar
+          swipeNextPage={swipeNextPage}
+          page={page}
+          curCategory={curCategory}
+        />
+      )}
+
       <CategoryWrapper>
-        <Category>{children}</Category>
-        {curCategory === children ? (
-          <NewsPage>
-            <CurrentPage>{page + 1}</CurrentPage>
-            <Slash>/</Slash>
-            <MaxPage>{maxPage}</MaxPage>
-          </NewsPage>
-        ) : null}
+        <CategoryTextWrapper>
+          <Category>{children}</Category>
+          {curCategory === children ? (
+            <NewsPage>
+              <CurrentPage>{page + 1}</CurrentPage>
+              <Slash>/</Slash>
+              <MaxPage>{maxPage}</MaxPage>
+            </NewsPage>
+          ) : null}
+        </CategoryTextWrapper>
       </CategoryWrapper>
     </StyledButton>
   );

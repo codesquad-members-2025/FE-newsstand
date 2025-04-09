@@ -132,6 +132,7 @@ export default function ContentView({ isAllpress, listView }) {
           moveCategory={moveCategory}
           newsCategory={newsCategory}
           pagedData={pagedData[0]}
+          swipeNextPage={swipeNextPage}
         />
       ) : (
         <GridView pagedData={pagedData} />

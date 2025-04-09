@@ -13,7 +13,7 @@ import PretendardExtraBold from "@fonts/Pretendard-ExtraBold.woff";
 import PretendardBlack from "@fonts/Pretendard-Black.woff";
 
 const GlobalStyle = createGlobalStyle`
-  @font-face {
+  /* @font-face {
     font-family: 'Pretendard';
     src: url(${PretendardThin}) format('woff');
     font-weight: 100;
@@ -66,7 +66,7 @@ const GlobalStyle = createGlobalStyle`
     src: url(${PretendardBlack}) format('woff');
     font-weight: 900;
     font-style: normal;
-  }
+  } */
 
   *, *::before, *::after {
     box-sizing: border-box;
