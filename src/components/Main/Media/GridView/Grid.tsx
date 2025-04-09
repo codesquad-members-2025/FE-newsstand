@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 import { useContext } from 'react'
-import { SubscriptionContext } from '@/contexts/SubscriptionContext'
+import { MediaContext } from '@/contexts/MediaContext'
 
 import SubscribeBtn from '@/components/Common/SubscribeBtn'
 import UnSubscribeBtn from '@/components/Common/UnSubscribeBtn'
@@ -13,7 +13,7 @@ interface GridProps {
 }
 
 function Grid({ pressData, isEmpty }: GridProps) {
-  const { subscribedPressMap, setSubscribedPressMap } = useContext(SubscriptionContext)
+  const { subscribedPressMap, setSubscribedPressMap } = useContext(MediaContext)
 
   const handleSubscribe = (pressId: string) => {
     setSubscribedPressMap(prev => new Map(prev).set(pressId, true))

@@ -9,36 +9,36 @@ interface PressDataType {
   isSubscribed: boolean
 }
 
-interface SubscriptionContextType {
+interface MediaContextType {
   subscribedPressMap: Map<string, boolean>
   setSubscribedPressMap: React.Dispatch<React.SetStateAction<Map<string, boolean>>>
   gridItems: PressDataType[]
   setGridItems: React.Dispatch<React.SetStateAction<PressDataType[]>>
 }
 
-const SubscriptionContext = createContext<SubscriptionContextType>({
+const MediaContext = createContext<MediaContextType>({
   subscribedPressMap: new Map(),
   setSubscribedPressMap: () => {},
   gridItems: [],
   setGridItems: () => {},
 })
 
-interface SubscriptionProviderProps {
+interface MediaProviderProps {
   children: ReactNode
 }
 
-function SubscriptionProvider({ children }: SubscriptionProviderProps) {
+function MediaProvider({ children }: MediaProviderProps) {
   const [subscribedPressMap, setSubscribedPressMap] = useState<Map<string, boolean>>(new Map())
   const [gridItems, setGridItems] = useState<PressDataType[]>([])
 
   return (
-    <SubscriptionContext.Provider
+    <MediaContext.Provider
       value={{ subscribedPressMap, setSubscribedPressMap, gridItems, setGridItems }}
     >
       {children}
-    </SubscriptionContext.Provider>
+    </MediaContext.Provider>
   )
 }
 
-export { SubscriptionContext }
-export default SubscriptionProvider
+export { MediaContext }
+export default MediaProvider

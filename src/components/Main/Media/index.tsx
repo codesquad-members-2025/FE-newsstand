@@ -1,7 +1,7 @@
 import { useState, useContext } from 'react'
 import styled from '@emotion/styled'
 
-import { SubscriptionContext } from '@/contexts/SubscriptionContext'
+import { MediaContext } from '@/contexts/MediaContext'
 import MediaHeader from './MediaHeader'
 import GridView from './GridView'
 import ListView from './ListView'
@@ -24,7 +24,7 @@ function Media() {
   const { data, loading } = useFetch('/mock/press_by_category.json')
   const [tabType, setTabType] = useState<TabType>('all')
   const [viewType, setViewType] = useState<ViewType>('grid')
-  const { subscribedPressMap } = useContext(SubscriptionContext)
+  const { subscribedPressMap } = useContext(MediaContext)
 
   return (
     <Container>

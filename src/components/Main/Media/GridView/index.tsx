@@ -5,7 +5,7 @@ import NextPageBtn from '@/components/Common/NextPageBtn'
 import PrevPageBtn from '@/components/Common/PrevPageBtn'
 
 import { PressDataType, TabType } from '..'
-import { SubscriptionContext } from '@/contexts/SubscriptionContext'
+import { MediaContext } from '@/contexts/MediaContext'
 import { getGridViewData } from '@/utils/newsTransFormater'
 import { shuffle } from '@/utils/suffleArray'
 
@@ -18,7 +18,7 @@ const MAX_GRID_PRESS_COUNT = 24
 
 function GridView({ pressData, tabType }: GridViewProps) {
   // 1. 데이터 준비 및 필터링
-  const { subscribedPressMap, gridItems, setGridItems } = useContext(SubscriptionContext)
+  const { subscribedPressMap, gridItems, setGridItems } = useContext(MediaContext)
   const [pageIndices, setPageIndices] = useState({
     all: 1,
     subscribed: 1,

@@ -5,7 +5,7 @@ import NewsCard from './NewsCard'
 
 import { PressDataType } from '..'
 import { TabType } from '..'
-import { SubscriptionContext } from '@/contexts/SubscriptionContext'
+import { MediaContext } from '@/contexts/MediaContext'
 
 import NextPageBtn from '@/components/Common/NextPageBtn'
 import PrevPageBtn from '@/components/Common/PrevPageBtn'
@@ -26,7 +26,7 @@ interface ListViewProps {
 function ListView({ pressData, tabType }: ListViewProps) {
   const [buttonIndex, setButtonIndex] = useState(0)
   const [pageIndex, setPageIndex] = useState(0)
-  const { subscribedPressMap } = useContext(SubscriptionContext)
+  const { subscribedPressMap } = useContext(MediaContext)
 
   if (tabType === 'subscribed' && subscribedPressMap.size === 0) {
     return (
