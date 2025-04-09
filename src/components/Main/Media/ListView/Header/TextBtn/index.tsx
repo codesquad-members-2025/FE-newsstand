@@ -2,16 +2,16 @@ import styled from '@emotion/styled'
 
 interface TextBtnProps {
   text: string
-  setButtonIndex: React.Dispatch<React.SetStateAction<number>>
+  setHeaderIndex: React.Dispatch<React.SetStateAction<number>>
   setPageIndex: React.Dispatch<React.SetStateAction<number>>
   index: number
 }
 
-function TextBtn({ text, setButtonIndex, setPageIndex, index }: TextBtnProps) {
+function TextBtn({ text, setHeaderIndex, setPageIndex, index }: TextBtnProps) {
   return (
     <Container
       onClick={() => {
-        setButtonIndex(index)
+        setHeaderIndex(index)
         setPageIndex(0)
       }}
     >

@@ -4,8 +4,8 @@ import TextBtn from './TextBtn'
 
 interface HeaderProps {
   categories: string[]
-  buttonIndex: number
-  setButtonIndex: React.Dispatch<React.SetStateAction<number>>
+  headerIndex: number
+  setHeaderIndex: React.Dispatch<React.SetStateAction<number>>
   pageIndex: number
   setPageIndex: React.Dispatch<React.SetStateAction<number>>
   totalPageCount: number
@@ -23,14 +23,14 @@ export interface TextBtnProps {
 
 function Header({
   categories,
-  buttonIndex,
-  setButtonIndex,
+  headerIndex,
+  setHeaderIndex,
   pageIndex,
   setPageIndex,
   totalPageCount,
 }: HeaderProps) {
   const getBtn = (category: string, index: number) => {
-    return index === buttonIndex ? (
+    return index === headerIndex ? (
       <ProgressBtn
         key={index}
         text={category}
@@ -41,7 +41,7 @@ function Header({
       <TextBtn
         key={index}
         text={category}
-        setButtonIndex={setButtonIndex}
+        setHeaderIndex={setHeaderIndex}
         setPageIndex={setPageIndex}
         index={index}
       />

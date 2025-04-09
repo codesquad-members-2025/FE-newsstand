@@ -24,7 +24,7 @@ interface ListViewProps {
 }
 
 function ListView({ pressData, tabType }: ListViewProps) {
-  const [buttonIndex, setButtonIndex] = useState(0)
+  const [headerIndex, setHeaderIndex] = useState(0)
   const [pageIndex, setPageIndex] = useState(0)
   const { subscribedPressMap } = useContext(MediaContext)
 
@@ -43,13 +43,13 @@ function ListView({ pressData, tabType }: ListViewProps) {
 
   if (tabType === 'all') {
     categories = getCategories(pressData)
-    const currentPid = getPidByIndex(pressData, buttonIndex, pageIndex)
+    const currentPid = getPidByIndex(pressData, headerIndex, pageIndex)
     newsCardData = getNewsCardData(pressData, currentPid)
-    totalCount = getCategoryPressCount(pressData, buttonIndex)
+    totalCount = getCategoryPressCount(pressData, headerIndex)
   } else {
     categories = getSubscribedPressNames(pressData, subscribedPressMap)
     const subscribedPids = Array.from(subscribedPressMap.keys())
-    const currentPid = subscribedPids[buttonIndex]
+    const currentPid = subscribedPids[headerIndex]
     newsCardData = getNewsCardData(pressData, currentPid)
     totalCount = 1
   }
@@ -70,8 +70,8 @@ function ListView({ pressData, tabType }: ListViewProps) {
     <Container>
       <Header
         categories={categories}
-        buttonIndex={buttonIndex}
-        setButtonIndex={setButtonIndex}
+        headerIndex={headerIndex}
+        setHeaderIndex={setHeaderIndex}
         pageIndex={pageIndex}
         setPageIndex={setPageIndex}
         totalPageCount={totalCount}
