@@ -1,9 +1,10 @@
+import { useContext } from 'react'
 import styled from '@emotion/styled'
 import BrandMark from './BrandMark'
 import EditDate from './EditDate'
-import SubscribeBtn from '@/components/Common/SubscribeBtn'
-import UnSubscribeBtn from '@/components/Common/UnSubscribeBtn'
+import SubscriptionBtn from '@/components/Common/SubscriptionBtn'
 
+import { MediaContext } from '@/contexts/MediaContext'
 import { newsInfoType } from '..'
 
 interface NewsInfoProps {
@@ -11,19 +12,21 @@ interface NewsInfoProps {
 }
 
 function NewsInfo({ newsInfo }: NewsInfoProps) {
+  const { subscribedPressMap, handlePressSubscription } = useContext(MediaContext)
+  const pressId = newsInfo.pid
+
   const imageUrl = newsInfo.logoLight
   const editDate = newsInfo.regDate
-  const isSubscribed = false
 
   return (
     <Container>
       <BrandMark imageUrl={imageUrl} />
       <EditDate editDate={editDate} />
-      {isSubscribed ? (
-        <UnSubscribeBtn />
-      ) : (
-        <SubscribeBtn backgroundColor="rgba(245, 247, 249, 1)" />
-      )}
+      <SubscriptionBtn
+        isSubscribed={subscribedPressMap.has(pressId)}
+        onClick={() => handlePressSubscription(pressId, !subscribedPressMap.has(pressId))}
+        isWhiteBackground={false}
+      />
     </Container>
   )
 }

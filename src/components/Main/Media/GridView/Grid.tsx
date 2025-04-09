@@ -2,8 +2,7 @@ import styled from '@emotion/styled'
 import { useContext } from 'react'
 import { MediaContext } from '@/contexts/MediaContext'
 
-import SubscribeBtn from '@/components/Common/SubscribeBtn'
-import UnSubscribeBtn from '@/components/Common/UnSubscribeBtn'
+import SubscriptionBtn from '@/components/Common/SubscriptionBtn'
 
 import { PressDataType } from '..'
 
@@ -13,19 +12,8 @@ interface GridProps {
 }
 
 function Grid({ pressData, isEmpty }: GridProps) {
-  const { subscribedPressMap, setSubscribedPressMap } = useContext(MediaContext)
-
-  const handleSubscribe = (pressId: string) => {
-    setSubscribedPressMap(prev => new Map(prev).set(pressId, true))
-  }
-
-  const handleUnsubscribe = (pressId: string) => {
-    setSubscribedPressMap(prev => {
-      const newMap = new Map(prev)
-      newMap.delete(pressId)
-      return newMap
-    })
-  }
+  const { subscribedPressMap, handlePressSubscription } = useContext(MediaContext)
+  const pressId = pressData.pid
 
   if (isEmpty) {
     return <Container />
@@ -33,16 +21,13 @@ function Grid({ pressData, isEmpty }: GridProps) {
 
   return (
     <Container>
-      <Image key={pressData.pid} src={pressData.logoLight} height="20" alt={pressData.name}></Image>
+      <Image key={pressId} src={pressData.logoLight} height="20" alt={pressData.name}></Image>
       <BtnWrapper>
-        {subscribedPressMap.has(pressData.pid) ? (
-          <UnSubscribeBtn onClick={() => handleUnsubscribe(pressData.pid)} />
-        ) : (
-          <SubscribeBtn
-            onClick={() => handleSubscribe(pressData.pid)}
-            backgroundColor={'rgba(255, 255, 255, 1)'}
-          />
-        )}
+        <SubscriptionBtn
+          isSubscribed={subscribedPressMap.has(pressId)}
+          onClick={() => handlePressSubscription(pressId, !subscribedPressMap.has(pressId))}
+          isWhiteBackground={true}
+        />
       </BtnWrapper>
     </Container>
   )
