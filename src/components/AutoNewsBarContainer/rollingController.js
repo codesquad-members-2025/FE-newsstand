@@ -12,11 +12,9 @@ export async function rollinginterval(
 ) {
   while (true) {
     if (isHoverRef.current) {
-      console.log(`111111마우스 올라감!`);
       // await timeDelay(100);
       continue;
     }
-    console.log("슬라이드 시작", indexRef.current); // 🔍 여기에 찍어보기
     if (!newsRef.current) return;
     await timeDelay(slideDelayMs);
     if (isHoverRef.current) {
@@ -28,7 +26,6 @@ export async function rollinginterval(
     newsRef.current.style.transform = `translateY(-17px)`;
     await timeDelay(transitionMs);
     if (isHoverRef.current) {
-      console.log(`중간 과정에 마우스 올라감!`);
       // await timeDelay(100);
       continue;
     }

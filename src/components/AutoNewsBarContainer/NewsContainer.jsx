@@ -13,7 +13,7 @@ const OuterBox = styled.div`
 const InnerBox = styled.div`
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  /* overflow: hidden; */
 `;
 
 export default function NewsContainer(prop) {
