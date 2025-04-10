@@ -3,6 +3,7 @@ import Header from '@/components/Main/Header'
 import AutoRollingBar from '@/components/Main/AutoRollingBar'
 import Media from '@/components/Main/Media'
 import MediaProvider from '@/contexts/MediaContext'
+import AlertProvider from '@/contexts/AlertContext'
 
 function Main() {
   return (
@@ -10,7 +11,9 @@ function Main() {
       <Header />
       <AutoRollingBar />
       <MediaProvider>
-        <Media />
+        <AlertProvider>
+          <Media />
+        </AlertProvider>
       </MediaProvider>
     </Container>
   )

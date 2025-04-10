@@ -1,16 +1,42 @@
+import { useContext } from 'react'
 import styled from '@emotion/styled'
+import { MediaContext } from '@/contexts/MediaContext'
+
 import PlusIcon from '@/assets/PlusIcon.svg?react'
 import CloseIcon from '@/assets/CloseIcon.svg?react'
-
-interface ButtonProps {
-  isWhiteBackground: boolean
-}
+import { AlertContext } from '@/contexts/AlertContext'
 
 interface SubscriptionButtonProps {
-  isSubscribed: boolean
-  onClick: () => void
+  pressId: string
   isWhiteBackground?: boolean
 }
+
+function SubscriptionButton({ pressId, isWhiteBackground = false }: SubscriptionButtonProps) {
+  const { subscribedPressMap, handlePressSubscription } = useContext(MediaContext)
+  const { setShowAlert, setPressId } = useContext(AlertContext)
+
+  const isSubscribed = subscribedPressMap.has(pressId)
+
+  const handleClick = () => {
+    if (isSubscribed) {
+      setPressId(pressId)
+      setShowAlert(true)
+    } else {
+      handlePressSubscription(pressId)
+    }
+  }
+
+  return (
+    <>
+      <Button onClick={handleClick} isWhiteBackground={isWhiteBackground}>
+        {isSubscribed ? <CloseIcon /> : <PlusIcon />}
+        <Text>{isSubscribed ? '해지하기' : '구독하기'}</Text>
+      </Button>
+    </>
+  )
+}
+
+export default SubscriptionButton
 
 const Text = styled.span`
   font-weight: 500;
@@ -19,20 +45,7 @@ const Text = styled.span`
   transition: color 0.2s ease;
 `
 
-function SubscriptionButton({
-  isSubscribed,
-  onClick,
-  isWhiteBackground = false,
-}: SubscriptionButtonProps) {
-  return (
-    <Button onClick={onClick} isWhiteBackground={isWhiteBackground}>
-      {isSubscribed ? <CloseIcon /> : <PlusIcon />}
-      <Text>{isSubscribed ? '해지하기' : '구독하기'}</Text>
-    </Button>
-  )
-}
-
-const Button = styled.button<ButtonProps>`
+const Button = styled.button<{ isWhiteBackground: boolean }>`
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -65,5 +78,3 @@ const Button = styled.button<ButtonProps>`
     }
   }
 `
-
-export default SubscriptionButton

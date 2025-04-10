@@ -1,9 +1,5 @@
 import styled from '@emotion/styled'
-import { useContext } from 'react'
-import { MediaContext } from '@/contexts/MediaContext'
-
 import SubscriptionBtn from '@/components/Common/SubscriptionBtn'
-
 import { PressDataType } from '..'
 
 interface GridProps {
@@ -12,7 +8,6 @@ interface GridProps {
 }
 
 function Grid({ pressData, isEmpty }: GridProps) {
-  const { subscribedPressMap, handlePressSubscription } = useContext(MediaContext)
   const pressId = pressData.pid
 
   if (isEmpty) {
@@ -23,11 +18,7 @@ function Grid({ pressData, isEmpty }: GridProps) {
     <Container>
       <Image key={pressId} src={pressData.logoLight} height="20" alt={pressData.name}></Image>
       <BtnWrapper>
-        <SubscriptionBtn
-          isSubscribed={subscribedPressMap.has(pressId)}
-          onClick={() => handlePressSubscription(pressId, !subscribedPressMap.has(pressId))}
-          isWhiteBackground={true}
-        />
+        <SubscriptionBtn pressId={pressId} isWhiteBackground={true} />
       </BtnWrapper>
     </Container>
   )

@@ -74,7 +74,6 @@ function getNewsCardData(data: any, pid: string) {
 function getSubscribedPressNames(data: any, subscribedPressMap: any) {
   const allPress = Object.values(data).flat()
   const subscribedPids = Array.from(subscribedPressMap.keys())
-  // console.log(allPress, subscribedPids)
   return subscribedPids
     .map(pid => {
       const press: any = allPress.find((press: any) => press.pid === pid)
@@ -97,6 +96,12 @@ function getCategoryPressLength(data: any, categoryIndex: number): number {
   return data[currentCategory].length
 }
 
+function getPressNameByPressId(data: any, pid: string) {
+  const allPress = Object.values(data).flat()
+  const press: any = allPress.find((press: any) => press.pid === pid)
+  return press?.name
+}
+
 export {
   getGridViewData,
   getCategories,
@@ -104,4 +109,5 @@ export {
   getSubscribedPressNames,
   getPidByIndex,
   getCategoryPressLength,
+  getPressNameByPressId,
 }

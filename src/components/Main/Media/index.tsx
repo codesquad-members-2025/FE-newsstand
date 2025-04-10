@@ -5,8 +5,8 @@ import { MediaContext } from '@/contexts/MediaContext'
 import MediaHeader from './MediaHeader'
 import GridView from './GridView'
 import ListView from './ListView'
-
-import useFetch from '@/hooks/useFetch'
+import Alert from '@/components/Common/Alert'
+import { AlertContext } from '@/contexts/AlertContext'
 
 export type TabType = 'all' | 'subscribed'
 export type ViewType = 'grid' | 'list'
@@ -21,10 +21,10 @@ export interface PressDataType {
 }
 
 function Media() {
-  const { data, loading } = useFetch('/mock/press_by_category.json')
   const [tabType, setTabType] = useState<TabType>('all')
   const [viewType, setViewType] = useState<ViewType>('grid')
-  const { subscribedPressMap } = useContext(MediaContext)
+  const { data, loading, subscribedPressMap } = useContext(MediaContext)
+  const { showAlert } = useContext(AlertContext)
 
   return (
     <Container>
@@ -42,11 +42,14 @@ function Media() {
       ) : (
         <ListView pressData={data} tabType={tabType} />
       )}
+
+      {showAlert && <Alert />}
     </Container>
   )
 }
 
 const Container = styled.div`
+  position: relative;
   width: 930px;
   display: flex;
   flex-direction: column;
