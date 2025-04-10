@@ -42,6 +42,12 @@ const CategoryTextWrapper = styled.div`
   z-index: 2;
 `;
 
+const StyledSVG = styled.svg`
+  path {
+    fill: ${({ theme }) => theme.text.whiteDefault}; // ✅ 테마 토큰으로 설정
+  }
+`;
+
 export default function TabButton({
   children,
   dataCategory,
@@ -50,6 +56,7 @@ export default function TabButton({
   page,
   maxPage,
   swipeNextPage,
+  isAllpress,
 }) {
   return (
     <StyledButton
@@ -71,9 +78,23 @@ export default function TabButton({
           <Category>{children}</Category>
           {curCategory === children ? (
             <NewsPage>
-              <CurrentPage>{page + 1}</CurrentPage>
-              <Slash>/</Slash>
-              <MaxPage>{maxPage}</MaxPage>
+              {isAllpress ? (
+                <>
+                  <CurrentPage>{page + 1}</CurrentPage>
+                  <Slash>/</Slash>
+                  <MaxPage>{maxPage}</MaxPage>
+                </>
+              ) : (
+                <StyledSVG
+                  width="5"
+                  height="8"
+                  viewBox="0 0 5 8"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M1.48317 7.5L0.666504 6.68333L3.34984 4L0.666504 1.31667L1.48317 0.5L4.98317 4L1.48317 7.5Z" />
+                </StyledSVG>
+              )}
             </NewsPage>
           ) : null}
         </CategoryTextWrapper>

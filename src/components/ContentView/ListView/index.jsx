@@ -17,6 +17,7 @@ export default function ListView({
   page,
   maxPage,
   swipeNextPage,
+  isAllpress,
 }) {
   return (
     <ListViewWrapper>
@@ -27,6 +28,7 @@ export default function ListView({
         moveCategory={moveCategory}
         newsCategory={newsCategory}
         swipeNextPage={swipeNextPage}
+        isAllpress={isAllpress}
       />
       <NewsTab pagedData={pagedData} />
     </ListViewWrapper>
