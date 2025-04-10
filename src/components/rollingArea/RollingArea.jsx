@@ -56,7 +56,6 @@ function useRolling(newsList) {
   const extendedNewsList = maskExtendedList(newsList);
   const [index, setIndex] = useState(0);
   const [isTransition, setIsTransition] = useState(true);
-  const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -70,20 +69,21 @@ function useRolling(newsList) {
     if (index === extendedNewsList.length - 1) {
       setTimeout(() => {
         setIsTransition(false);
-        setIsVisible(false);
-        setIndex(0);
+
+        requestAnimationFrame(() => {
+          setIndex(0);
+
+          requestAnimationFrame(() => {
+            setIsTransition(true);
+          });
+        });
       }, 500);
-      setTimeout(() => {
-        setIsTransition(true);
-        setIsVisible(true);
-      }, 510);
     }
   }, [index]);
 
   const getRollingStyle = {
     transform: `translateY(-${index * 49}px)`,
     transition: isTransition ? "transform 0.5s ease-in-out" : "none",
-    opacity: isVisible ? 1 : 0,
   };
 
   return { list: extendedNewsList, getRollingStyle };
