@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import NewsItem from "./NewsItem";
 import { useState, useRef, useEffect } from "react";
-import { rollinginterval } from "./rollingController";
 import { startRolling } from "./startRolling";
 const StyledDiv = styled.div`
   display: flex;
@@ -16,14 +15,15 @@ function makeNewsItem(newsData) {
   ));
 }
 
-export default function LeftNewsWrapper({ isHoverRef, newsData }) {
+export default function RollingNewsWrapper({ newsData, startDelayMs }) {
   const newsRef = useRef();
   const [curNews, setcurNews] = useState(0);
   // const [isHover, setisHover] = useState(false); -> 호버의 상태가 바뀐다고 재렌더링이 발생해야할까?
   const indexRef = useRef(0);
-  const hasStartedRef = useRef(false);
+  // const hasStartedRef = useRef(false);
   const locationRef = useRef(0);
   const rafIdRef = useRef(0);
+  const isHoverRef = useRef(false);
 
   const newsSet =
     curNews === newsData.length - 1
@@ -43,7 +43,8 @@ export default function LeftNewsWrapper({ isHoverRef, newsData }) {
       setcurNews,
       locationRef,
       rafIdRef,
-      isHoverRef
+      isHoverRef,
+      startDelayMs
     );
 
     return () => {

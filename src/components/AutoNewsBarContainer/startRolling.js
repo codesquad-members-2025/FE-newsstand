@@ -9,8 +9,13 @@ export async function startRolling(
   setCurNews,
   locationRef,
   rafIdRef,
-  isHoverRef
+  isHoverRef,
+  startDelayMs
 ) {
+  const lastSlideTimeRef = { current: performance.now() + startDelayMs }; // 시작 지연 반영
+
+  if (startDelayMs !== 0) await timeDelay(startDelayMs);
+
   if (isHoverRef?.current) {
     rafIdRef.current = requestAnimationFrame(() =>
       startRolling(
@@ -20,7 +25,8 @@ export async function startRolling(
         setCurNews,
         locationRef,
         rafIdRef,
-        isHoverRef
+        isHoverRef,
+        startDelayMs
       )
     );
     return;
@@ -35,7 +41,7 @@ export async function startRolling(
     cancelAnimationFrame(rafIdRef.current);
     return;
   }
-  locationRef.current -= 1;
+  locationRef.current -= 17 / 60;
   newsRef.current.style.transform = `translateY(${locationRef.current}px)`;
 
   rafIdRef.current = requestAnimationFrame(() =>

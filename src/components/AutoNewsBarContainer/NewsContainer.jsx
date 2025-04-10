@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import LeftNewsWrapper from "./LeftNewsWrapper";
 import RightNewsWrapper from "./RightNewsWrapper";
+import RollingNewsWrapper from "./RollingNewsWrapper";
 
 const OuterBox = styled.div`
   background-color: ${({ theme }) => theme.surface.alt};
@@ -13,7 +13,7 @@ const OuterBox = styled.div`
 const InnerBox = styled.div`
   width: 100%;
   height: 100%;
-  /* overflow: hidden; */
+  overflow: hidden;
 `;
 
 export default function NewsContainer(prop) {
@@ -22,18 +22,16 @@ export default function NewsContainer(prop) {
       <OuterBox>
         <InnerBox>
           {prop.leftNewsData ? (
-            <LeftNewsWrapper
-              isHoverRef={prop.isHoverRef}
+            <RollingNewsWrapper
+              // isHoverRef={prop.isHoverRef}
               newsData={prop.leftNewsData}
-              onMouseEnter={prop.onMouseEnter}
-              onMouseLeave={prop.onMouseLeave}
+              startDelayMs={prop.startDelayMs}
             />
           ) : (
-            <RightNewsWrapper
-              isHoverRef={prop.isHoverRef}
+            <RollingNewsWrapper
+              // isHoverRef={prop.isHoverRef}
               newsData={prop.rightNewsData}
-              onMouseEnter={prop.onMouseEnter}
-              onMouseLeave={prop.onMouseLeave}
+              startDelayMs={prop.startDelayMs}
             />
           )}
         </InnerBox>

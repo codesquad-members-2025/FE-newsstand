@@ -10,8 +10,8 @@ const RollingBarWrapper = styled.div`
 
 export default function AutoNewsBarContainer() {
   const [headLineNews, setheadLineNews] = useState([]);
-  const isHoverRightRef = useRef(false);
-  const isHoverLefttRef = useRef(false);
+  // const isHoverRightRef = useRef(false);
+  // const isHoverLefttRef = useRef(false);
 
   useEffect(() => {
     async function fetchData() {
@@ -29,24 +29,28 @@ export default function AutoNewsBarContainer() {
   return (
     <RollingBarWrapper>
       <NewsContainer
-        isHoverRef={isHoverLefttRef}
-        onMouseEnter={() => {
-          isHoverLefttRef.current = true;
-        }}
-        onMouseLeave={() => {
-          isHoverLefttRef.current = false;
-        }}
+        // isHoverRef={isHoverLefttRef}
+
+        // onMouseEnter={() => {
+        //   isHoverLefttRef.current = true;
+        // }}
+        // onMouseLeave={() => {
+        //   isHoverLefttRef.current = false;
+        // }}
         leftNewsData={leftNewsData}
+        startDelayMs={0}
       />
       <NewsContainer
-        isHoverRef={isHoverRightRef}
-        onMouseEnter={() => {
-          isHoverRightRef.current = true;
-        }}
-        onMouseLeave={() => {
-          isHoverRightRef.current = false;
-        }}
+        // isHoverRef={isHoverRightRef}
+
+        // onMouseEnter={() => {
+        //   isHoverRightRef.current = true;
+        // }}
+        // onMouseLeave={() => {
+        //   isHoverRightRef.current = false;
+        // }}
         rightNewsData={rightNewsData}
+        startDelayMs={1000}
       />
     </RollingBarWrapper>
   );
