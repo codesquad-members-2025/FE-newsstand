@@ -1,6 +1,7 @@
 import React, { FC } from "react"; // 리액트 및 타입 정의 import
 import styled from "@emotion/styled"; // styled-components or emotion 사용 시 (선택)
 import { useSubscribedState } from "../../../contexts/SubscribedContext";
+import { useNavigate } from "react-router-dom";
 
 interface MyComponentProps {
   // 컴포넌트에 필요한 props 타입을 정의
@@ -12,22 +13,42 @@ const MainHeaderListTab: FC<MyComponentProps> = ({
   currPressState,
   setCurrPressState,
 }) => {
+  const navigate = useNavigate();
   const { subscriptions } = useSubscribedState();
 
-  console.log(currPressState);
-
   // const [newsData, setNewsData] = React.useState([]);
-  setCurrPressState("my-press");
-  setCurrPressState("all-press");
   // 아직 미구현 - UI 먼저 작업 중
+
+  console.log(
+    "클래스 이름" + (currPressState === "all-press" ? "strong" : "normal")
+  );
 
   return (
     <Container>
-      <div>
-        <p>전체 언론사</p>
+      <div
+        className="all-press-area"
+        onClick={() => {
+          setCurrPressState("all-press");
+          navigate("/press-grid-all-press");
+        }}
+      >
+        <p
+          // className={`${currPressState === "all-press" ? "strong" : "normal"}`}
+          className={currPressState === "all-press" ? "strong" : "normal"}
+        >
+          전체 언론사
+        </p>
       </div>
-      <div className="my-press-area">
-        <p>내가 구독한 언론사</p>
+      <div
+        className="my-press-area"
+        onClick={() => {
+          setCurrPressState("my-press");
+          navigate("/press-grid-my-press");
+        }}
+      >
+        <p className={`${currPressState === "my-press" ? "strong" : "normal"}`}>
+          내가 구독한 언론사
+        </p>
         <div className="my-press-count">{subscriptions.length}</div>
       </div>
     </Container>
@@ -43,9 +64,28 @@ const Container = styled.div`
   align-items: center;
   width: 15rem;
 
+  .all-press-area {
+    cursor: pointer;
+  }
+
   .my-press-area {
     display: flex;
     align-items: center;
+    cursor: pointer;
+  }
+
+  .strong {
+    font-weight: ${({ theme }) => theme.typo.bold16.fontWeight} !important;
+    font-size: ${({ theme }) => theme.typo.bold16.fontSize} !important;
+    line-height: ${({ theme }) => theme.typo.bold16.lineHeight} !important;
+    color: ${({ theme }) => theme.colors.text.strong} !important;
+  }
+
+  .normal {
+    font-weight: ${({ theme }) => theme.typo.medium16.fontWeight};
+    font-size: ${({ theme }) => theme.typo.medium16.fontSize};
+    line-height: ${({ theme }) => theme.typo.medium16.lineHeight};
+    color: ${({ theme }) => theme.colors.text.weak};
   }
 
   .my-press-count {

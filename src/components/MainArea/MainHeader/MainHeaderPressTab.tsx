@@ -52,7 +52,7 @@ const MainHeaderPressTab: FC<MyComponentProps> = ({
             src={pressGridNotSelected}
             onClick={() => {
               setCurrShowState("grid");
-              navigate("/press-grid");
+              navigate("/press-grid-all-press");
             }}
             alt="press-grid-not-selected"
           />

@@ -5,12 +5,14 @@ import MainHeaderPressTab from "./MainHeaderPressTab";
 
 interface MyComponentProps {
   // 컴포넌트에 필요한 props 타입을 정의
+  currPressState: string;
   currShowState: string;
   setCurrPressState: React.Dispatch<React.SetStateAction<string>>;
   setCurrShowState: React.Dispatch<React.SetStateAction<string>>;
 }
 
 const MainHeader: FC<MyComponentProps> = ({
+  currPressState,
   currShowState,
   setCurrPressState,
   setCurrShowState,
@@ -18,8 +20,9 @@ const MainHeader: FC<MyComponentProps> = ({
   return (
     <Container>
       <MainHeaderListTab
-        currPressState={currShowState}
-        setCurrPressState={setCurrPressState} />
+        currPressState={currPressState}
+        setCurrPressState={setCurrPressState}
+      />
       <MainHeaderPressTab
         currShowState={currShowState}
         setCurrShowState={setCurrShowState}

@@ -1,46 +1,44 @@
 /** @jsxImportSource @emotion/react */ // Emotion 사용 시 (선택)
-import React, { FC, useState } from "react"; // 리액트 및 타입 정의 import
+import { FC, useState } from "react"; // 리액트 및 타입 정의 import
 import styled from "@emotion/styled"; // styled-components or emotion 사용 시 (선택)
-// import { Link } from "react-router-dom";
 import PressGridElem from "./PressGridElem";
-import { useNewsContext } from "../../../contexts/NewsContext";
-import makeAllPressData from "../../../utils/makeAllPressData";
-import { pressTypes } from "../../../types/pressDataTypes";
+import { pressType, pressTypes } from "../../../types/pressDataTypes";
+import { useSubscribedState } from "../../../contexts/SubscribedContext";
 
-interface MyComponentProps {
-  // 컴포넌트에 필요한 props 타입을 정의
-  currPressState?: string;
-}
-
-const PressGridPage: FC<MyComponentProps> = ({ currPressState }) => {
-  const { state } = useNewsContext();
-  const newsData = state.data;
+const PressGridMyPress: FC = () => {
   const [page, setPage] = useState(0);
+  const { subscriptions } = useSubscribedState();
 
-  let gridData: pressTypes = [];
+  // '내가 구독한 언론사' 로직 처리
+  const gridData: pressTypes = subscriptions.map((press: pressType) => ({
+    pid: press.pid,
+    name: press.name,
+    regDate: press.regDate,
+    materials: press.materials,
+    logoDark: press.logoDark,
+    logoLight: press.logoLight,
+  }));
 
-  if (currPressState === "all-press") {
-    // 전체 언론사 보기
-    gridData = newsData ? makeAllPressData(newsData) : [];
-  } else if (currPressState === "my-press") {
-    // 내가 구독한 언론사 보기 (전역 데이터에서 불러오기)
-    // 작성 예정
-  }
-  const maxPage = Math.ceil(gridData.length / 24) - 1;
+  const maxPage = 3;
   const currentData = gridData.slice(page * 24, (page + 1) * 24);
 
   return (
     <Container>
       <div className="press-grid-area">
         {/* <Link to="/press-list">Press List</Link> */}
-        {currentData.map(({ pid, logoDark, logoLight }) => (
-          <PressGridElem
-            key={pid}
-            id={parseInt(pid)}
-            logoDark={logoDark}
-            logoLight={logoLight}
-          />
-        ))}
+        {currentData.map(
+          ({ pid, name, regDate, materials, logoDark, logoLight }) => (
+            <PressGridElem
+              key={pid}
+              name={name}
+              regDate={regDate}
+              materials={materials}
+              dataId={parseInt(pid)}
+              logoDark={logoDark}
+              logoLight={logoLight}
+            />
+          )
+        )}
       </div>
       <div className="press-grid-arrow-area">
         {/* 화살표 버튼 영역 */}
@@ -59,7 +57,7 @@ const PressGridPage: FC<MyComponentProps> = ({ currPressState }) => {
   );
 };
 
-export default PressGridPage;
+export default PressGridMyPress;
 
 // 아래는 Emotion styled 예시 (선택)
 const Container = styled.div`

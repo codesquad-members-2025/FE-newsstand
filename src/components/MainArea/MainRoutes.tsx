@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
-import PressGrid from "./PressGrid/PressGrid";
+import PressGridAllPress from "./PressGrid/PressGridAllPress";
+import PressGridMyPress from "./PressGrid/PressGridMyPress";
 import PressList from "./PressList/PressList";
 import MainHeader from "./MainHeader/MainHeader";
 import styled from "@emotion/styled";
@@ -8,7 +9,7 @@ import styled from "@emotion/styled";
 const MainRoutes: React.FC = () => {
   const [currPressState, setCurrPressState] =
     React.useState<string>("all-press");
-  const [currShowState, setCurrShowState] = React.useState<string>("list");
+  const [currShowState, setCurrShowState] = React.useState<string>("grid");
 
   useEffect(() => {
     if (currPressState === "all-press") {
@@ -22,15 +23,14 @@ const MainRoutes: React.FC = () => {
   return (
     <Container>
       <MainHeader
+        currPressState={currPressState}
         currShowState={currShowState}
         setCurrShowState={setCurrShowState}
         setCurrPressState={setCurrPressState}
       />
       <Routes>
-        <Route
-          path="/press-grid"
-          element={<PressGrid currPressState={currPressState} />}
-        />
+        <Route path="/press-grid-all-press" element={<PressGridAllPress />} />
+        <Route path="/press-grid-my-press" element={<PressGridMyPress />} />
         <Route
           path="/press-list"
           element={<PressList currPressState={currPressState} />}

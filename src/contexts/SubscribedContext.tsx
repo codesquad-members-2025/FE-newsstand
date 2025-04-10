@@ -51,8 +51,12 @@ export function SubscribedProvider({ children }: SubscribedProviderProps) {
   const [state, dispatch] = useReducer(subscribedReducer, {
     subscriptions: [],
   });
+
+  // useMemo를 사용해 state를 메모이제이션
+  const memoizedState = React.useMemo(() => state, [state]);
+
   return (
-    <SubscribedStateContext.Provider value={state}>
+    <SubscribedStateContext.Provider value={memoizedState}>
       <SubscribedDispatchContext.Provider value={dispatch}>
         {children}
       </SubscribedDispatchContext.Provider>

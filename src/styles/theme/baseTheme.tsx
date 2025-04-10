@@ -36,4 +36,3 @@ export const blue = {
   blue100: "#7890E7",
   blue500: "#4362D0",
 };
-
