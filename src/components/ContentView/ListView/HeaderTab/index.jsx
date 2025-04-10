@@ -14,7 +14,8 @@ function makeTabButtons(
   curCategory,
   page,
   maxPage,
-  swipeNextPage
+  swipeNextPage,
+  isAllpress
 ) {
   return newsCategory.map((category, idx) => {
     return (
@@ -26,6 +27,7 @@ function makeTabButtons(
         moveCategory={moveCategory}
         key={idx}
         swipeNextPage={swipeNextPage}
+        isAllpress={isAllpress}
       >
         {category}
       </TabButton>
@@ -40,6 +42,7 @@ export default function HeaderTab({
   newsCategory,
   moveCategory,
   swipeNextPage,
+  isAllpress,
 }) {
   return (
     <TabButtonWrapper>
@@ -49,7 +52,8 @@ export default function HeaderTab({
         curCategory,
         page,
         maxPage,
-        swipeNextPage
+        swipeNextPage,
+        isAllpress
       )}
     </TabButtonWrapper>
   );
