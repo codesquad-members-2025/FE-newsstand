@@ -52,10 +52,11 @@ function maskExtendedList(list) {
   return [...list, list[0]];
 }
 
-export default function RollingArea() {
+function useRolling(newsList) {
   const extendedNewsList = maskExtendedList(newsList);
   const [index, setIndex] = useState(0);
   const [isTransition, setIsTransition] = useState(true);
+  const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -69,10 +70,12 @@ export default function RollingArea() {
     if (index === extendedNewsList.length - 1) {
       setTimeout(() => {
         setIsTransition(false);
+        setIsVisible(false);
         setIndex(0);
       }, 500);
       setTimeout(() => {
         setIsTransition(true);
+        setIsVisible(true);
       }, 510);
     }
   }, [index]);
@@ -80,12 +83,20 @@ export default function RollingArea() {
   const getRollingStyle = {
     transform: `translateY(-${index * 49}px)`,
     transition: isTransition ? "transform 0.5s ease-in-out" : "none",
+    opacity: isVisible ? 1 : 0,
   };
+
+  return { list: extendedNewsList, getRollingStyle };
+}
+
+export default function RollingArea() {
+  const rollingList1 = useRolling(newsList);
+  const rollingList2 = useRolling(newsList);
   return (
     <RollingContainer>
       <RollingBox>
-        <RollingList style={getRollingStyle}>
-          {extendedNewsList.map((news, i) => (
+        <RollingList style={rollingList1.getRollingStyle}>
+          {rollingList1.list.map((news, i) => (
             <RollingItem key={i}>
               <PressName>{news.press}</PressName>
               <PressNewsTitle as="a">{news.title}</PressNewsTitle>
@@ -94,8 +105,8 @@ export default function RollingArea() {
         </RollingList>
       </RollingBox>
       <RollingBox>
-        <RollingList style={getRollingStyle}>
-          {extendedNewsList.map((news, i) => (
+        <RollingList style={rollingList2.getRollingStyle}>
+          {rollingList2.list.map((news, i) => (
             <RollingItem key={i}>
               <PressName>{news.press}</PressName>
               <PressNewsTitle as="a">{news.title}</PressNewsTitle>
