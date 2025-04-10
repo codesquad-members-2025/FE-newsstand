@@ -6,11 +6,19 @@ const ProgressBarWrapper = styled.div`
   bottom: 0; /* 하단에 붙임 */
   left: 0;
   height: 100%;
-  background-color: ${({ theme }) => theme.surface.brandDefault};
-  transition: width 0.5s linear;
-  width: ${({ $progress }) => `${$progress}%`};
+  width: 100%;
   z-index: 1;
+`;
+
+const ProgressFill = styled.div`
+  height: 100%;
+  width: 100%;
+  transform-origin: left;
+  transform: scaleX(${({ $progress }) => $progress / 100});
+  background-color: ${({ theme }) => theme.surface.brandDefault};
+  transition: transform 0.5s linear;
   opacity: 0.8;
+  will-change: transform;
 `;
 
 export default function ProgressBar({ swipeNextPage, page, curCategory }) {
@@ -33,5 +41,9 @@ export default function ProgressBar({ swipeNextPage, page, curCategory }) {
     return () => clearInterval(intervalId);
   }, [page, curCategory]);
   //의존성배열:페이지넘기면 리렌더링,카테고리 넘어가면 리렌더링
-  return <ProgressBarWrapper $progress={progress} />;
+  return (
+    <ProgressBarWrapper>
+      <ProgressFill $progress={progress} />
+    </ProgressBarWrapper>
+  );
 }
