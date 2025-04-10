@@ -1,5 +1,7 @@
 import { newsItemTypes, pressTypes } from "../types/pressDataTypes";
 
+const ROLLING_NEWS_COUNT = 5; // 전체 뉴스 개수
+
 const makeRandNewsData = (newsData: pressTypes | null) => {
   const allNewsData: newsItemTypes = [];
   const rightNewsData: newsItemTypes = [];
@@ -32,13 +34,13 @@ const makeRandNewsData = (newsData: pressTypes | null) => {
   }
 
   // 각 뉴스 아이템을 랜덤하게 왼쪽과 오른쪽으로 나누기
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < ROLLING_NEWS_COUNT; i++) {
     if (allNewsData[i]) {
       leftNewsData.push(allNewsData[i]);
     }
   }
 
-  for (let i = 5; i < 10; i++) {
+  for (let i = ROLLING_NEWS_COUNT; i < ROLLING_NEWS_COUNT * 2; i++) {
     if (allNewsData[i]) {
       rightNewsData.push(allNewsData[i]);
     }
