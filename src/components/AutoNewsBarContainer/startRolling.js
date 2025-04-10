@@ -10,12 +10,19 @@ export async function startRolling(
   locationRef,
   rafIdRef,
   isHoverRef,
-  startDelayMs
+  lastSlideTimeRef,
+  hoverOverTimeRef
 ) {
-  const lastSlideTimeRef = { current: performance.now() + startDelayMs }; // 시작 지연 반영
+  //   if (startDelayMs !== 0) await timeDelay(startDelayMs);
 
-  if (startDelayMs !== 0) await timeDelay(startDelayMs);
-
+  //추가로 싱크를 맞추기 위한 딜레이를 실행해야함.
+  if (hoverOverTimeRef.current) {
+    await timeDelay(
+      slideDelayMs -
+        ((hoverOverTimeRef.current - lastSlideTimeRef.current) % slideDelayMs)
+    );
+    hoverOverTimeRef.current = null;
+  }
   if (isHoverRef?.current) {
     rafIdRef.current = requestAnimationFrame(() =>
       startRolling(
@@ -26,7 +33,8 @@ export async function startRolling(
         locationRef,
         rafIdRef,
         isHoverRef,
-        startDelayMs
+        lastSlideTimeRef,
+        hoverOverTimeRef
       )
     );
     return;
@@ -48,11 +56,13 @@ export async function startRolling(
     startRolling(
       newsRef,
       indexRef,
-      5000,
+      slideDelayMs,
       setCurNews,
       locationRef,
       rafIdRef,
-      isHoverRef
+      isHoverRef,
+      lastSlideTimeRef,
+      hoverOverTimeRef
     )
   );
 }

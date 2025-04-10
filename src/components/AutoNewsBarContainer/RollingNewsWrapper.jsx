@@ -20,22 +20,19 @@ export default function RollingNewsWrapper({ newsData, startDelayMs }) {
   const [curNews, setcurNews] = useState(0);
   // const [isHover, setisHover] = useState(false); -> 호버의 상태가 바뀐다고 재렌더링이 발생해야할까?
   const indexRef = useRef(0);
-  // const hasStartedRef = useRef(false);
+  const hasStartedRef = useRef(false); //중복 실행 방지
   const locationRef = useRef(0);
   const rafIdRef = useRef(0);
   const isHoverRef = useRef(false);
+  const lastSlideTimeRef = useRef(0);
+  const hoverOverTimeRef = useRef(null);
 
   const newsSet =
     curNews === newsData.length - 1
       ? [newsData[curNews], newsData[0]]
       : newsData.slice(curNews, curNews + 2);
 
-  useEffect(() => {
-    // if (hasStartedRef.current) return;
-    // let isMounted = true;
-    // hasStartedRef.current = true;
-
-    newsRef.current.style.transform = `translateY(${locationRef.current}px)`;
+  function startRollingHandler() {
     startRolling(
       newsRef,
       indexRef,
@@ -44,12 +41,28 @@ export default function RollingNewsWrapper({ newsData, startDelayMs }) {
       locationRef,
       rafIdRef,
       isHoverRef,
-      startDelayMs
+      lastSlideTimeRef,
+      hoverOverTimeRef
     );
+  }
+
+  useEffect(() => {
+    if (hasStartedRef.current) return;
+    hasStartedRef.current = true;
+    lastSlideTimeRef.current = performance.now() + startDelayMs; // 시작 지연 반영
+    newsRef.current.style.transform = `translateY(${locationRef.current}px)`;
+
+    if (startDelayMs !== 0) {
+      setTimeout(() => {
+        startRollingHandler();
+      }, startDelayMs);
+    } else {
+      startRollingHandler();
+    }
 
     return () => {
       cancelAnimationFrame(rafIdRef.current);
-      // isMounted = false;
+      hasStartedRef.current = false;
     };
   }, [curNews]);
 
@@ -57,7 +70,10 @@ export default function RollingNewsWrapper({ newsData, startDelayMs }) {
     <>
       <StyledDiv
         onMouseEnter={() => (isHoverRef.current = true)}
-        onMouseLeave={() => (isHoverRef.current = false)}
+        onMouseLeave={() => {
+          isHoverRef.current = false;
+          hoverOverTimeRef.current = performance.now();
+        }}
         ref={newsRef}
       >
         {makeNewsItem(newsSet)}
