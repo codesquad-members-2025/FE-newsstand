@@ -76,7 +76,15 @@ function ListView({ pressData, tabType }: ListViewProps) {
     if (tabType === 'subscribed') {
       setHeaderIndex(prev => (headerIndex === 0 ? categories.length - 1 : prev - 1))
     } else if (pageIndex === 0) {
+      const maxPrevPageIndex =
+        getCategoryPressLength(
+          pressData,
+          headerIndex === 0 ? categories.length - 1 : headerIndex - 1
+        ) - 1
       setHeaderIndex(prev => (headerIndex === 0 ? categories.length - 1 : prev - 1))
+      setPageIndex(maxPrevPageIndex)
+    } else {
+      setPageIndex(prev => prev - 1)
     }
   }
 
