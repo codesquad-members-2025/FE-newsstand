@@ -33,11 +33,9 @@ const PressListNav: FC<MyComponentProps> = ({ data, pressIndex }) => {
   const day = String(parseInt(datePart.slice(6, 8), 10)).padStart(2, "0"); // 일을 2자리로 맞춥니다.
 
   // 시, 분, 초를 추출합니다.
-  const [hour, minute, second] = timePart
+  const [hour, minute] = timePart
     .split(":")
     .map((num) => String(parseInt(num, 10)).padStart(2, "0")); // 시, 분, 초를 2자리로 맞춥니다.
-
-  console.log(second);
 
   return (
     <Container>
