@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react'
+import { useContext } from 'react'
 import styled from '@emotion/styled'
 
 import { useMediaContext } from '@/hooks/useMediaContext'
@@ -7,7 +7,6 @@ import GridView from './GridView'
 import ListView from './ListView'
 import Alert from '@/components/Common/Alert'
 import { AlertContext } from '@/contexts/AlertContext'
-import GridProvider from '@/contexts/GridContext'
 
 export type TabType = 'all' | 'subscribed'
 export type ViewType = 'grid' | 'list'
@@ -38,9 +37,7 @@ function Media() {
       {loading ? (
         <p>Loading...</p>
       ) : viewType === 'grid' ? (
-        <GridProvider>
-          <GridView pressData={data} tabType={tabType} />
-        </GridProvider>
+        <GridView tabType={tabType} />
       ) : (
         <ListView pressData={data} tabType={tabType} />
       )}

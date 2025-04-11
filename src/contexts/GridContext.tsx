@@ -1,4 +1,7 @@
-import { createContext, useState, ReactNode } from 'react'
+import { createContext, useState, useEffect, ReactNode } from 'react'
+import { useMediaContext } from '@/hooks/useMediaContext'
+import { shuffle } from '@/utils/suffleArray'
+import { getGridViewData } from '@/utils/newsTransFormater'
 
 interface PressData {
   pid: string
@@ -20,7 +23,12 @@ const GridContext = createContext<GridContextType>({
 })
 
 const GridProvider = ({ children }: { children: ReactNode }) => {
+  const { data, loading } = useMediaContext()
   const [gridItemList, setGridItemList] = useState<PressData[]>([])
+
+  useEffect(() => {
+    if (!loading) setGridItemList(shuffle(getGridViewData(data)))
+  }, [loading])
 
   return (
     <GridContext.Provider value={{ gridItemList, setGridItemList }}>

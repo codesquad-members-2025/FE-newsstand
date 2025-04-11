@@ -4,6 +4,7 @@ import AutoRollingBar from '@/components/Main/AutoRollingBar'
 import Media from '@/components/Main/Media'
 import MediaProvider from '@/contexts/MediaContext'
 import AlertProvider from '@/contexts/AlertContext'
+import GridProvider from '@/contexts/GridContext'
 
 function Main() {
   return (
@@ -11,9 +12,11 @@ function Main() {
       <Header />
       <AutoRollingBar />
       <MediaProvider>
-        <AlertProvider>
-          <Media />
-        </AlertProvider>
+        <GridProvider>
+          <AlertProvider>
+            <Media />
+          </AlertProvider>
+        </GridProvider>
       </MediaProvider>
     </Container>
   )

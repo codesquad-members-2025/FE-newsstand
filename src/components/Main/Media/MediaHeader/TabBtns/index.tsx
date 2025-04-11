@@ -1,7 +1,6 @@
 import styled from '@emotion/styled'
 import Badge from '@/components/Common/Badge'
 import { TabType } from '../..'
-import { act } from 'react'
 
 interface TabBtnsProps {
   tabType: string

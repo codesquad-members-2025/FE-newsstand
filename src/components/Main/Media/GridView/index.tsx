@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect } from 'react'
+import { useState, useMemo } from 'react'
 import styled from '@emotion/styled'
 import Grid from './Grid'
 import NextPageBtn from '@/components/Common/NextPageBtn'
@@ -7,28 +7,19 @@ import PrevPageBtn from '@/components/Common/PrevPageBtn'
 import { PressDataType, TabType } from '..'
 import { useMediaContext } from '@/hooks/useMediaContext'
 import { useGridContext } from '@/hooks/useGridContext'
-import { getGridViewData } from '@/utils/newsTransFormater'
-import { shuffle } from '@/utils/suffleArray'
 
 interface GridViewProps {
-  pressData: PressDataType[]
   tabType: TabType
 }
 
 const MAX_GRID_PRESS_COUNT = 24
 
-function GridView({ pressData, tabType }: GridViewProps) {
+function GridView({ tabType }: GridViewProps) {
   // 1. 데이터 준비 및 필터링
   const { subscribedPressMap } = useMediaContext()
-  const { gridItemList, setGridItemList } = useGridContext()
+  const { gridItemList } = useGridContext()
   const [pageIndexAll, setPageIndexAll] = useState(1)
   const [pageIndexSubscribed, setPageIndexSubscribed] = useState(1)
-
-  useEffect(() => {
-    if (gridItemList.length === 0) {
-      setGridItemList(shuffle(getGridViewData(pressData)))
-    }
-  }, [])
 
   const filteredPressList =
     tabType === 'subscribed'
