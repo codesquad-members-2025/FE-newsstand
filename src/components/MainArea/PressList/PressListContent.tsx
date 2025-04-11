@@ -28,7 +28,5 @@ const Container = styled.div`
   display: grid;
   grid-template-columns: 320px 530px;
   grid-template-rows: 24px 260px 32px;
-  gap: 2rem;
-  padding: 1.5rem;
   border: 1px solid ${({ theme }) => theme.colors.border.default};
 `;
