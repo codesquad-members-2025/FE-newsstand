@@ -9,10 +9,27 @@ const ListViewWrapper = styled.div`
   border: 1px solid ${({ theme }) => theme.border.default};
 `;
 
-export default function ListView({ moveCategory, pagedData, newsCategory }) {
+export default function ListView({
+  category,
+  moveCategory,
+  pagedData,
+  newsCategory,
+  page,
+  maxPage,
+  swipeNextPage,
+  isAllpress,
+}) {
   return (
     <ListViewWrapper>
-      <HeaderTab moveCategory={moveCategory} newsCategory={newsCategory} />
+      <HeaderTab
+        page={page}
+        maxPage={maxPage}
+        curCategory={category}
+        moveCategory={moveCategory}
+        newsCategory={newsCategory}
+        swipeNextPage={swipeNextPage}
+        isAllpress={isAllpress}
+      />
       <NewsTab pagedData={pagedData} />
     </ListViewWrapper>
   );

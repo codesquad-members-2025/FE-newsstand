@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 const StyledButton = styled.button`
   all: unset;
-  color: ${({ theme }) => theme.text.strong};
+  color: ${({ $press, theme }) =>
+    $press ? theme.text.strong : theme.text.weak};
   cursor: pointer;
   &:hover {
     opacity: 0.8;
@@ -10,6 +11,10 @@ const StyledButton = styled.button`
   font-weight: 700;
 `;
 
-export default function AllPress({ showAllpress }) {
-  return <StyledButton onClick={showAllpress}>전체 언론사</StyledButton>;
+export default function AllPress({ showAllpress, press }) {
+  return (
+    <StyledButton $press={press} onClick={showAllpress}>
+      전체 언론사
+    </StyledButton>
+  );
 }

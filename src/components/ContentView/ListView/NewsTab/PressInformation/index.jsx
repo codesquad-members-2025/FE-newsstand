@@ -4,7 +4,7 @@ import styled from "styled-components";
 import SubScribedButton from "../../../../../utils/Buttons/SubScribedButton";
 import formatDateTime from "../../../util/formatDateTime";
 import { SubscribedContext } from "../../../../../utils/Subscribed/SubscribedContext";
-
+import { SubscribedModalContext } from "../../../../../utils/Subscribed/SubscribedModal/SubscribedModalContext";
 const NewsInformWrapper = styled.div`
   display: flex;
   gap: 1rem;
@@ -21,7 +21,8 @@ export default function PressInformation({ pagedData }) {
   const { logoDark, logoLight, pressId, regDate: rawRegDate } = pagedData;
   const pressLogo = theme === "light" ? logoLight : logoDark;
   const regDate = formatDateTime(rawRegDate);
-  const { subscribed, toggleSubscribed } = useContext(SubscribedContext);
+  const { subscribed } = useContext(SubscribedContext); //모달에서 관리해야함
+  const { clickSubscribedModal } = useContext(SubscribedModalContext);
   const isSubscribed = subscribed.includes(pressId) ? null : "구독하기";
   return (
     <NewsInformWrapper>
@@ -31,7 +32,15 @@ export default function PressInformation({ pagedData }) {
         id={pressId}
         width={isSubscribed ? 4.5 : 1.5}
         visible={true}
-        onClick={(e) => toggleSubscribed(e.currentTarget.id)}
+        // onClick={(e) => toggleSubscribed(e.currentTarget.id)}
+        // onClick={toggleSubscribedModal}
+        onClick={(e) => {
+          clickSubscribedModal(
+            e.currentTarget.id,
+            pagedData.name,
+            !isSubscribed
+          );
+        }}
       >
         {isSubscribed}
       </SubScribedButton>
