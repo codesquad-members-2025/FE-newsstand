@@ -35,7 +35,9 @@ export default PressListArrowArea;
 // 아래는 Emotion styled 예시 (선택)
 const Container = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   grid-area: 3 / 1 / 3 / 3;
+  margin-top: 1rem;
+  cursor: pointer;
 `;

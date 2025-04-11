@@ -19,17 +19,16 @@ const PressListMainNews: FC<MyComponentProps> = ({ data, pressIndex }) => {
     return <div>데이터를 불러올 수 없습니다.</div>;
   }
 
-  // const { logoDark, logoLight, materials, name, pid, regDate } = data[pressIndex]; // 첫 번째 데이터 항목을 사용
-  // 다크모드 여부 가져오기
-  // const { isDarkMode } = useThemeState();
+  const { image, title, url } = data[pressIndex].materials[0];
+  console.log(image, title, url);
 
   return (
     <Container>
       <div className="main-news-thumbnail">
-        <img src="" alt="" />
+        <img src={image?.url} alt="메인 뉴스 썸네일" />
       </div>
       <div className="main-news-title">
-        <a href="">메인 기사</a>
+        <a href={url}>{title}</a>
       </div>
     </Container>
   );
@@ -42,4 +41,8 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   padding: 1rem;
+
+  .main-news-title {
+    margin-top: 1rem;
+  }
 `;
