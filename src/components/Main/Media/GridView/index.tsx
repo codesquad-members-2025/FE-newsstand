@@ -1,11 +1,12 @@
-import { useState, useContext, useMemo, useEffect } from 'react'
+import { useState, useMemo, useEffect } from 'react'
 import styled from '@emotion/styled'
 import Grid from './Grid'
 import NextPageBtn from '@/components/Common/NextPageBtn'
 import PrevPageBtn from '@/components/Common/PrevPageBtn'
 
 import { PressDataType, TabType } from '..'
-import { MediaContext } from '@/contexts/MediaContext'
+import { useMediaContext } from '@/hooks/useMediaContext'
+import { useGridContext } from '@/hooks/useGridContext'
 import { getGridViewData } from '@/utils/newsTransFormater'
 import { shuffle } from '@/utils/suffleArray'
 
@@ -18,20 +19,21 @@ const MAX_GRID_PRESS_COUNT = 24
 
 function GridView({ pressData, tabType }: GridViewProps) {
   // 1. 데이터 준비 및 필터링
-  const { subscribedPressMap, gridItems, setGridItems } = useContext(MediaContext)
+  const { subscribedPressMap } = useMediaContext()
+  const { gridItemList, setGridItemList } = useGridContext()
   const [pageIndexAll, setPageIndexAll] = useState(1)
   const [pageIndexSubscribed, setPageIndexSubscribed] = useState(1)
 
   useEffect(() => {
-    if (gridItems.length === 0) {
-      setGridItems(shuffle(getGridViewData(pressData)))
+    if (gridItemList.length === 0) {
+      setGridItemList(shuffle(getGridViewData(pressData)))
     }
   }, [])
 
   const filteredPressList =
     tabType === 'subscribed'
-      ? gridItems.filter(press => subscribedPressMap.has(press.pid))
-      : gridItems
+      ? gridItemList.filter(press => subscribedPressMap.has(press.pid))
+      : gridItemList
 
   // 2. 페이지네이션 데이터 처리
   const totalPages = Math.ceil(filteredPressList.length / MAX_GRID_PRESS_COUNT) || 1

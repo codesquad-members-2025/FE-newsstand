@@ -1,6 +1,6 @@
 import { useContext } from 'react'
 import styled from '@emotion/styled'
-import { MediaContext } from '@/contexts/MediaContext'
+import { useMediaContext } from '@/hooks/useMediaContext'
 
 import PlusIcon from '@/assets/PlusIcon.svg?react'
 import CloseIcon from '@/assets/CloseIcon.svg?react'
@@ -12,7 +12,7 @@ interface SubscriptionButtonProps {
 }
 
 function SubscriptionButton({ pressId, isWhiteBackground = false }: SubscriptionButtonProps) {
-  const { subscribedPressMap, handlePressSubscription } = useContext(MediaContext)
+  const { subscribedPressMap, handlePressSubscription } = useMediaContext()
   const { setShowAlert, setPressId } = useContext(AlertContext)
 
   const isSubscribed = subscribedPressMap.has(pressId)

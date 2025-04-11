@@ -1,12 +1,12 @@
 import { useContext } from 'react'
 import styled from '@emotion/styled'
-import { MediaContext } from '@/contexts/MediaContext'
+import { useMediaContext } from '@/hooks/useMediaContext'
 import { AlertContext } from '@/contexts/AlertContext'
 import { getPressNameByPressId } from '@/utils/newsTransFormater'
 import { getProperPostposition } from '@/utils/postposition'
 
 function Alert() {
-  const { data, handlePressSubscription } = useContext(MediaContext)
+  const { data, handlePressSubscription } = useMediaContext()
   const { setShowAlert, pressId } = useContext(AlertContext)
 
   const pressName = getPressNameByPressId(data, pressId)
@@ -21,19 +21,34 @@ function Alert() {
   }
 
   return (
-    <Container>
-      <TextArea>
-        <Text>{pressName}</Text>
-        {postpostion}
-        <br /> 구독 해지하시겠습니까?
-      </TextArea>
-      <ButtonWarrper>
-        <Button onClick={handleConfirm}>예, 해지합니다</Button>
-        <Button onClick={onClose}>아니오</Button>
-      </ButtonWarrper>
-    </Container>
+    <Backdrop onClick={onClose}>
+      <Container>
+        <TextArea>
+          <Text>{pressName}</Text>
+          {postpostion}
+          <br /> 구독 해지하시겠습니까?
+        </TextArea>
+        <ButtonWarrper>
+          <Button onClick={handleConfirm}>예, 해지합니다</Button>
+          <Button onClick={onClose}>아니오</Button>
+        </ButtonWarrper>
+      </Container>
+    </Backdrop>
   )
 }
+
+const Backdrop = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 99;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
 
 const Container = styled.div`
   position: absolute;
@@ -47,6 +62,8 @@ const Container = styled.div`
   font-size: 16px;
   background-color: white;
   z-index: 100;
+  box-shadow: 0px 2px 18px 0px rgba(20, 33, 43, 0.08);
+  box-shadow: 0px 4px 2px 0px rgba(20, 33, 43, 0.02);
 `
 
 const TextArea = styled.div`

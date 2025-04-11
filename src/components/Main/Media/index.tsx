@@ -1,12 +1,13 @@
 import { useState, useContext } from 'react'
 import styled from '@emotion/styled'
 
-import { MediaContext } from '@/contexts/MediaContext'
+import { useMediaContext } from '@/hooks/useMediaContext'
 import MediaHeader from './MediaHeader'
 import GridView from './GridView'
 import ListView from './ListView'
 import Alert from '@/components/Common/Alert'
 import { AlertContext } from '@/contexts/AlertContext'
+import GridProvider from '@/contexts/GridContext'
 
 export type TabType = 'all' | 'subscribed'
 export type ViewType = 'grid' | 'list'
@@ -21,9 +22,8 @@ export interface PressDataType {
 }
 
 function Media() {
-  const [tabType, setTabType] = useState<TabType>('all')
-  const [viewType, setViewType] = useState<ViewType>('grid')
-  const { data, loading, subscribedPressMap } = useContext(MediaContext)
+  const { data, loading, subscribedPressMap, tabType, setTabType, viewType, setViewType } =
+    useMediaContext()
   const { showAlert } = useContext(AlertContext)
 
   return (
@@ -38,7 +38,9 @@ function Media() {
       {loading ? (
         <p>Loading...</p>
       ) : viewType === 'grid' ? (
-        <GridView pressData={data} tabType={tabType} />
+        <GridProvider>
+          <GridView pressData={data} tabType={tabType} />
+        </GridProvider>
       ) : (
         <ListView pressData={data} tabType={tabType} />
       )}
