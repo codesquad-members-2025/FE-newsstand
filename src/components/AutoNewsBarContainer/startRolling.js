@@ -10,17 +10,19 @@ export async function startRolling(
   locationRef,
   rafIdRef,
   isHoverRef,
-  lastSlideTimeRef,
-  hoverOverTimeRef
+  lastSlideTimeRef, //???필요할까??
+  hoverOverTimeRef,
+  nowRef
 ) {
   //   if (startDelayMs !== 0) await timeDelay(startDelayMs);
 
-  //추가로 싱크를 맞추기 위한 딜레이를 실행해야함.
+  //추가로 싱크를 맞추기 위한 딜레이를 실행해야함. ---------------------------------------------------여기
   if (hoverOverTimeRef.current) {
     await timeDelay(
       slideDelayMs -
-        ((hoverOverTimeRef.current - lastSlideTimeRef.current) % slideDelayMs)
+        ((hoverOverTimeRef.current - nowRef.current) % slideDelayMs)
     );
+    cancelAnimationFrame(rafIdRef.current);
     hoverOverTimeRef.current = null;
   }
   if (isHoverRef?.current) {
@@ -34,7 +36,8 @@ export async function startRolling(
         rafIdRef,
         isHoverRef,
         lastSlideTimeRef,
-        hoverOverTimeRef
+        hoverOverTimeRef,
+        nowRef
       )
     );
     return;
@@ -62,7 +65,8 @@ export async function startRolling(
       rafIdRef,
       isHoverRef,
       lastSlideTimeRef,
-      hoverOverTimeRef
+      hoverOverTimeRef,
+      nowRef
     )
   );
 }

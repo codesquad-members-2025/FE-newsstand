@@ -26,12 +26,14 @@ export default function NewsContainer(prop) {
               // isHoverRef={prop.isHoverRef}
               newsData={prop.leftNewsData}
               startDelayMs={prop.startDelayMs}
+              nowRef={prop.nowRef}
             />
           ) : (
             <RollingNewsWrapper
               // isHoverRef={prop.isHoverRef}
               newsData={prop.rightNewsData}
               startDelayMs={prop.startDelayMs}
+              nowRef={prop.nowRef}
             />
           )}
         </InnerBox>

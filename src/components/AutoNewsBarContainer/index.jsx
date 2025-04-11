@@ -10,6 +10,7 @@ const RollingBarWrapper = styled.div`
 
 export default function AutoNewsBarContainer() {
   const [headLineNews, setheadLineNews] = useState([]);
+  const nowRef = useRef(0);
   // const isHoverRightRef = useRef(false);
   // const isHoverLefttRef = useRef(false);
 
@@ -20,6 +21,10 @@ export default function AutoNewsBarContainer() {
       setheadLineNews(() => data.newsHeadLine);
     }
     fetchData();
+  }, []);
+
+  useEffect(() => {
+    nowRef.current = performance.now();
   }, []);
 
   if (headLineNews.length === 0) return null;
@@ -39,6 +44,7 @@ export default function AutoNewsBarContainer() {
         // }}
         leftNewsData={leftNewsData}
         startDelayMs={0}
+        nowRef={nowRef}
       />
       <NewsContainer
         // isHoverRef={isHoverRightRef}
@@ -51,6 +57,7 @@ export default function AutoNewsBarContainer() {
         // }}
         rightNewsData={rightNewsData}
         startDelayMs={1000}
+        nowRef={nowRef}
       />
     </RollingBarWrapper>
   );

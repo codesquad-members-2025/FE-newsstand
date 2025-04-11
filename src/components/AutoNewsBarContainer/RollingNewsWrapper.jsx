@@ -15,7 +15,7 @@ function makeNewsItem(newsData) {
   ));
 }
 
-export default function RollingNewsWrapper({ newsData, startDelayMs }) {
+export default function RollingNewsWrapper({ newsData, startDelayMs, nowRef }) {
   const newsRef = useRef();
   const [curNews, setcurNews] = useState(0);
   // const [isHover, setisHover] = useState(false); -> 호버의 상태가 바뀐다고 재렌더링이 발생해야할까?
@@ -42,14 +42,14 @@ export default function RollingNewsWrapper({ newsData, startDelayMs }) {
       rafIdRef,
       isHoverRef,
       lastSlideTimeRef,
-      hoverOverTimeRef
+      hoverOverTimeRef,
+      nowRef
     );
   }
 
   useEffect(() => {
     if (hasStartedRef.current) return;
     hasStartedRef.current = true;
-    lastSlideTimeRef.current = performance.now() + startDelayMs; // 시작 지연 반영
     newsRef.current.style.transform = `translateY(${locationRef.current}px)`;
 
     if (startDelayMs !== 0) {

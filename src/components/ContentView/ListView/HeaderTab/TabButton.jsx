@@ -3,6 +3,7 @@ import ProgressBar from "./ProgressBar";
 
 const StyledButton = styled.button`
   all: unset;
+  flex: 0 0 auto;
   position: relative;
   box-sizing: border-box;
   cursor: pointer;
@@ -16,6 +17,7 @@ const StyledButton = styled.button`
   font-size: 0.88rem;
   width: ${({ $curCategory, $dataCategory }) =>
     $curCategory === $dataCategory ? "10.38rem" : null};
+  flex-shrink: 0;
 `;
 const CategoryWrapper = styled.div`
   gap: 0.5rem;

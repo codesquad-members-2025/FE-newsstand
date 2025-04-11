@@ -1,12 +1,35 @@
 import styled from "styled-components";
 import TabButton from "./TabButton";
+import DraggableScroll from "./DraggableScroll";
 
-const TabButtonWrapper = styled.div`
-  display: flex;
-  background-color: ${({ theme }) => theme.surface.alt};
+const TabButtonContainer = styled.div`
+  overflow-x: auto;
   width: 58.13rem;
-  border-bottom: 1px solid ${({ theme }) => theme.border.default};
+  cursor: grab;
+  user-select: none;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+
+  /* &::-webkit-scrollbar {
+    height: 2px;
+  } */
+  &::-webkit-scrollbar {
+    display: none; /* Chrome, Safari */
+  }
+  /* &::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 2px;
+  } */
+
+  /* scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.3) transparent; */
 `;
+
+// const TabButtonWrapper = styled.div`
+//   display: flex;
+//   background-color: ${({ theme }) => theme.surface.alt};
+//   border-bottom: 1px solid ${({ theme }) => theme.border.default};
+// `;
 
 function makeTabButtons(
   newsCategory,
@@ -45,16 +68,18 @@ export default function HeaderTab({
   isAllpress,
 }) {
   return (
-    <TabButtonWrapper>
-      {makeTabButtons(
-        newsCategory,
-        moveCategory,
-        curCategory,
-        page,
-        maxPage,
-        swipeNextPage,
-        isAllpress
-      )}
-    </TabButtonWrapper>
+    <TabButtonContainer>
+      <DraggableScroll>
+        {makeTabButtons(
+          newsCategory,
+          moveCategory,
+          curCategory,
+          page,
+          maxPage,
+          swipeNextPage,
+          isAllpress
+        )}
+      </DraggableScroll>
+    </TabButtonContainer>
   );
 }
