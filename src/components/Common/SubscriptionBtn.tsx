@@ -1,10 +1,11 @@
 import { useContext } from 'react'
 import styled from '@emotion/styled'
-import { useMediaContext } from '@/hooks/useMediaContext'
 
 import PlusIcon from '@/assets/PlusIcon.svg?react'
 import CloseIcon from '@/assets/CloseIcon.svg?react'
+import { useMediaContext } from '@/hooks/useMediaContext'
 import { AlertContext } from '@/contexts/AlertContext'
+import { useListContext } from '@/hooks/useListContext'
 
 interface SubscriptionButtonProps {
   pressId: string
@@ -12,7 +13,8 @@ interface SubscriptionButtonProps {
 }
 
 function SubscriptionButton({ pressId, isWhiteBackground = false }: SubscriptionButtonProps) {
-  const { subscribedPressMap, handlePressSubscription } = useMediaContext()
+  const { subscribedPressMap, handlePressSubscription, viewType, setTabType } = useMediaContext()
+  const { setHeaderIndexSubscribed } = useListContext()
   const { setShowAlert, setPressId } = useContext(AlertContext)
 
   const isSubscribed = subscribedPressMap.has(pressId)
@@ -23,6 +25,10 @@ function SubscriptionButton({ pressId, isWhiteBackground = false }: Subscription
       setShowAlert(true)
     } else {
       handlePressSubscription(pressId)
+      if (viewType === 'list') {
+        setHeaderIndexSubscribed(subscribedPressMap.size)
+        setTabType('subscribed')
+      }
     }
   }
 

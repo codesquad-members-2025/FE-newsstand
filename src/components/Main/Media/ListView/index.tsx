@@ -6,6 +6,7 @@ import NewsCard from './NewsCard'
 import { PressDataType } from '..'
 import { TabType } from '..'
 import { useMediaContext } from '@/hooks/useMediaContext'
+import { useListContext } from '@/hooks/useListContext'
 
 import NextPageBtn from '@/components/Common/NextPageBtn'
 import PrevPageBtn from '@/components/Common/PrevPageBtn'
@@ -33,10 +34,15 @@ function skeletonListView() {
 }
 
 function ListView({ pressData, tabType }: ListViewProps) {
-  const [headerIndexAll, setHeaderIndexAll] = useState(0)
-  const [headerIndexSubscribed, setHeaderIndexSubscribed] = useState(0)
-  const [pageIndex, setPageIndex] = useState(0)
   const { subscribedPressMap } = useMediaContext()
+  const {
+    headerIndexAll,
+    setHeaderIndexAll,
+    headerIndexSubscribed,
+    setHeaderIndexSubscribed,
+    pageIndex,
+    setPageIndex,
+  } = useListContext()
 
   const subscriptionCount = subscribedPressMap.size
 

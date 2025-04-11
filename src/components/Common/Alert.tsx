@@ -4,16 +4,25 @@ import { useMediaContext } from '@/hooks/useMediaContext'
 import { AlertContext } from '@/contexts/AlertContext'
 import { getPressNameByPressId } from '@/utils/newsTransFormater'
 import { getProperPostposition } from '@/utils/postposition'
+import { useListContext } from '@/hooks/useListContext'
 
 function Alert() {
-  const { data, handlePressSubscription } = useMediaContext()
+  const { data, handlePressSubscription, subscribedPressMap, viewType } = useMediaContext()
   const { setShowAlert, pressId } = useContext(AlertContext)
+  const { headerIndexSubscribed, setHeaderIndexSubscribed } = useListContext()
 
   const pressName = getPressNameByPressId(data, pressId)
   const postpostion = getProperPostposition(pressName)
 
   const handleConfirm = () => {
     handlePressSubscription(pressId)
+    if (
+      viewType === 'list' &&
+      headerIndexSubscribed !== 0 &&
+      headerIndexSubscribed > subscribedPressMap.size - 2
+    ) {
+      setHeaderIndexSubscribed(prev => prev - 1)
+    }
     setShowAlert(false)
   }
   const onClose = () => {
