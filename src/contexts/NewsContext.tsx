@@ -1,4 +1,10 @@
-import React, { createContext, useReducer, useContext, ReactNode } from "react";
+import React, {
+  createContext,
+  useReducer,
+  useContext,
+  useEffect,
+  ReactNode,
+} from "react";
 import { pressTypes } from "../types/pressDataTypes";
 
 // 뉴스 데이터 상태 타입 정의
@@ -42,20 +48,23 @@ export function NewsProvider({ children }: NewsProviderProps) {
     { data: null } // 초기값
   );
 
-  const fetchNewsData = async () => {
-    try {
-      const response = await fetch("/mock-data/mockPressData.json");
-      if (!response.ok) {
-        throw new Error("Failed to fetch news data");
+  useEffect(() => {
+    // 컴포넌트가 마운트될 때 뉴스 데이터를 fetch
+    const fetchNewsData = async () => {
+      try {
+        const response = await fetch("/mock-data/mockPressData.json");
+        if (!response.ok) {
+          throw new Error("Failed to fetch news data");
+        }
+        const data: pressTypes = await response.json();
+        dispatch({ type: "SET_NEWS", payload: data });
+      } catch (error) {
+        console.error("Error fetching news data:", error);
       }
-      const data: pressTypes = await response.json();
-      dispatch({ type: "SET_NEWS", payload: data });
-    } catch (error) {
-      console.error("Error fetching news data:", error);
-    }
-  };
+    };
 
-  fetchNewsData();
+    fetchNewsData();
+  }, []);
 
   return (
     <NewsContext.Provider value={{ state, dispatch }}>

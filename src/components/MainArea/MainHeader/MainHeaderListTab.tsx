@@ -19,10 +19,6 @@ const MainHeaderListTab: FC<MyComponentProps> = ({
   // const [newsData, setNewsData] = React.useState([]);
   // 아직 미구현 - UI 먼저 작업 중
 
-  console.log(
-    "클래스 이름" + (currPressState === "all-press" ? "strong" : "normal")
-  );
-
   return (
     <Container>
       <div
