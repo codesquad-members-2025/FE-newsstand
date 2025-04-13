@@ -18,7 +18,7 @@ export default function NewsRolling() {
   }, [rollingNewsData]);
 
   useEffect(() => {
-    fetch('/mockData/rollingNews.json')
+    fetch('http://localhost:5173/news/rolling')
       .then((res) => res.json())
       .then(setRollingNewsData)
       .catch((err) => console.error('rollingNewsData fetch error:', err));

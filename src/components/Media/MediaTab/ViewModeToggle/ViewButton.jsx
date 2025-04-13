@@ -8,10 +8,6 @@ import ListIcon from '@/assets/icons/list-view.svg?react';
 const StyledViewButton = styled.button`
   width: 24px;
   height: 24px;
-  background: none;
-  padding: 0;
-  border: none;
-  cursor: pointer;
 
   color: ${({ theme, isActive }) =>
     isActive ? theme.colors.text.point : theme.colors.text.weak};

@@ -24,7 +24,7 @@ export default function PressInfo({ logoUrl, editedTime }) {
     <StyledPressInfo>
       <Logo src={logoUrl} />
       <Time>{editedTime} 편집</Time>
-      <Button isEmphasized label="구독하기" iconType="plus" />
+      <Button isEmphasized labelText="구독하기" iconType="plus" />
     </StyledPressInfo>
   );
 }

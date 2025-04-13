@@ -3,10 +3,7 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 
 const ToggleButton = styled.button`
-  background: none;
-  border: none;
   font-size: 2rem;
-  cursor: pointer;
   transition: transform 0.3s ease;
   padding: 0.5rem;
   border-radius: 50%;

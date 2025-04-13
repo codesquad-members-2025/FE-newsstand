@@ -9,10 +9,6 @@ const StyledTabItem = styled.button`
   align-items: center;
   font-size: 14px;
   font-weight: 500;
-  background: none;
-  padding: 0;
-  border: none;
-  cursor: pointer;
 
   color: ${({ theme, isActive }) =>
     isActive ? theme.colors.text.strong : theme.colors.text.weak};
@@ -27,13 +23,22 @@ const LabelWrapper = styled.span`
   gap: 8px;
 `;
 
-const TabItem = ({ isActive, onClick, label, badgeLabel }) => {
+const TabItem = ({ isActive, onClick, tabType, badgeLabel }) => {
+  const tabLabels = {
+    all: '전체 언론사',
+    subscribed: '내가 구독한 언론사',
+  };
+
+  const label = tabLabels[tabType];
+
   return (
     <>
       <StyledTabItem isActive={isActive} onClick={onClick}>
         <LabelWrapper>
           {label}
-          {badgeLabel && <Badge label={badgeLabel} isActive={isActive} />}
+          {typeof badgeLabel === 'number' && (
+            <Badge label={badgeLabel} isActive={isActive} />
+          )}
         </LabelWrapper>
       </StyledTabItem>
     </>

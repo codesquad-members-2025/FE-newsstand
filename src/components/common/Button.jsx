@@ -46,15 +46,15 @@ function getIconComponent(type) {
   return map[type] || null;
 }
 
-export default function Button({ isEmphasized, label, iconType, onClick }) {
+export default function Button({ isEmphasized, labelText, iconType, handler }) {
   const IconComponent = getIconComponent(iconType);
 
   return (
-    <StyledButton isEmphasized={isEmphasized} label={label} onClick={onClick}>
+    <StyledButton isEmphasized={isEmphasized} onClick={handler}>
       <IconWrapper>
         <IconComponent />
       </IconWrapper>
-      {label && <StyledLabel>{label}</StyledLabel>}
+      {labelText && <StyledLabel>{labelText}</StyledLabel>}
     </StyledButton>
   );
 }

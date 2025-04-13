@@ -54,8 +54,6 @@ const ButtonGroup = styled.div`
 const Button = styled.button`
   width: 100%;
   padding: 10px 20px;
-  border: none;
-  cursor: pointer;
   background-color: ${({ theme }) => theme.colors.surface.alt};
   color: ${({ emphasized, theme }) =>
     emphasized ? theme.colors.text.strong : theme.colors.text.default};
@@ -67,7 +65,7 @@ const Button = styled.button`
   }
 `;
 
-const Modal = ({ mediaName, isModalOpen, handleClose }) => {
+const Modal = ({ targetName, isModalOpen, onConfirm, onModalClose }) => {
   useEffect(() => {
     if (isModalOpen) {
       document.body.style.overflow = 'hidden';
@@ -85,13 +83,13 @@ const Modal = ({ mediaName, isModalOpen, handleClose }) => {
       <ModalContent>
         <TitleGroup>
           <p>
-            <StyledText>{mediaName}</StyledText>을(를)
+            <StyledText>{targetName}</StyledText>을(를)
           </p>
           <p>구독해지하시겠습니까?</p>
         </TitleGroup>
         <ButtonGroup>
-          <Button onClick={handleClose}>예, 해지합니다</Button>
-          <Button emphasized onClick={handleClose}>
+          <Button onClick={onConfirm}>예, 해지합니다</Button>
+          <Button emphasized onClick={onModalClose}>
             아니오
           </Button>
         </ButtonGroup>

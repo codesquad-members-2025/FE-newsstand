@@ -1,83 +1,107 @@
-/** @jsxImportSource @emotion/react */
-import styled from '@emotion/styled';
-import { useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
-import FieldTab from './FieldTab';
-import MainNewsItem from './MainNewsItem';
-import PressInfo from './PressInfo';
-import SubNewsList from './SubNewsList';
+import { fieldMap } from '@/utils/constants/constants';
 
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  box-sizing: border-box;
-`;
+import ListView from './ListView';
+import Carousel from '../Carousel';
+import useCarousel from '../Carousel/useCarousel';
 
-const PressNews = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  padding: 24px;
+const DURATION = 20000;
+const INTERVAL_DURATION = 100;
+const PROGRESS_INCREMENT = 100;
 
-  border: 1px solid ${({ theme }) => theme.colors.border.default};
-  border-top: none;
-`;
+const ListViewContainer = ({ data }) => {
+  const [totalPage, setTotalPage] = useState(0);
+  const { currentPage, goNext, goPrev, reset } = useCarousel();
+  const [currentCategory, setCurrentCategory] = useState('generalEconomy');
+  const [progress, setProgress] = useState(0);
 
-const News = styled.div`
-  display: flex;
-  align-items: flex-start;
-  gap: 16px;
-`;
+  const pressList = data[currentCategory];
+  const selectedPressData = pressList[currentPage];
 
-const RightNewsColumn = styled.div`
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 16px;
-`;
+  const getCurrentCategoryIndex = useCallback(
+    (direction) => {
+      const currentIndex = fieldMap.findIndex(
+        (item) => item.key === currentCategory
+      );
+      const nextIndex =
+        (currentIndex + direction + fieldMap.length) % fieldMap.length;
+      return nextIndex;
+    },
+    [currentCategory]
+  );
 
-const EditedByPress = styled.div`
-  width: 100%;
-  align-self: flex-end;
-  ${({ theme }) => theme.typography.m14}
-  color: ${({ theme }) => theme.colors.text.weak};
-`;
+  function goToPrevPage() {
+    if (currentPage !== 0) {
+      goPrev();
+      return;
+    }
+    const prevIndex = getCurrentCategoryIndex(-1);
+    const previousCategory = fieldMap[prevIndex].key;
 
-const ListView = ({ data: pressList }) => {
-  const [category, setCategory] = useState('generalEconomy');
-  const [currentIndex, setCurrentIndex] = useState(0);
+    // 카테고리 변경 전에 이전 카테고리의 총 페이지 수를 계산 : currentCategory 상태는 이전값.
+    const prevCategoryTotalPage = data[previousCategory].length - 1;
 
-  const { logoLight, regDate, materials, name } =
-    pressList[category][currentIndex];
+    setCurrentCategory(previousCategory);
+    reset(prevCategoryTotalPage);
+  }
 
-  const mainNews = materials[0];
-  const subNewsList = materials.slice(1);
-  const pressListLength = pressList[category].length;
+  function goToNextPage() {
+    if (currentPage !== totalPage) {
+      goNext();
+      return;
+    }
+
+    const nextIndex = getCurrentCategoryIndex(1);
+    const nextCategory = fieldMap[nextIndex].key;
+
+    setCurrentCategory(nextCategory);
+    reset();
+  }
+
+  useEffect(() => {
+    setTotalPage(pressList.length - 1);
+  }, [currentCategory]);
+
+  useEffect(() => {
+    // 초기화: 프로그레스바 초기화
+    setProgress(0);
+
+    // 20초마다 페이지 변경
+    const pageChangeInterval = setInterval(() => {
+      console.log('실행됨');
+      goToNextPage();
+    }, DURATION);
+
+    // 프로그레스바 업데이트
+    const progressInterval = setInterval(() => {
+      setProgress((prev) => {
+        if (prev >= PROGRESS_INCREMENT) {
+          clearInterval(progressInterval);
+          return PROGRESS_INCREMENT;
+        }
+        return prev + PROGRESS_INCREMENT / (DURATION / INTERVAL_DURATION);
+      });
+    }, INTERVAL_DURATION);
+
+    return () => {
+      [pageChangeInterval, progressInterval].forEach(clearInterval);
+    };
+  }, [currentPage, totalPage, currentCategory]);
 
   return (
-    <Container>
-      <FieldTab
-        category={category}
-        setCategory={setCategory}
-        pressLength={pressListLength}
-        currentIndex={currentIndex}
+    <Carousel goPrev={goToPrevPage} goNext={goToNextPage}>
+      <ListView
+        currentCategory={currentCategory}
+        setCurrentCategory={setCurrentCategory}
+        currentPage={currentPage}
+        data={selectedPressData}
+        totalPressCount={pressList.length}
+        reset={reset}
+        progress={progress}
       />
-      <PressNews>
-        <PressInfo logoUrl={logoLight} editedTime={regDate} />
-        <News>
-          <MainNewsItem mainNews={mainNews} />
-          <RightNewsColumn>
-            <SubNewsList subNewsList={subNewsList} />
-            <EditedByPress>
-              {name} 언론사에서 직접 편집한 뉴스입니다.
-            </EditedByPress>
-          </RightNewsColumn>
-        </News>
-      </PressNews>
-    </Container>
+    </Carousel>
   );
 };
 
-export default ListView;
+export default ListViewContainer;

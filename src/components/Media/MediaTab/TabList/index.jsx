@@ -1,4 +1,7 @@
 import styled from '@emotion/styled';
+import { useContext } from 'react';
+
+import { SubscribeContext } from '@/context/SubscribeContext';
 
 import TabItem from './TabItem';
 
@@ -7,19 +10,21 @@ const StyledTabList = styled.div`
   gap: 16px;
 `;
 
-const TabList = ({ tabType, setTabType }) => {
+const TabList = ({ activeTab, setActiveTab }) => {
+  const { subscribedPress } = useContext(SubscribeContext);
+
   return (
     <StyledTabList>
       <TabItem
-        isActive={tabType === 'all'}
-        onClick={() => setTabType('all')}
-        label="전체 언론사"
+        isActive={activeTab === 'all'}
+        onClick={() => setActiveTab('all')}
+        tabType="all"
       />
       <TabItem
-        isActive={tabType === 'subscribed'}
-        onClick={() => setTabType('subscribed')}
-        label="내가 구독한 언론사"
-        badgeLabel="8"
+        isActive={activeTab === 'subscribed'}
+        onClick={() => setActiveTab('subscribed')}
+        tabType="subscribed"
+        badgeLabel={subscribedPress.length}
       />
     </StyledTabList>
   );

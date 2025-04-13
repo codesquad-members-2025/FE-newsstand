@@ -11,10 +11,10 @@ const TabBarContainer = styled.div`
   height: 40px;
 `;
 
-const MediaTab = ({ tabType, setTabType, viewType, setViewType }) => {
+const MediaTab = ({ activeTab, setActiveTab, viewType, setViewType }) => {
   return (
     <TabBarContainer>
-      <TabList tabType={tabType} setTabType={setTabType} />
+      <TabList activeTab={activeTab} setActiveTab={setActiveTab} />
       <ViewModeToggle viewType={viewType} setViewType={setViewType} />
     </TabBarContainer>
   );

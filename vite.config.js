@@ -21,4 +21,10 @@ export default defineConfig({
       },
     ],
   },
+
+  server: {
+    proxy: {
+      '/news': 'http://localhost:3000', // Express 서버가 실행 중인 포트로 프록시 설정
+    },
+  },
 });

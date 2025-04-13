@@ -6,7 +6,6 @@ const Wrapper = styled.div`
   height: 49px;
   overflow: hidden;
   position: relative;
-  box-sizing: border-box;
   border: 1px solid ${({ theme }) => theme.colors.border.default};
 `;
 
