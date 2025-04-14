@@ -4,6 +4,10 @@
 
 #### ReactJS, CSS Emotion, TypeScript, Vite
 
+## [📝 Wiki 바로가기](https://github.com/SangYoonLee1231/FE-newsstand/wiki)
+
+#### 프로젝트 설계 및 학습 일지 작성
+
 <br/><br/>
 
 ## 요구 사항 분석 및 할 일 정리
@@ -90,12 +94,6 @@
 - [x] 다크 모드 구현 마무리
 - [ ] Express 서버 연동
 - [ ] 버그 수정
-
-<br/><br/>
-
-## [📝 Wiki 바로가기](https://github.com/SangYoonLee1231/FE-newsstand/wiki)
-
-#### 프로젝트 설계 및 학습 일지 작성
 
 <br/><br/>
 
