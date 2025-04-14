@@ -93,11 +93,9 @@
 
 <br/><br/>
 
-## Wiki 바로가기
+## [📝 Wiki 바로가기](https://github.com/SangYoonLee1231/FE-newsstand/wiki)
 
-### [🔨 프로젝트 설계](https://github.com/SangYoonLee1231/FE-newsstand/wiki/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%84%A4%EA%B3%84)
-
-### [📚 학습 일지 (고민과 해결)](https://github.com/SangYoonLee1231/FE-newsstand/wiki/%ED%95%99%EC%8A%B5-%EC%9D%BC%EC%A7%80-(%EA%B3%A0%EB%AF%BC%EA%B3%BC-%ED%95%B4%EA%B2%B0))
+#### 프로젝트 설계 및 학습 일지 작성
 
 <br/><br/>
 
