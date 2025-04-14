@@ -3,23 +3,24 @@ import React, { FC } from "react"; // 리액트 및 타입 정의 import
 import styled from "@emotion/styled"; // styled-components or emotion 사용 시 (선택)
 import PressListContentHeader from "./PressListContentHeader";
 import PressListContent from "./PressListContent";
-// import { Link } from "react-router-dom";
-import type { pressDataTypes } from "../../../types/pressDataTypes";
 
 interface MyComponentProps {
   // 컴포넌트에 필요한 props 타입을 정의
   currPressState?: string;
-  allNewsData?: pressDataTypes;
 }
 
-const PressListPage: FC<MyComponentProps> = ({
-  currPressState,
-  allNewsData,
-}) => {
+const PressListPage: FC<MyComponentProps> = ({ currPressState }) => {
+  const [currCategory, setCurrCategory] = React.useState("종합/경제");
+
+  console.log(currPressState);
+
   return (
     <Container>
-      <PressListContentHeader />
-      <PressListContent />
+      <PressListContentHeader
+        currCategory={currCategory}
+        setCurrCategory={setCurrCategory}
+      />
+      <PressListContent currCategory={currCategory} />
       {/* <Link to="/press-grid">Press Grid</Link> */}
     </Container>
   );

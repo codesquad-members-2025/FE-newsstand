@@ -4,16 +4,16 @@ import HeaderTitle from "./HeaderTitle";
 import HeaderToggle from "./HeaderToggle";
 import HeaderDate from "./HeaderDate";
 
-interface MyComponentProps {
-  // 컴포넌트에 필요한 props 타입을 정의
-  toggleTheme: () => void;
-}
+// interface MyComponentProps {
+//   // 컴포넌트에 필요한 props 타입을 정의
+//   toggleTheme: () => void;
+// }
 
-const Header: FC<MyComponentProps> = ({ toggleTheme }) => {
+const Header: FC = () => {
   return (
     <Container>
       <HeaderTitle />
-      <HeaderToggle toggleTheme={toggleTheme} />
+      <HeaderToggle />
       <HeaderDate />
     </Container>
   );

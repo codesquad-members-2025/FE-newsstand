@@ -1,36 +1,15 @@
 import React, { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
-import PressGrid from "./PressGrid/PressGrid";
+import PressGridAllPress from "./PressGrid/PressGridAllPress";
+import PressGridMyPress from "./PressGrid/PressGridMyPress";
 import PressList from "./PressList/PressList";
 import MainHeader from "./MainHeader/MainHeader";
 import styled from "@emotion/styled";
 
 const MainRoutes: React.FC = () => {
-  const [allNewsData, setAllNewsData] = React.useState([]);
-
   const [currPressState, setCurrPressState] =
     React.useState<string>("all-press");
-  const [currShowState, setCurrShowState] = React.useState<string>("list");
-
-  // 뉴스 데이터 불러오기
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch("/mock-data/mockPressData.json");
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        const data = await response.json();
-        // 뉴스 데이터 저장
-        setAllNewsData(data);
-        console.log(allNewsData);
-      } catch (error) {
-        console.error("데이터 불러오기 실패:", error);
-      }
-    };
-
-    fetchData();
-  }, []);
+  const [currShowState, setCurrShowState] = React.useState<string>("grid");
 
   useEffect(() => {
     if (currPressState === "all-press") {
@@ -44,28 +23,17 @@ const MainRoutes: React.FC = () => {
   return (
     <Container>
       <MainHeader
+        currPressState={currPressState}
         currShowState={currShowState}
         setCurrShowState={setCurrShowState}
         setCurrPressState={setCurrPressState}
       />
       <Routes>
-        <Route
-          path="/press-grid"
-          element={
-            <PressGrid
-              currPressState={currPressState}
-              allNewsData={allNewsData}
-            />
-          }
-        />
+        <Route path="/press-grid-all-press" element={<PressGridAllPress />} />
+        <Route path="/press-grid-my-press" element={<PressGridMyPress />} />
         <Route
           path="/press-list"
-          element={
-            <PressList
-              currPressState={currPressState}
-              allNewsData={allNewsData}
-            />
-          }
+          element={<PressList currPressState={currPressState} />}
         />
         <Route path="/" element={<PressList />} />
         <Route path="*" element={<div>Page Not Found</div>} />

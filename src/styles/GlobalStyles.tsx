@@ -4,7 +4,7 @@ import "pretendard/dist/web/variable/pretendardvariable.css";
 
 const GlobalStyles = () => (
   <Global
-    styles={css`
+    styles={(theme) => css`
       :root {
         font-family: "Pretendard Variable", sans-serif;
         line-height: 1.5;
@@ -12,7 +12,7 @@ const GlobalStyles = () => (
 
         color-scheme: light dark;
         color: rgba(255, 255, 255, 0.87);
-        background-color: #242424;
+        /* background-color: #242424; */
 
         font-synthesis: none;
         text-rendering: optimizeLegibility;
@@ -24,24 +24,30 @@ const GlobalStyles = () => (
         align-items: center;
       }
 
+      html {
+        background-color: ${theme.colors.surface.default} !important;
+      }
+
       /* 기본 밑줄 제거 */
       a {
         text-decoration: none;
+        color: ${theme.colors.text.strong};
       }
 
       /* 아직 방문하지 않은 링크의 글자색 정의 */
       a:link {
-        color: pink;
+        color: ${theme.colors.text.strong};
       }
 
       /* 사용자가 방문한 적이 있는(클릭한 이후) 링크의 글자색 정의 */
       a:visited {
-        color: black;
+        color: ${theme.colors.text.strong};
       }
 
       /* 마우스를 링크에 올려두었을 때, 글자색을 정의 */
       a:hover {
-        color: red;
+        color: ${theme.colors.text.strong};
+        text-decoration: underline;
       }
 
       /* 마우스로 링크를 클릭하고 뗄 때까지의 글자색을 정의 */
@@ -56,11 +62,16 @@ const GlobalStyles = () => (
         min-width: 930px;
         min-height: 100vh;
         box-sizing: border-box;
+        background-color: ${theme.colors.surface.default};
       }
 
       h1 {
         font-size: 3.2em;
         line-height: 1.1;
+      }
+
+      p {
+        color: ${theme.colors.text.strong};
       }
 
       button {

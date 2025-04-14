@@ -12,7 +12,7 @@ export interface NewsItem {
 }
 
 export interface Press {
-  pid: number;
+  pid: string;
   name: string;
   regDate: string;
   logoDark: string;
@@ -22,3 +22,4 @@ export interface Press {
 
 export type newsItemTypes = NewsItem[];
 export type pressTypes = Press[];
+export type pressType = Press;

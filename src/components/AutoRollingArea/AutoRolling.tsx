@@ -4,21 +4,24 @@ import styled from "@emotion/styled"; // styled-components or emotion 사용 시
 import { keyframes } from "@emotion/react";
 import { NewsItem } from "../../types/pressDataTypes";
 
+const CYCLE_TIME = 5000; // 5초 주기
+const ANIMATION_TIME = CYCLE_TIME / 10; // 애니메이션 시간 (0.5초)
+
 interface MyComponentProps {
   position: "left" | "right"; // 'left' 또는 'right' 중 하나의 값
   news?: NewsItem[];
 }
 
 const AutoRolling: FC<MyComponentProps> = ({ position, news }) => {
-  const [currIndex, setCurrIndex] = useState<number>(0);
+  const [currIndex, setCurrIndex] = useState(0);
   const [prevIndex, setPrevIndex] = useState<number | null>(null);
-  const [isPaused, setIsPaused] = useState<boolean>(false);
-  const offset = position === "left" ? 0 : 1000;
+  const [isPaused, setIsPaused] = useState(false);
+  const offset: 0 | 1000 = position === "left" ? 0 : 1000;
 
   const intervalRef = useRef<NodeJS.Timeout | null>(null); // 최초 업데이트 후 5초 주기로 계속 업데이트를 위한 setInterval 식별자
   const timeoutRef = useRef<NodeJS.Timeout | null>(null); // 최초 업데이트를 위한 setTimeout 식별자
-  const startTimeRef = useRef<number>(Date.now() + offset); // 시작 시간은 오프셋을 반영해 초기화 (우측은 1초 후 시작)
-  const elapsedTimeRef = useRef<number>(0); // 시작 후 경과 시간을 저장 (마우스 벗아날 때 시 계산)
+  const startTimeRef = useRef(Date.now() + offset); // 시작 시간은 오프셋을 반영해 초기화 (우측은 1초 후 시작)
+  const elapsedTimeRef = useRef(0); // 시작 후 경과 시간을 저장 (마우스 벗아날 때 시 계산)
 
   // 인덱스 업데이트 함수
   const updateIndexWithSlide = () => {
@@ -30,14 +33,14 @@ const AutoRolling: FC<MyComponentProps> = ({ position, news }) => {
     // 애니메이션 시간(0.5초) 후 이전 요소 제거 및 애니메이션 종료
     setTimeout(() => {
       setPrevIndex(null);
-    }, 500);
+    }, ANIMATION_TIME);
   };
 
   // 5초 주기 이후에 최초 업데이트하고, 이후 매 5초마다 업데이트하는 타이머를 설정하는 함수
   const startRolling = () => {
     // 남은 시간 계산: 현재 시점과 시작 시간의 차이를 고려하여 남은 ms 계산
     const elapsed = Date.now() - startTimeRef.current;
-    const remaining = 5000 - (elapsed % 5000);
+    const remaining = CYCLE_TIME - (elapsed % CYCLE_TIME);
 
     // 최초 업데이트를 위한 setTimeout
     timeoutRef.current = setTimeout(() => {
@@ -45,7 +48,7 @@ const AutoRolling: FC<MyComponentProps> = ({ position, news }) => {
       // 최초 업데이트 후에는 5초 주기로 계속 업데이트
       intervalRef.current = setInterval(() => {
         updateIndexWithSlide();
-      }, 5000);
+      }, CYCLE_TIME);
     }, remaining);
   };
 
@@ -83,14 +86,14 @@ const AutoRolling: FC<MyComponentProps> = ({ position, news }) => {
     setIsPaused(false);
     // 타이머 재시작: 좌측은 그대로, 우측은 +1000ms 추가
     elapsedTimeRef.current = Date.now() - startTimeRef.current;
-    const resumeDelay = 5000 - (elapsedTimeRef.current % 5000);
+    const resumeDelay = CYCLE_TIME - (elapsedTimeRef.current % CYCLE_TIME);
 
     timeoutRef.current = setTimeout(() => {
       updateIndexWithSlide();
       // 타이머 재설정
       intervalRef.current = setInterval(() => {
         updateIndexWithSlide();
-      }, 5000);
+      }, CYCLE_TIME);
     }, resumeDelay);
   };
 

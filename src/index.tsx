@@ -1,18 +1,12 @@
-import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { BrowserRouter } from "react-router-dom";
+import { StrictMode } from "react";
 import App from "./App.tsx";
-import GlobalStyles from "./styles/GlobalStyles.tsx";
-import ResetStyles from "./styles/ResetStyles.tsx";
+import AppProvider from "./AppProvider.tsx";
 
 createRoot(document.getElementById("root") as HTMLElement).render(
   <StrictMode>
-    <ResetStyles />
-    <GlobalStyles />
-    {/* 라우팅 영역 시작 */}
-    <BrowserRouter>
+    <AppProvider>
       <App />
-    </BrowserRouter>
-    {/* 라우팅 영역 끝 */}
+    </AppProvider>
   </StrictMode>
 );
