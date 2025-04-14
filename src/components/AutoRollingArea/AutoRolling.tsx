@@ -16,7 +16,7 @@ const AutoRolling: FC<MyComponentProps> = ({ position, news }) => {
   const [currIndex, setCurrIndex] = useState(0);
   const [prevIndex, setPrevIndex] = useState<number | null>(null);
   const [isPaused, setIsPaused] = useState(false);
-  const offset: number = position === "left" ? 0 : 1000;
+  const offset: 0 | 1000 = position === "left" ? 0 : 1000;
 
   const intervalRef = useRef<NodeJS.Timeout | null>(null); // 최초 업데이트 후 5초 주기로 계속 업데이트를 위한 setInterval 식별자
   const timeoutRef = useRef<NodeJS.Timeout | null>(null); // 최초 업데이트를 위한 setTimeout 식별자

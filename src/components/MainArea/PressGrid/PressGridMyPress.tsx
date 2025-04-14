@@ -2,7 +2,7 @@
 import { FC, useState } from "react"; // 리액트 및 타입 정의 import
 import styled from "@emotion/styled"; // styled-components or emotion 사용 시 (선택)
 import PressGridElem from "./PressGridElem";
-import { pressType, pressTypes } from "../../../types/pressDataTypes";
+import { pressTypes } from "../../../types/pressDataTypes";
 import { useSubscribedState } from "../../../contexts/SubscribedContext";
 
 const PressGridMyPress: FC = () => {
@@ -10,14 +10,16 @@ const PressGridMyPress: FC = () => {
   const { subscriptions } = useSubscribedState();
 
   // '내가 구독한 언론사' 로직 처리
-  const gridData: pressTypes = subscriptions.map((press: pressType) => ({
-    pid: press.pid,
-    name: press.name,
-    regDate: press.regDate,
-    materials: press.materials,
-    logoDark: press.logoDark,
-    logoLight: press.logoLight,
-  }));
+  const gridData: pressTypes = subscriptions.map(
+    ({ pid, name, regDate, materials, logoDark, logoLight }) => ({
+      pid: pid,
+      name: name,
+      regDate: regDate,
+      materials: materials,
+      logoDark: logoDark,
+      logoLight: logoLight,
+    })
+  );
 
   const maxPage = 3;
   const currentData = gridData.slice(page * 24, (page + 1) * 24);
